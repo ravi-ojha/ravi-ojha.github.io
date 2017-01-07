@@ -1,0 +1,34 @@
+<header class="header-nav reveal">
+  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">{{ site.name }}</a>
+  <ul class="header-links">
+    {% if site.about_enabled == true %}
+      <li>
+        <a href="{{ 'about' | relative_url }}" title="About me">
+          <span class="icon icon-android-person"></span>
+        </a>
+      </li>
+    {% endif %}
+    
+    {% if site.rss_enabled == true %}
+      <li>
+        <a href="{{ 'feed.xml' | relative_url }}" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</header>
+
+<!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="{{ site.url }}">Home</a></li>
+    <li><a href="{{ site.baseurl }}{% link _my_tags/software-engineering.md %}">Software Engineering</a></li>
+    <li><a href="{{ site.baseurl }}{% link _my_tags/competitive-programming.md %}">Competitive Programming</a></li>
+    <li><a href="{{ site.baseurl }}{% post_url 2013-01-12-collection-of-python-blogs-for-beginners-mitx-600x-edx %}">Beginner's Python</a></li>
+    <li class="sep"><a href="{{ site.baseurl }}{% link about.html %}">About</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>

@@ -1,0 +1,4 @@
+---
+slug: gimp
+name: GIMP
+---

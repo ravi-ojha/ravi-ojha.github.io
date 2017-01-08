@@ -37,6 +37,7 @@ assets:
     - _assets/javascripts
     - _assets/stylesheets
     - _vendor/
+    - _plugins/
 collections:
   my_tags:
     output: true

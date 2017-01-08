@@ -64,3 +64,6 @@ gems:
   - jekyll-sitemap
   - jemoji
 permalink: posts/:slug
+
+timezone: Asia/Kolkata
+future: true

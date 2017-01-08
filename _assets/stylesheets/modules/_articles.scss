@@ -70,7 +70,7 @@
   p {
     display: block;
     margin: 12px 0 10px;
-    font-size: 18px;
+    font-size: 15px;
     color: $article-header-description-color;
   }
 }
@@ -132,7 +132,7 @@
   p {
     display: block;
     margin: 12px 0 10px;
-    font-size: 18px;
+    font-size: 15px;
     color: $article-header-description-color;
   }
   a {
@@ -187,37 +187,6 @@
     vertical-align: middle;
     &:hover {
       color: $gray-dark;
-    }
-  }
-}
-
-.previous-next-links {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  float: left;
-  .previous-box {
-    width: 50%;
-    float: left;
-    .previous-text {
-      font-size: 12px;
-      color: $article-footer-color;
-      text-transform: uppercase;
-    }
-    a {
-      text-decoration: none;
-    }
-  }
-  .next-box {
-    width: 50%;
-    float: right;
-    text-align: right;
-    .next-text {
-      font-size: 12px;
-      color: $article-footer-color;
-      text-transform: uppercase;
-    }
-    a {
-      text-decoration: none;
     }
   }
 }

@@ -1,4 +1,0 @@
----
-slug: edx
-name: edX
----

@@ -1,4 +1,0 @@
----
-slug: poster
-name: Poster
----

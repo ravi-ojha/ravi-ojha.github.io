@@ -29,7 +29,7 @@ assets:
     css: true
     js: true
   features:
-    automatic_img_size: false
+    automatic_img_size: true
   sources:
     - _assets/bower
     - _assets/fonts

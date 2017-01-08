@@ -1,5 +1,6 @@
-<nav class="header-nav reveal">
-  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">{{ site.name }}</a>
+<header class="header-nav reveal">
+  <a href="{{ '/' | relative_url }}" class="header-logo" title="{{ site.name }}">
+  <img style="max-width: 300px;" src="{% asset_path 'documentation/11_new_rookieslab_logo.png' %}" alt="{{ site.name }}"/></a>
   <ul class="header-links">
     {% if site.about_enabled == true %}
       <li>
@@ -8,62 +9,7 @@
         </a>
       </li>
     {% endif %}
-    {% if site.social.twitter %}
-      <li>
-        <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" title="Twitter">
-          <span class="icon icon-social-twitter"></span>
-        </a>
-      </li>
-    {% endif %}
-    {% if site.social.facebook %}
-      <li>
-        <a href="https://www.facebook.com/{{ site.social.facebook }}" target="_blank" title="Facebook">
-          <span class="icon icon-social-facebook"></span>
-        </a>
-      </li>
-    {% endif %}
-    {% if site.social.github %}
-      <li>
-        <a href="https://github.com/{{ site.social.github }}" target="_blank" title="GitHub">
-          <span class="icon icon-social-github"></span>
-        </a>
-      </li>
-    {% endif %}
-    {% if site.social.dribbble %}
-      <li>
-        <a href="https://dribbble.com/{{ site.social.dribbble }}" target="_blank" title="Dribbble">
-          <span class="icon icon-social-dribbble-outline"></span>
-        </a>
-      </li>
-    {% endif %}
-    {% if site.social.flickr %}
-      <li>
-        <a href="https://www.flickr.com/photos/{{ site.social.flickr }}" target="_blank" title="Flickr">
-          <span class="icon icon-android-camera"></span>
-        </a>
-      </li>
-    {% endif %}
-    {% if site.social.linkedin %}
-      <li>
-        <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" target="_blank" title="LinkedIn">
-          <span class="icon icon-social-linkedin"></span>
-        </a>
-      </li>
-    {% endif %}
-    {% if site.social.bitcoin %}
-      <li>
-        <a href="{{ site.social.bitcoin }}" target="_blank" title="Bitcoin">
-          <span class="icon icon-social-bitcoin"></span>
-        </a>
-      </li>
-    {% endif %}
-    {% if site.social.email %}
-      <li>
-        <a href="mailto:{{ site.social.email }}" target="_blank" title="Email">
-          <span class="icon icon-at"></span>
-        </a>
-      </li>
-    {% endif %}
+    
     {% if site.rss_enabled == true %}
       <li>
         <a href="{{ 'feed.xml' | relative_url }}" target="_blank" title="RSS">
@@ -72,4 +18,18 @@
       </li>
     {% endif %}
   </ul>
+</header>
+
+<!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="{{ site.url }}">Home</a></li>
+    <li><a href="{{ site.baseurl }}{% link _my_tags/software-engineering.md %}">Software Engineering</a></li>
+    <li><a href="{{ site.baseurl }}{% link _my_tags/competitive-programming.md %}">Competitive Programming</a></li>
+    <li><a href="{{ site.baseurl }}{% post_url 2013-01-12-collection-of-python-blogs-for-beginners-mitx-600x-edx %}">Beginner's Python</a></li>
+    <li class="sep"><a href="{{ site.baseurl }}{% link about.html %}">About</a></li>
+  </ul>
 </nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>

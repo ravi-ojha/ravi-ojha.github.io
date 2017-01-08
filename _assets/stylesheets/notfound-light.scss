@@ -69,7 +69,7 @@ $article-paginator-color-hover: $gray-darkest;
 
 .notfound-content {
   flex: auto;
-  max-width: 250px;
+  max-width: 400px;
   text-align: center;
   h1 {
     display: inline-block;
@@ -78,6 +78,7 @@ $article-paginator-color-hover: $gray-darkest;
     font-size: 36px;
     a {
       color: $gray-darkest;
+      text-decoration: none;
     }
   }
   p {

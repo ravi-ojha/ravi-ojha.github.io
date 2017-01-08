@@ -49,6 +49,21 @@
             </a>
           </div>
 
+          <div class="previous-next-links">
+            {% if page.previous.url %}
+            <div class="previous-box">
+              <div class="previous-text">Previous</div>
+              <a href="{{page.previous.url}}">{{page.previous.title}}</a>
+            </div>
+            {% endif %}
+            {% if page.next.url %}
+            <div class="next-box">
+              <div class="next-text">Next</div>
+              <a href="{{page.next.url}}">{{page.next.title}}</a>
+            </div>
+            {% endif %}
+          </div>
+
           {% if site.discus_identifier %}
             <div id="disqus_thread" class="article-comments"></div>
             <script>
@@ -61,6 +76,8 @@
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           {% endif %}
+
+          
         </article>
         {% include footer.html %}
       </div>

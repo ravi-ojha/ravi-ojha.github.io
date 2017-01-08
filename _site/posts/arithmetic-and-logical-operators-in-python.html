@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Rookie's Lab | Python: Arithmetic and Logical Operators</title>
+  <meta name="description" content="How to perform arithmetic and logical operations on Python variables of different types">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Python: Arithmetic and Logical Operators">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000/posts/arithmetic-and-logical-operators-in-python">
+  <meta property="og:description" content="How to perform arithmetic and logical operations on Python variables of different types">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="http://localhost:4000/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://localhost:4000/posts/arithmetic-and-logical-operators-in-python">
+  <meta name="twitter:title" content="Python: Arithmetic and Logical Operators">
+  <meta name="twitter:description" content="How to perform arithmetic and logical operations on Python variables of different types">
+  <meta name="twitter:image" content="http://localhost:4000/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="http://localhost:4000/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <header class="header-nav reveal">
+  <a href="/" class="header-logo" title="Rookie's Lab">
+  <img style="max-width: 300px;" src="/assets/documentation/11_new_rookieslab_logo.png" alt="Rookie's Lab"/></a>
+  <ul class="header-links">
+    
+    
+    
+      <li>
+        <a href="/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</header>
+
+<!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="http://localhost:4000">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Python: Arithmetic and Logical Operators</h1>
+            <p>How to perform arithmetic and logical operations on Python variables of different types</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 3, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  3 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/python">python</a>
+                
+                  <a href="/tag/arithmetic-operators">arithmetic-operators</a>
+                
+                  <a href="/tag/logical-operators">logical-operators</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="arithmetic-operators-in-python">Arithmetic Operators in Python</h2>
+
+<p>Addition, Subtraction, Division, Modulus, Power (number raised to some power)</p>
+
+<h4 id="addition">Addition</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">6.4</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="mf">11.4</span></code></pre></figure>
+
+<p>Python knows that if you ask to add an <code class="highlighter-rouge">int</code> to <code class="highlighter-rouge">float</code>, it makes sense to answer in <code class="highlighter-rouge">float</code></p>
+
+<h4 id="subtraction">Subtraction</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">4</span>
+<span class="mi">1</span></code></pre></figure>
+
+<h4 id="multiplication">Multiplication</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="mi">24</span></code></pre></figure>
+
+<h4 id="division">Division</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">18</span><span class="o">/</span><span class="mi">2</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">19</span><span class="o">/</span><span class="mi">2</span>
+<span class="mi">9</span></code></pre></figure>
+
+<p>What? That’s wrong!
+Nope. Python will always return <code class="highlighter-rouge">int</code> if both numerator and denominator are of type <code class="highlighter-rouge">int</code>
+If one of them is in <code class="highlighter-rouge">float</code> then it will return answer in <code class="highlighter-rouge">float</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mf">19.0</span><span class="o">/</span><span class="mi">2</span>
+<span class="mf">9.5</span></code></pre></figure>
+
+<h4 id="modulus">Modulus</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span> <span class="o">%</span> <span class="mi">5</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">5</span>
+<span class="mi">0</span></code></pre></figure>
+
+<h4 id="finding-integer-raised-to-the-power">Finding integer raised to the power</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span><span class="o">**</span><span class="mi">2</span>
+<span class="mi">36</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">3.14</span><span class="o">*</span><span class="mi">20</span>
+<span class="mf">62.800000000000004</span></code></pre></figure>
+
+<h4 id="complex-expression-a-mixture-of-multiple-operators">Complex expression, a mixture of multiple operators</h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="mi">14</span></code></pre></figure>
+
+<p>Hey! I meant, add 3 to 2 and then multiply it with 4. How do I assign preference of operations? Answer is to surround them by <code class="highlighter-rouge">()</code>.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="mi">20</span></code></pre></figure>
+
+<h4 id="order-of-precedence">Order of precedence</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">**</code> has highest, then <code class="highlighter-rouge">*</code> and  <code class="highlighter-rouge">/</code> (whichever comes first in your expression), then <code class="highlighter-rouge">+</code> and <code class="highlighter-rouge">-</code>. Key to not get confused by operator precedence is to use <code class="highlighter-rouge">()</code>. This also helps in future when you come back to your code after months and have no clue what you did.</li>
+</ul>
+
+<p>We can also perform operations on <code class="highlighter-rouge">str</code> types. <code class="highlighter-rouge">+</code> will join two strings.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="s">"su"</span> <span class="o">+</span> <span class="s">"san"</span>
+<span class="s">'susan'</span></code></pre></figure>
+
+<h2 id="logical-operators-in-python">Logical Operators in Python</h2>
+
+<p>Let’s consider two variables <code class="highlighter-rouge">i</code> and <code class="highlighter-rouge">j</code> to understand the meaning of various comparison operators.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">i &gt; j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if <code class="highlighter-rouge">i</code> is strictly greater than <code class="highlighter-rouge">j</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">i &gt;= j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if <code class="highlighter-rouge">i</code> is greater than or equal to <code class="highlighter-rouge">j</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">i &lt; j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if <code class="highlighter-rouge">i</code> is strictly less than <code class="highlighter-rouge">j</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">i &lt;= j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if <code class="highlighter-rouge">i</code> is less than or equal to <code class="highlighter-rouge">j</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">i == j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if <code class="highlighter-rouge">i</code> is equal to <code class="highlighter-rouge">j</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">i != j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if <code class="highlighter-rouge">i</code> is not equal to <code class="highlighter-rouge">j</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="more-logical-operators-in-python">More logical operators in Python</h2>
+
+<p>Assume <code class="highlighter-rouge">i</code> and <code class="highlighter-rouge">j</code> are <code class="highlighter-rouge">bool</code> variables</p>
+
+<ul>
+  <li><code class="highlighter-rouge">i and j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if both <code class="highlighter-rouge">i</code> and <code class="highlighter-rouge">j</code> are <code class="highlighter-rouge">True</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">i or j</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if either of <code class="highlighter-rouge">i</code> or <code class="highlighter-rouge">j</code> is <code class="highlighter-rouge">True</code>, else returns <code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">not i</code>
+    <ul>
+      <li>returns <code class="highlighter-rouge">True</code> if <code class="highlighter-rouge">i</code> is <code class="highlighter-rouge">False</code>, returns <code class="highlighter-rouge">False</code> if <code class="highlighter-rouge">i</code> is <code class="highlighter-rouge">True</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Next post will discuss yet another widely used data-type in Python: <a href="{ site.baseurl }}/posts/python-strings-and-frequently-used-str-methods">Strings</a></p>
+
+<hr />
+
+<p>Note:
+This is a part of what I learned in an online Open Course Ware offered by MIT on edX.
+Its for my personal reference &amp; also for those who would like to revisit the course.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Python: Arithmetic and Logical Operators - http://localhost:4000/posts/arithmetic-and-logical-operators-in-python by @raviojha21', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/posts/arithmetic-and-logical-operators-in-python', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/posts/arithmetic-and-logical-operators-in-python', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          <div class="previous-next-links">
+            
+            <div class="previous-box">
+              <div class="previous-text">Previous</div>
+              <a href="/posts/python-objects-and-types">Python: Objects and Types</a>
+            </div>
+            
+            
+            <div class="next-box">
+              <div class="next-text">Next</div>
+              <a href="/posts/python-strings-and-frequently-used-str-methods">Python: Strings and it's frequently used methods</a>
+            </div>
+            
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+          
+        </article>
+        <footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+      </br>
+      <p style="float: left;">
+      Thanks to Nielsen Ramon for <a href="https://github.com/nielsenramon/chalk" target="_blank" title="Download Chalk">Chalk</a> theme
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

@@ -5,8 +5,8 @@
 // Typography
 // =============================================================================
 
-$sans-serif: "Lato", Helvetica, Arial, sans-serif;
-$serif: "Cormorant Garamond", Courier, serif;
+$sans-serif: "Lato", sans-serif;
+$serif: "Lato", serif;
 $base-font-family: $sans-serif;
 $base-font-weight: 400;
 $base-font-weight-bold: 700;
@@ -27,19 +27,19 @@ $brand-warning: #f1c90b;
 // Grid
 
 $columns: 12;
-$max-width: 650px;
+$max-width: 760px;
 $gutter: 20px;
 $one-column: 100% / $columns;
 $negative-gutter: 0 - $gutter;
 
 // Font sizes
 
-$base-font-size: 16px;
+$base-font-size: 18px;
 $base-line-height: 1.8;
 
 // Box sizes
 
-$base-border-radius: 4px;
+$base-border-radius: 3px;
 
 // Effects
 // =============================================================================

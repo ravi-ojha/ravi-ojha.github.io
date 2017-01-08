@@ -25,3 +25,4 @@ tmp/*
 .asset-cache/
 npm-debug.log
 helpers/
+bower_components/

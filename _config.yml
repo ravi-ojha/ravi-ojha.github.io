@@ -3,7 +3,7 @@
 name: Rookie's Lab
 paginate: 25
 paginate_path: "/posts/page/:num/"
-url: http://rookieslab.com/
+url: http://rookieslab.com
 blog_theme: light # Or use dark
 
 # Optional settings

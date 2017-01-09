@@ -4,6 +4,8 @@ title: "Python: Tuples and Basic Operations on Tuples"
 description: "What is a tuple? How is it different from a list? And some basic methods on Tuples"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, python-tuple]
+redirect_from:
+  - /2012/12/learnign-python-objects-of-python-tuples.html
 ---
 
 ## What is a Tuple?

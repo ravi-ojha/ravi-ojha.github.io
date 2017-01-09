@@ -4,6 +4,8 @@ title: "Python: Perform repetitive tasks using Iteration or Loop"
 description: "For and While loop constructs in Python enable us to perform repetitive tasks or help us iterate over a string or a list or any iterable object"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, python-loop, python-iteration]
+redirect_from:
+  - /2012/12/learning-python-iteration-or-looping-for-loop-while-loop.html
 ---
 
 Iterations in programs allow us to perform repetitive tasks in a loop. Let's have look at the following flow diagram.

@@ -4,6 +4,8 @@ title: "How to compute Time Complexity or Order of Growth of any program"
 description: "Time Complexity gives us an idea of running time of any program w.r.t. the size of input fed to the program. Order of Growth is just another word for Time Complexity."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [time-complexity, order-of-growth, competitive-programming]
+redirect_from:
+  - /2012/12/complexity-or-order-of-growth-in-programming.html
 ---
 
 ## What is a Time Complexity/Order of Growth?

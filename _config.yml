@@ -63,7 +63,11 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+  - jekyll-redirect-from
 permalink: posts/:slug
 
 timezone: Asia/Kolkata
 future: true
+
+whitelist:
+  - jekyll-redirect-from

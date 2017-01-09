@@ -4,6 +4,9 @@ title: "Python: Finding Square Root using Guess & Check Algorithm"
 description: "Guess and Check is one of the most common methods of finding solution to any problem. We will see how it can be used to find a close approximation of square root of any number"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, square-root, guess-and-check]
+redirect_from:
+  - /2012/12/finding-square-root-guess-and-check-method-in-python.html
+  - /2012/12/learning-python-finding-roots-advanced.html
 ---
 
 ## Guess and Check Algorithm

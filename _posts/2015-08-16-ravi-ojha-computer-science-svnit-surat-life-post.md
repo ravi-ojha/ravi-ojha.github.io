@@ -4,6 +4,8 @@ title: "Open Diary Post: How I lead 4 years of Computer Engineering"
 description: "Life is like a real-time strategy game. Its great to know beforehand how others played it when they were at your situation. In this short post, I'm summing up scenarios I faced, decisions I made and their outcomes during four years of Computer Engineering."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [personal]
+redirect_from:
+  - /2015/08/four-years-of-computer-engineering-summed-up.html
 ---
 
 

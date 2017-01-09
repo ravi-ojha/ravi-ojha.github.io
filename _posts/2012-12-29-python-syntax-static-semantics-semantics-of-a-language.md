@@ -4,6 +4,8 @@ title: "Python: Syntax, Static Semantics, Semantics of a Language"
 description: "Before we begin with any language, it's important to know the aspects of the language. What is Syntax? Semantics? Static Semantics? This post explain these terms with examples."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, syntax, semantics]
+redirect_from:
+  - /2012/12/learning-python-edx-mitx-600x-lec-1-summary-revision.html
 ---
 
 It was the first year of the launch of edX and MIT's 6.00x course was offered free of cost, along with certification. I, along with a friend of mine, started the classes. At the end of the course, we had a final exam. We started revising 2 weeks prior the exam and I had this idea of posting the revision on this blog for easy access in future.

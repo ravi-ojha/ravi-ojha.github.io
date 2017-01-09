@@ -4,6 +4,8 @@ title: "Python: Arithmetic and Logical Operators"
 description: "How to perform arithmetic and logical operations on Python variables of different types"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, arithmetic-operators, logical-operators]
+redirect_from:
+  - /2012/12/operations-on-string-some-simple.html
 ---
 
 ## Arithmetic Operators in Python

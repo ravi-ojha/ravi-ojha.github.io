@@ -4,6 +4,8 @@ title: "Python: Branching code flow using if - else - elif"
 description: "If this Then that! Python provides us with if, else and elif to add conditions in code and branch it like a tree"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, python-if-elif-else]
+redirect_from:
+  - /2012/12/branching-program-using-if-if-else-nested-if-else-elif.html
 ---
 
 Branching programs allow us to make choices and do different things. Let's have look at the following flow diagram.

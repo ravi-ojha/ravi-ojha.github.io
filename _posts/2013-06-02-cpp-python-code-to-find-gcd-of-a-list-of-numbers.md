@@ -4,6 +4,8 @@ title: "Greatest Common Divisor of a list of numbers - C++ and Python Implementa
 description: "First, we will see how to find GCD of two numbers. It is also known as Highest Common Factor - HCF. Then we will move on to find the GCD of a list of numbers and code it in both C++ as well as Python"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+redirect_from:
+  - /2013/05/c-or-c-plus-plus-and-python-program-to-find-gcd-hcf-of-a-list-array.html
 ---
 
 Greatest Common Divisor or Highest Common Factor of two numbers, say `a` and `b` is the largest positive integer that divides both `a` and `b`. What better way than to take an example to understand what the definition means.

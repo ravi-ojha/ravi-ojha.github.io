@@ -4,6 +4,8 @@ title: "Basics of Recursion with an example in Python"
 description: "Recursion is a technique of finding solutions to larger problems using known solution of smaller problems. For me atleast, it was hard to get the understanding of recursion. In this post we see an iterative and recursive version of one problem in programming."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, recursion, competitive-programming]
+redirect_from:
+  - /2012/12/learning-python-recursion-explained-how-recursive-functions-work.html
 ---
 
 ## What is Recursion?

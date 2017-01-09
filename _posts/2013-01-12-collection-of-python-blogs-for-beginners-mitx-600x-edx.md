@@ -4,6 +4,8 @@ title: "Collection of Python posts for beginners"
 description: "I took MITx 6.00x on edX in 2012 and we were taught basics of Python along-with programming in general. While revisiting the videos in the end, I thought of creating a quick guide for myself and everyone else."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, mitx, edx]
+redirect_from:
+  - /2013/01/600x-mitx-python-final-exam-preparation.html
 ---
 
 This article is a compilation of all the posts in this blog that are written with a motive to revise all the video lectures and notes while preparing for the final exam of MITx 6.00x on edX in 2012. The course has moved on to newer version by now, nevertheless, these posts serve as a good starter kit to learn programming with Python.

@@ -4,6 +4,8 @@ title: "Fast Power Algorithm - Exponentiation by Squaring - C++ and Python Imple
 description: "We know how to find 2 raised to the power 10. But what if we have to find 2 raised to the power very large number such as 1000000000? We discuss how to find solution to such a problem using an fast, efficient algorithm"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+redirect_from:
+  - /2013/05/fast-power-algorithm-cc-and-python-code.html
 ---
 
 Programming helps us in solving repetitive tasks by using loop constructs. However, sometimes, our loops may run forever! Let's discuss one such example.

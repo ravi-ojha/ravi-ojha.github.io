@@ -4,6 +4,8 @@ title: "Hobbyist Competitive Programmer to Software Developer at HackerEarth"
 description: "During four years of Computer Engineering, I used to think about what I should pursue as professional career. Loved designing graphic posters, thoroughly enjoyed Competitive Programmer and it was immensely satisfying to build software products to solve real world problems. So much dilemma and I ended up being a Software Engineer at HackerEarth"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [personal, competitive-programming, software-engineering]
+redirect_from:
+  - /2015/09/hobbyist-competitive-programmer-to-software-developer-at-hackerearth.html
 ---
 
 #### Prologue - Late December 2012, beginning of a new semester.

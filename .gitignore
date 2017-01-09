@@ -17,7 +17,6 @@ coverage
 gh-pages/
 pkg/
 site/_site/
-_site/
 test/dest
 tmp/*
 .sass-cache/
@@ -26,3 +25,4 @@ tmp/*
 npm-debug.log
 helpers/
 bower_components/
+_site/

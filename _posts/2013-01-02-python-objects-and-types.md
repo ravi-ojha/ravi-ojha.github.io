@@ -85,7 +85,7 @@ This is called Boolean type. They are either `True` or `False`. This type is wid
 
 There are many more types in Python, we will see them one at a time in future posts. Some important ones are: [List]({{ site.baseurl }}{% post_url 2013-01-09-python-lists-and-list-methods %}), [Dictionary]({{ site.baseurl }}{% post_url 2013-01-10-python-dictionary-and-its-properties %}), [Tuple]({{ site.baseurl }}{% post_url 2013-01-09-python-tuples-and-basic-operations-on-tuples %}).
 
-Next post will discuss some arithmetic and logical operations]({ site.baseurl }}{% post_url 2013-01-03-arithmetic-and-logical-operators-in-python %}) we can perform on various data-types.
+Next post will discuss some arithmetic and logical operations]({{ site.baseurl }}{% post_url 2013-01-03-arithmetic-and-logical-operators-in-python %}) we can perform on various data-types.
 
 ---
 

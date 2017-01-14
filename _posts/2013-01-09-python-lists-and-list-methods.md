@@ -305,7 +305,7 @@ Some more common functions on list.
 {% endhighlight %}
 
 
-In Python, list is the most versatile data-type. You'll find that list is used in almost every other complex data-structure in Python. Next, we will see yet another widely used data-type, `dict` - [Dictionaries in Python]({ site.baseurl }}{% post_url 2013-01-10-python-dictionary-and-its-properties %}).
+In Python, list is the most versatile data-type. You'll find that list is used in almost every other complex data-structure in Python. Next, we will see yet another widely used data-type, `dict` - [Dictionaries in Python]({{ site.baseurl }}{% post_url 2013-01-10-python-dictionary-and-its-properties %}).
 
 ---
 

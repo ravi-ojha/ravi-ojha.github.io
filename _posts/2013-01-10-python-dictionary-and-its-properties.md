@@ -224,7 +224,7 @@ Creating a copy of a dictionary.
 {'i': 'one', 'ii': 'two', 'iii': 'three', 'iv': 'four'}
 {% endhighlight %}
 
-Dictionaries are yet another widely used data-structures in Python, just like [Lists]({ site.baseurl }}{% post_url 2013-01-09-python-lists-and-list-methods %}). It would be interesting to know how it is possible to have various types of keys in dictionary and yet have a fast lookup while accessing the value for that key. Python creates a hash for the key and created internal hash: value map. Let's not get deeper into this, it's a post for some other day.
+Dictionaries are yet another widely used data-structures in Python, just like [Lists]({{ site.baseurl }}{% post_url 2013-01-09-python-lists-and-list-methods %}). It would be interesting to know how it is possible to have various types of keys in dictionary and yet have a fast lookup while accessing the value for that key. Python creates a hash for the key and created internal hash: value map. Let's not get deeper into this, it's a post for some other day.
 
 ---
 

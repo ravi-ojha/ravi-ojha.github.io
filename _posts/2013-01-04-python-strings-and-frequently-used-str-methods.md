@@ -174,7 +174,7 @@ Who are you?Ravi
 Welcome! Ravi
 {% endhighlight %}
 
-Next, we will see how to [control the flow of a program]({ site.baseurl }}{% post_url 2013-01-05-branching-with-if-else-elif-in-python %}) depending on various conditions.
+Next, we will see how to [control the flow of a program]({{ site.baseurl }}{% post_url 2013-01-05-branching-with-if-else-elif-in-python %}) depending on various conditions.
 
 ---
 

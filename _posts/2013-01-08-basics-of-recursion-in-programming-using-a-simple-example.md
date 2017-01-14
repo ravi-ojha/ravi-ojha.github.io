@@ -78,7 +78,7 @@ print recursive_factorial(5)
 
 That was a very simple example of recursion. Recursion is one of the widely used techniques in programming. We will see more problems that can be solved using recursion in future posts.
 
-There's another technique which optimizes a recursive code, it's called [Memoization, also known as Dynamic Programming]({ site.baseurl }}{% post_url 2013-07-07-what-is-memoization-what-is-dynamic-programming %}).
+There's another technique which optimizes a recursive code, it's called [Memoization, also known as Dynamic Programming]({{ site.baseurl }}{% post_url 2013-07-07-what-is-memoization-what-is-dynamic-programming %}).
 
 ---
 

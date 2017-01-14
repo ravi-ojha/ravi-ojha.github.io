@@ -223,7 +223,7 @@ Using `+` to create a new tuple using existing tuples. This is called concatenat
 (1, 2, 3, 4, 5)
 {% endhighlight %}
 
-In Python, you will notice so many similarities between the methods on [strings]({ site.baseurl }}{% post_url 2013-01-04-python-strings-and-frequently-used-str-methods %}), [tuples]({ site.baseurl }}{% post_url 2013-01-09-python-tuples-and-basic-operations-on-tuples %}) and [lists]({ site.baseurl }}{% post_url 2013-01-09-python-lists-and-list-methods %}). It is so easy to understand them one you understand one of them. Next, we will see [Lists in Python]({ site.baseurl }}{% post_url 2013-01-09-python-lists-and-list-methods %}).
+In Python, you will notice so many similarities between the methods on [strings]({{ site.baseurl }}{% post_url 2013-01-04-python-strings-and-frequently-used-str-methods %}), [tuples]({{ site.baseurl }}{% post_url 2013-01-09-python-tuples-and-basic-operations-on-tuples %}) and [lists]({{ site.baseurl }}{% post_url 2013-01-09-python-lists-and-list-methods %}). It is so easy to understand them one you understand one of them. Next, we will see [Lists in Python]({{ site.baseurl }}{% post_url 2013-01-09-python-lists-and-list-methods %}).
 
 ---
 

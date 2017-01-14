@@ -132,7 +132,7 @@ Assume `i` and `j` are `bool` variables
    - returns `True` if `i` is `False`, returns `False` if `i` is `True`
 
 
-Next post will discuss yet another widely used data-type in Python: [Strings]({ site.baseurl }}{% post_url 2013-01-04-python-strings-and-frequently-used-str-methods %})
+Next post will discuss yet another widely used data-type in Python: [Strings]({{ site.baseurl }}{% post_url 2013-01-04-python-strings-and-frequently-used-str-methods %})
 
 ---
 

@@ -85,7 +85,7 @@ Analysis of the above code:
  - We check for two conditions in the `if` clause, and then print a human readable string by joining several strings and numbers. Since `x`, `y`, and `z` were integers, we first need to convert them into `str` objects to be able to join them
  - `elif` and `else` are quite understandable
 
-Next, we will discuss [how to perform repetitive tasks by creating a loop in Python]({ site.baseurl }}{% post_url 2013-01-06-iteration-or-loop-in-python %}).
+Next, we will discuss [how to perform repetitive tasks by creating a loop in Python]({{ site.baseurl }}{% post_url 2013-01-06-iteration-or-loop-in-python %}).
 
 ---
 

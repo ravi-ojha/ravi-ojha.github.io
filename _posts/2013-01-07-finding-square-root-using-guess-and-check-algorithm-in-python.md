@@ -135,7 +135,7 @@ Try to find square root of 1000000000, it will run way faster than the previous 
 There are cases when this code will fail, cases when x is a fractional number between 0 and 1 or when x is negative.
 If you're curious, do post a fix for that in comments.
 
-Up next is one of the most important techniques of programming, [Recursion]({ site.baseurl }}{% post_url 2013-01-08-basics-of-recursion-in-programming-using-a-simple-example %}).
+Up next is one of the most important techniques of programming, [Recursion]({{ site.baseurl }}{% post_url 2013-01-08-basics-of-recursion-in-programming-using-a-simple-example %}).
 
 ---
 

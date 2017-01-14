@@ -86,7 +86,7 @@ See? How easy it was to perform the same task in a different way.
  - Use `for` when you know the fixed number of times the loop should repeat.
 
 
-Next we will apply the knowledge gained so far to solve an interesting problem. [How to find square root of any number?]({ site.baseurl }}{% post_url 2013-01-07-finding-square-root-using-guess-and-check-algorithm-in-python %})
+Next we will apply the knowledge gained so far to solve an interesting problem. [How to find square root of any number?]({{ site.baseurl }}{% post_url 2013-01-07-finding-square-root-using-guess-and-check-algorithm-in-python %})
 
 ---
 

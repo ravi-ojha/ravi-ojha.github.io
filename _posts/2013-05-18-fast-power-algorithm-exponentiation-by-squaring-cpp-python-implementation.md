@@ -227,6 +227,6 @@ int main() {
 }
 {% endhighlight %}
 
-Time Complexity of the above implementation is *O(log power)* or we can *O(log N)* (where `N` is `power`). But how? Notice that we keep dividing the value of power in half in each iteration. Please refer the article that discusses [Time Complexity or Order of Growth of various types]({ site.baseurl }}{% post_url 2013-01-11-how-to-compute-time-complexity-order-of-growth-of-any-program %}).
+Time Complexity of the above implementation is *O(log power)* or we can *O(log N)* (where `N` is `power`). But how? Notice that we keep dividing the value of power in half in each iteration. Please refer the article that discusses [Time Complexity or Order of Growth of various types]({{ site.baseurl }}{% post_url 2013-01-11-how-to-compute-time-complexity-order-of-growth-of-any-program %}).
 
 Got a burning question you might wanna get answered?  Ask it in the comments.

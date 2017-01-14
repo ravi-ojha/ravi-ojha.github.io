@@ -28,7 +28,7 @@ If we were to implement the above process in code, we would:
  - Then find the common factors
  - And, finally the maximum of the common factors
 
-The process of finding factors is not very time efficient. Time Complexity would be *O(N)*, which can be further improved till *O(sqrt N)*. Still, it is a costly operation. Father of Geometry, Euclid, came up with an out of box algorithm to find GCD of two numbers in a very cost effective way. When we say cost, we are referring to time here.
+The [process of finding factors]({{ site.baseurl }}{% post_url 2017-01-14-most-efficient-way-to-find-all-factors-of-a-number-python-cpp %}) is not very time efficient. Time Complexity would be *O(N)*, which can be further improved till *O(sqrt N)*. Still, it is a costly operation. Father of Geometry, Euclid, came up with an out of box algorithm to find GCD of two numbers in a very cost effective way. When we say cost, we are referring to time here.
 
 Formally, Euclid described the algorithm for gcd of two numbers `a` and `b` as:
 

@@ -111,7 +111,7 @@ Points to note between Linear Search & Bisection Search:
  - Time Complexity of Linear Search is *O(n)*, where *n* is the number of elements in the list.
  - Time Complexity of Bisection Search is *O(log n)*. We will see more about Time Complexity in future.
 
-We make use of the concept of Binary Search to [find square root of a number in an efficient way]({ site.baseurl }}{% post_url 2013-01-07-finding-square-root-using-guess-and-check-algorithm-in-python %}).
+We make use of the concept of Binary Search to [find square root of a number in an efficient way]({{ site.baseurl }}{% post_url 2013-01-07-finding-square-root-using-guess-and-check-algorithm-in-python %}).
 
 ---
 

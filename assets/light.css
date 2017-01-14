@@ -929,7 +929,8 @@ img {
 .previous-next-links {
   padding-top: 50px;
   padding-bottom: 50px;
-  float: left; }
+  float: left;
+  width: 100%; }
   .previous-next-links .previous-box {
     width: 50%;
     float: left; }

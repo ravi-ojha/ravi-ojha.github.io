@@ -38,15 +38,17 @@
 
           <div class="article-share">
             {% assign page_title = page.title  | truncate '110' %}
-            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status={{ page_title }} - {{ page.url | absolute_url }} {% if site.social.twitter %}by @{{ site.social.twitter }}{% endif %}', 'newwindow', 'width=500, height=225'); return false;">
-              <span class="icon icon-social-twitter"></span>
-            </a>
-            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}', 'newwindow', 'width=500, height=500'); return false;">
-              <span class="icon icon-social-facebook"></span>
-            </a>
-            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url={{ page.url | absolute_url }}', 'newwindow', 'width=550, height=400'); return false;">
-              <span class="icon icon-social-googleplus"></span>
-            </a>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-like" data-href="{{ page.url }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page_title }}" data-url="{{ page.url | absolute_url }}" data-via="raviojha21" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
 
           <div class="previous-next-links">

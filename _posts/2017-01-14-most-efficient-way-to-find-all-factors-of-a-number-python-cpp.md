@@ -22,7 +22,7 @@ The breakdown of the process of finding factors of a number `x` is:
 
 ## Brute Force Python Implementation to find factors of a number
 
-{% highlight python %}
+{% highlight python linenos %}
 def factors(x):
     # We will store all factors in `result`
     result = []
@@ -78,7 +78,7 @@ Process of finding all factors of `x` in efficient way;
 
 ## Efficient Python Implementation to find factors of a number
 
-{% highlight python %}
+{% highlight python linenos %}
 def factors(x):
     # We will store all factors in `result`
     result = []
@@ -110,7 +110,7 @@ print factors(16)
 
 ## Efficient C++ Implementation to find factors of a number
 
-{% highlight cpp %}
+{% highlight cpp linenos %}
 #include <iostream>
 #include <vector>
 // Switch DEBUG to false if you don't want to print the factors

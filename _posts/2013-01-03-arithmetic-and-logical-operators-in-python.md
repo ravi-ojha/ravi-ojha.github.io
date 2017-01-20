@@ -8,6 +8,11 @@ redirect_from:
   - /2012/12/operations-on-string-some-simple.html
 ---
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## Arithmetic Operators in Python
 
 Addition, Subtraction, Division, Modulus, Power (number raised to some power)
@@ -73,7 +78,7 @@ If one of them is in `float` then it will return answer in `float`
 62.800000000000004
 {% endhighlight %}
 
-#### Complex expression, a mixture of multiple operators
+### Complex expression, a mixture of multiple operators
 
 {% highlight python %}
 >>> 2 + 3 * 4
@@ -87,7 +92,7 @@ Hey! I meant, add 3 to 2 and then multiply it with 4. How do I assign preference
 20
 {% endhighlight %}
 
-#### Order of precedence
+### Order of precedence
 
  - `**` has highest, then `*` and  `/` (whichever comes first in your expression), then `+` and `-`. Key to not get confused by operator precedence is to use `()`. This also helps in future when you come back to your code after months and have no clue what you did.
 

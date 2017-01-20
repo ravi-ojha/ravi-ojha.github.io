@@ -8,6 +8,11 @@ redirect_from:
   - /2012/12/python-objects-lists-mutation-of-list.html
 ---
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## What is a List?
 
 List is a sequence of elements. A list is mutable, unlike a tuple in Python. By mutable, we mean that it is possible update a list after declaring one. The elements inside a list can be any Python object such a string, integer etc. Lists are surrounded by square brackets.

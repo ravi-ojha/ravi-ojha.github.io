@@ -8,6 +8,11 @@ redirect_from:
   - /2012/12/learnign-python-objects-of-python-tuples.html
 ---
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## What is a Tuple?
 
 Tuple is a sequence of elements. A tuple is immutable, unlike a list in Python. By immutable, we mean that it is not possible to update a tuple after declaring one. The elements inside a tuple can be any Python object such a string, integer etc. Tuples are surrounded by parenthesis.

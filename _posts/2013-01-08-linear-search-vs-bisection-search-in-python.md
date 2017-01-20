@@ -8,6 +8,11 @@ redirect_from:
   - /2012/12/linear-search-vs-bisection-search-algorithm-python-code.html
 ---
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## What is Linear Search?
 
 In Linear Search, we sequentially iterate over the given list and check if the element we are looking for is equal to the one in the list. Some quick points about Linear Search.

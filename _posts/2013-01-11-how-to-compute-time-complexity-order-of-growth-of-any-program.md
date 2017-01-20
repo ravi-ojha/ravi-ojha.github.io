@@ -8,6 +8,11 @@ redirect_from:
   - /2012/12/complexity-or-order-of-growth-in-programming.html
 ---
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## What is a Time Complexity/Order of Growth?
 
 Time Complexity/Order of Growth defines the amount of time taken by any program with respect to the size of the input. Time Complexity specifies how the program would behave as the order of size of input is increased. So, Time Complexity is just a function of size of its input. Time Complexity is represented using Big O notation i.e. *O()*.

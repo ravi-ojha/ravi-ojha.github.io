@@ -10,6 +10,11 @@ redirect_from:
 
 Strings are just words or a combination of words. Python has a built-in class `str`, which comes in handy while dealing with words or sentences.
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## How to declare a string in Python?
 
 Strings are surrounded by either `"` or `'`.

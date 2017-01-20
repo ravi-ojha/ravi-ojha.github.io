@@ -19,6 +19,11 @@ Observing the flow diagram:
  - If the test is `True`
  - An optional block of code to execute if the test is `False`
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 Such a desire can be achieved using `if else` clauses in Python.
 
 ## A simple example of `if` and `else` in Python:

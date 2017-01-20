@@ -10,6 +10,11 @@ redirect_from:
 
 Greatest Common Divisor or Highest Common Factor of two numbers, say `a` and `b` is the largest positive integer that divides both `a` and `b`. What better way than to take an example to understand what the definition means.
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## How to find GCD of two numbers?
 
 Let's find GCD of 24 and 18. As we know it, GCD is HCF i.e. Highest Common Factors. So, let's find factors of 24 and 18.
@@ -123,7 +128,7 @@ Let's take an example: Say we have to find GCD of `[4, 6, 14, 10]`
  - `gcd(2, 10) = 2`, now we have `[2]`, hence our answer is `2`.
 
 
-Python implementation for GCD of a list of numbers:
+## Python implementation to find GCD of a list of numbers:
 
 {% highlight python %}
 def gcd(a, b):
@@ -140,7 +145,7 @@ for i in a[1:]:
 print(result)
 {% endhighlight %}
 
-C++ code for GCD of a list of numbers:
+## C++ implementation to find GCD of a list of numbers:
 
 {% highlight cpp %}
 #include <iostream>
@@ -168,4 +173,4 @@ int main() {
 }
 {% endhighlight %}
 
-Got a burning question you might wanna get answered? Ask it in the comments.
+Got a burning question you wanna get answered? Ask it in the comments.

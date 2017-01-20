@@ -10,6 +10,11 @@ redirect_from:
 
 Programming helps us in solving repetitive tasks by using loop constructs. However, sometimes, our loops may run forever! Let's discuss one such example.
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## How to find A raised to the power B?
 
 We multiply `a` to itself, `b` times. That is, `a^b = a * a * a * ... * a` (`b` occurrences of `a`).
@@ -40,6 +45,8 @@ print iterative_power(2, 100)
 {% endhighlight %}
 
 Notice that the answer to `2^100` is way too large to fit in `int` data-type of other languages. To be fair, let's modify our code to print the result modulo `1000000007`. You'd ask why `1000000007`? There's a long story behind that, read it [here](https://codeaccepted.wordpress.com/2014/02/15/output-the-answer-modulo-109-7/). TLDR, we want to contain the result within the range of 32 bit `int`.
+
+## Brute force Python implementation
 
 {% highlight python %}
 MOD = 1000000007
@@ -161,6 +168,8 @@ print fast_power(2, 100)
 Our above code is a bit repetitive and can be simplified. We also have to make changes to keep the final result less than `1000000007`.
 We will common out the code that is present in both `if` and `else`. Also, the two statements `power = power - 1` and `power = power / 2` can be simply merged into one like `power = power / 2`, because we are performing integers division.
 
+## Efficient Python implementation to find base raised to the power
+
 {% highlight python %}
 MOD = 1000000007
 def fast_power(base, power):
@@ -197,6 +206,8 @@ print fast_power(3, 4)
 print fast_power(2, 100)
 # Output: 976371285
 {% endhighlight %}
+
+## Efficient C++ implementation to find exponent raised to a power
 
 A lot of competitive programmers prefer C++ during the contest. So a C++ implementation would always be there for any of my post targeting competitive programmer.
 

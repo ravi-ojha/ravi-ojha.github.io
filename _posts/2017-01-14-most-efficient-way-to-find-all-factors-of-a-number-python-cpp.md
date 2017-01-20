@@ -6,8 +6,6 @@ og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
 ---
 
-
-
 A factor of a number `x` is a number `y` if `y` divides `x` without leaving a remainder. That is if `x % y == 0` we say that `y` is a factor of `x`. 
 
 <h2> Table of Contents </h2>

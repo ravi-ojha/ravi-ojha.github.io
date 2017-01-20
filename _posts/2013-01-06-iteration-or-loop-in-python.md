@@ -18,6 +18,11 @@ Observing the flow diagram:
  - If the test is `True`, then execute the loop body once and go back to re-evaluate the test
  - Repeat until test evaluates to `False`, after which code following iteration statement is executed
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## A simple example of iteration using `while` construct in Python:
 
 {% highlight python %}

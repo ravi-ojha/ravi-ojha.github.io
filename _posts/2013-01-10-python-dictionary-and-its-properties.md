@@ -8,6 +8,11 @@ redirect_from:
   - /2012/12/python-objects-dictionary-dict-examples-insertion-lists.html
 ---
 
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
 ## What is a Dictionary?
 
 In Python, Dictionary is a generalization of a List. Values in a list are accessed using index that start from 0, whereas values in a Dictionary are accessed using a `key`. A key can be any immutable python object. Dictionaries are surrounded by curly braces.

@@ -114,7 +114,7 @@ Enter a number : 100000000
 How do I find square root of very large numbers? As large as 1000000000!
 There is always a scope of optimization. It is suggested to read about [Binary Search]({{ site.baseurl }}{% post_url 2013-01-08-linear-search-vs-bisection-search-in-python %}) before proceeding further.
 
-## Square Root of a number using Guess and Check algorithm
+## Efficient method to find Square Root of a number using Guess and Check algorithm
 
 {% highlight python linenos %}
 x = int(raw_input('Enter a number : '))

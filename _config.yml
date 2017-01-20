@@ -71,3 +71,5 @@ future: true
 
 whitelist:
   - jekyll-redirect-from
+
+markdown: kramdown

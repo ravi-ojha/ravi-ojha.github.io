@@ -3651,3 +3651,23 @@ body.menu-active div.menu-trigger {
 .icon-xbox:before {
   content: "";
 }
+
+#markdown-toc {
+  border: 1px solid #ebeaea;
+  font-size: 16px;
+  background: rgba(235, 234, 234, 0.4);
+  border-radius: 3px;
+  padding: 10px 10px 10px 32px;
+}
+#markdown-toc > li {
+  padding: 2px 0;
+  cursor: pointer;
+}
+#markdown-toc > li a {
+  font-size: 16px;
+  color: #615b5b;
+  text-decoration: none;
+}
+#markdown-toc > li a:hover {
+  color: #121111;
+}

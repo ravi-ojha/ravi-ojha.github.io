@@ -6,9 +6,16 @@ og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
 ---
 
+
+
 A factor of a number `x` is a number `y` if `y` divides `x` without leaving a remainder. That is if `x % y == 0` we say that `y` is a factor of `x`. 
 
-## How to find factor of a number?
+<h2> Table of Contents </h2>
+
+* TOC
+{:toc}
+
+## How to find the factors of a number?
 
 Let's find all factors of 24. We know all the factors of `24` are `1, 2, 3, 4, 6, 8, 12, 24`. How can we find them programmatically?
 
@@ -50,7 +57,7 @@ Time Complexity of the above algorithm is *O(N)*, `N` being the number for which
 
 How can improve upon that? We notice that the factor of any number `x` is always less than `x/2`. So instead of looping up to `x`, we can loop up to `x/2`. This will bring down the time to half but it is still not every efficient. Also, *O(N/2)* boils down to *O(N)*.
 
-## Efficient way to find factors of a number
+## Efficient method to find factors of a number
 
 If we analyze the factors of `24`, they are `1, 2, 3, 4, 6, 8, 12, 24`. We notice that, `1 x 24 = 24`, so when we found that `1` is a factor of `24`, we also know that `24` is yet another factor. Similarly, `2 x 12 = 24`. So when we found that `2` is a factor of `24`, we also know that `12` is also a factor of `24`. This applies for `3 x 8` and `4 x 6` as well. This means that we can find all factors of `24` by looping till `4`. 
 

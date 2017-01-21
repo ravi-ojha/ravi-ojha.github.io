@@ -169,7 +169,7 @@ int main() {
 {% endhighlight %}
 
 Time Complexity of the above algorithm is *O(sqrt(N))*. Go ahead, try to check for a number as large as 1000000000, this implementation will return the result in flash.
-However, at times, we might need to find prime numbers in a given range. Let's say the range is `i` to `j`. In this case, we loop from `i` to `j` and for each number we check if it is prime or not in *O(sqrt(N))*. So overall, we will end up with a solution with time complexity *O((j-i) * sqrt(N)). Can we do any better?
+However, at times, we might need to find prime numbers in a given range. Let's say the range is `i` to `j`. In this case, we loop from `i` to `j` and for each number we check if it is prime or not in *O(sqrt(N))*. So overall, we will end up with a solution with time complexity *O((j-i) \* sqrt(N))*. Can we do any better?
 
 ## Sieve of Eratosthenes
 
@@ -307,6 +307,7 @@ int main() {
 {% endhighlight %}
 
 Analysis of complexity:
+
  - **Space Complexity:** We consume *O(N)* space for initializing `is_prime` array.
  - **Time Complexity:** From the reference paper<sup>[1](#reference-paper)</sup>, the first loop iterates from `2` to `sqrt(N)`, so it is at most *O(sqrt(N))*. And the time spent in removing the multiples is at most:
 

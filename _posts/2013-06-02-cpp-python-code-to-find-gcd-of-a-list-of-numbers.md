@@ -115,7 +115,7 @@ int main() {
 }
 {% endhighlight %}
 
-It is quite tricky to fall for the trap that the Time Complexity is *O(a%b)*. It is not so. There's a great discussion on [stackoverflow](http://stackoverflow.com/a/3981010) regarding the time complexity of Euclid's algorithm to find GCD of two numbers. It turns out that the upper bound is *O(log(a\*b))*
+It is quite tricky to fall for the trap that the Time Complexity is *O(a%b)*. It is not so. There's a great discussion on [stackoverflow](http://stackoverflow.com/a/3981010) regarding the time complexity of Euclid's algorithm to find GCD of two numbers. It turns out that the Time Complexity is *O(log(a) + log(b))*
 
 ## How to find GCD of a list of numbers?
 

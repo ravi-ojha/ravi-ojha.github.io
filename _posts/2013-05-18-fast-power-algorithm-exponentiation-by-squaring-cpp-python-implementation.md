@@ -207,6 +207,8 @@ print fast_power(2, 100)
 # Output: 976371285
 {% endhighlight %}
 
+See how we can use Fast Power Algorithm to [find Modular Multiplicative Inverse of a number]({{ site.baseurl }}{% post_url 2017-01-28-how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp %}).
+
 ## Efficient C++ implementation to find exponent raised to a power
 
 A lot of competitive programmers prefer C++ during the contest. So a C++ implementation would always be there for any of my post targeting competitive programmer.

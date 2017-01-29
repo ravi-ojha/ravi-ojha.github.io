@@ -552,40 +552,29 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
-  font-size: 25.2px;
+  font-size: 32px;
   font-weight: 400;
   letter-spacing: -.03em;
   color: #212121;
 }
 h2 {
-  font-size: 23.4px;
+  font-size: 28px;
   font-weight: 400;
 }
 h3 {
-  font-size: 22.5px;
+  font-size: 26px;
   font-weight: 500;
 }
 h4 {
-  font-size: 21.6px;
+  font-size: 24px;
   font-weight: 500;
 }
 h5 {
-  font-size: 19.8px;
+  font-size: 22px;
   font-weight: 500;
 }
 h6 {
-  font-size: 18px;
-}
-@media all and (max-width:767px) {
-  h1 {
-    font-size: 25.2px;
-  }
-  h2 {
-    font-size: 23.4px;
-  }
-  h3 {
-    font-size: 21.6px;
-  }
+  font-size: 20px;
 }
 a {
   color: #424242;
@@ -1497,7 +1486,12 @@ body.menu-active div.menu-trigger {
 .icon-social-rss-outline:before {
   content: "";
 }
-
+.icon-ios-arrow-thin-left:before {
+  content: "";
+}
+.icon-ios-arrow-thin-right:before {
+  content: "";
+}
 #markdown-toc {
   padding: 10px 10px 10px 32px;
   margin: 30px 0;

@@ -1598,6 +1598,12 @@ body.menu-active div.menu-trigger {
   /* It is very important for width to be as it is defined below */
   width: 335px; 
 }
+@media all and (max-device-width:360px) {
+  .card-big {
+    height: 300px;
+    width: 300px;
+  }
+}
 .card-big .card-image {
   border-radius: 1px 1px 0 0;
   left: 0;

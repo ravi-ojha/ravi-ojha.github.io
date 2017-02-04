@@ -354,6 +354,60 @@ textarea {
   font: inherit;  /* 2 */
 }
 
+/* -- Material Design Table style -------------- */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  background-color: #fff;
+}
+table > thead > tr,
+table > tbody > tr,
+table > tfoot > tr {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+  text-align: left;
+  vertical-align: top;
+  border-top: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #F5F5F5;
+}
+table > thead > tr > th {
+  font-weight: 400;
+  color: #212121;
+  font-weight: 600;
+  vertical-align: bottom;
+  border-bottom: 1px solid #F5F5F5;
+}
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+  border: 0;
+  border-bottom: 1px solid #F5F5F5;
+}
+table > tbody + tbody {
+  border-top: 1px solid #F5F5F5;
+}
+table table {
+  background-color: #fff;
+}
+table .no-border {
+  border: 0;
+}
+
 /* Interactive
  ========================================================================== */
 

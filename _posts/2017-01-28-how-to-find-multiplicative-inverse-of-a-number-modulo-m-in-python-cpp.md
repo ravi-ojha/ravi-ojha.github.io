@@ -35,7 +35,7 @@ We know for a fact that, if multiplicative inverse for a number exists then it l
  - Check if `(A x i) % M` equals `1`
  - If yes, then we have `i` as multiplicative inverse of `A` under `M` 
 
-## Brute Force Python Code to to find Multiplicative Inverse of a number modulo M - *O(M)*
+## Brute Force Python Code to find Multiplicative Inverse of a number modulo M - *O(M)*
 
 {% highlight python linenos %}
 def modulo_multiplicative_inverse(A, M):

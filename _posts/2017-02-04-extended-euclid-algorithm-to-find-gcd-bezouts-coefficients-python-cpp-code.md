@@ -32,9 +32,9 @@ int gcd(int a,int b) {
 
 ## What is Extended Euclid's Algorithm?
 
-As the name suggests, Extended Euclid's Algorithm is an extension of Euclid's Algorithm to find GCD of two numbers. Along with GCD of two numbers, say `a` and `b`, it also finds `x` and `y` such that `ax + by = gcd(a, b)`. Here, `x` and `y` are known as Bézout's coefficients.
+As the name suggests, Extended Euclid's Algorithm is an extension of [Euclid's Algorithm](http://rookieslab.com/posts/cpp-python-code-to-find-gcd-of-a-list-of-numbers#how-to-find-gcd-of-two-numbers) to find GCD of two numbers. Along with GCD of two numbers, say `a` and `b`, it also finds `x` and `y` such that `ax + by = gcd(a, b)`. Here, `x` and `y` are known as Bézout's coefficients.
 
-But why should we learn Extended Euclid's Algorithm is we can find GCD of two numbers using simple Euclid's Algorithm? Extended Euclid's Algorithm<sup>[1](#extended-euclid-wiki)</sup> is particularly useful when we have to find [Modular Multiplicative Inverse of a number A in the range M](http://rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp), where A and M are co-prime numbers and M is not not necessarily a prime number. If M is a prime number then there's a very easy method to find [Multiplicative Inverse using Fast Power Algorithm](http://rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp#modular-multiplicative-inverse-using-fast-power-algorithm).
+But why should we learn Extended Euclid's Algorithm if we can find GCD of two numbers using simple Euclid's Algorithm? Extended Euclid's Algorithm<sup>[1](#extended-euclid-wiki)</sup> is particularly useful when we have to find [Modular Multiplicative Inverse of a number A in the range M](http://rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp), where A and M are co-prime numbers and M is not necessarily a prime number. If M is a prime number then there's a very easy method to find [Multiplicative Inverse using Fast Power Algorithm](http://rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp#modular-multiplicative-inverse-using-fast-power-algorithm).
 
 ## Python Code to find GCD using Extended Euclid's Algorithm
 

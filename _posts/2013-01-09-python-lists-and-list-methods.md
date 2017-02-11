@@ -4,6 +4,7 @@ title: "Python: Lists and List methods"
 description: "Declaring, Accessing, Slicing, Deleting and Updating Lists and its elements in Python"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, python-list]
+related_posts: ['/posts/python-tuples-and-basic-operations-on-tuples', '/posts/python-strings-and-frequently-used-str-methods']
 redirect_from:
   - /2012/12/python-objects-lists-mutation-of-list.html
 ---

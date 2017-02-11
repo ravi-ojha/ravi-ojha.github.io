@@ -50,20 +50,15 @@
             <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page_title }}" data-url="{{ page.url | absolute_url }}" data-via="raviojha21" data-show-count="false">Tweet</a></div>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
-
-          <div class="previous-next-links">
-            {% if page.previous.url %}
-            <div class="previous-box">
-              <div class="previous-text">Previous</div>
-              <a href="{{page.previous.url}}">{{page.previous.title}}</a>
-            </div>
-            {% endif %}
-            {% if page.next.url %}
-            <div class="next-box">
-              <div class="next-text">Next</div>
-              <a href="{{page.next.url}}">{{page.next.title}}</a>
-            </div>
-            {% endif %}
+          
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              {% for related_post in page.related_posts %}
+              {% assign apage = site.posts | where:'url', related_post | first %}
+              <div class="single-post">
+                <a href="{{ relative_url }}{{ apage.url }}">{{ apage.title }}</a>
+              </div>
+              {% endfor %}
           </div>
 
           {% if site.discus_identifier %}

@@ -4,6 +4,7 @@ title: "Extended Euclid Algorithm to find GCD and Bézout's coefficients"
 description: "We will see how to use Extended Euclid's Algorithm to find GCD of two numbers. It also gives us Bézout's coefficients (x, y) such that ax + by = gcd(a, b). We will discuss and implement all of the above problems in Python and C++"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+related_posts: ['/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp', '/posts/cpp-python-code-to-find-gcd-of-a-list-of-numbers'] 
 ---
 
 

@@ -4,6 +4,7 @@ title: "What it takes to develop, test and release a Software Product?"
 description: "When we talk about developing a software product, we often overlook what goes on in the life of an engineer. The software is not just about code, much like how a journey is not about destination."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [software-engineering, product-development]
+related_posts: ['/posts/a-millennials-thoughts-on-embarking-as-a-software-engineer', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth'] 
 ---
 
 ## Prologue

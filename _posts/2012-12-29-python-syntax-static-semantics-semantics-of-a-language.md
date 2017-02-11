@@ -4,6 +4,7 @@ title: "Python: Syntax, Static Semantics, Semantics of a Language"
 description: "Before we begin with any language, it's important to know the aspects of the language. What is Syntax? Semantics? Static Semantics? This post explain these terms with examples."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, syntax, semantics]
+related_posts: ['/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx', '/posts/arithmetic-and-logical-operators-in-python']
 redirect_from:
   - /2012/12/learning-python-edx-mitx-600x-lec-1-summary-revision.html
 ---

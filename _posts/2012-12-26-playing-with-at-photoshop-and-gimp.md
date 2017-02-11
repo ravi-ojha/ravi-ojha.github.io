@@ -4,6 +4,7 @@ title: "Playing with Photoshop and GIMP"
 description: "As a kid, I admired designs and wanted to pursue design as a career. (Un)fortunately, I married Software Engineering. These were some of the designs that were created for college fests."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [design, poster]
+related_posts: ['/posts/ravi-ojha-computer-science-svnit-surat-life-post', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth']
 redirect_from:
   - /2014/03/graphic-designs-for-acm-nit-surat.html
   - /2012/12/sparsh-mindbend-photoshop-gimp-work-svnit-design-teammate.html

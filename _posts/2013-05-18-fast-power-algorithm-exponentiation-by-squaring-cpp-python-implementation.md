@@ -4,6 +4,7 @@ title: "Fast Power Algorithm - Exponentiation by Squaring - C++ and Python Imple
 description: "We know how to find 2 raised to the power 10. But what if we have to find 2 raised to the power very large number such as 1000000000? We discuss how to find solution to such a problem using an fast, efficient algorithm"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+related_posts: ['/posts/fastest-way-to-check-if-a-number-is-prime-or-not', '/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp'] 
 redirect_from:
   - /2013/05/fast-power-algorithm-cc-and-python-code.html
 ---

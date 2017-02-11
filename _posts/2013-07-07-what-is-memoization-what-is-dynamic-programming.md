@@ -4,6 +4,7 @@ title: "What is Memoization? What is Dynamic Programming? Let's take an example"
 description: "Memoization or Dynamic Programming is a technique of remembering solutions to sub-problems which will help us solve a larger problem."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+related_posts: ['/posts/basics-of-recursion-in-programming-using-a-simple-example', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth'] 
 redirect_from:
   - /2013/06/dynamic-programming-or-memoization-SUMTRAIN-codechef-editorial-python.html
 ---

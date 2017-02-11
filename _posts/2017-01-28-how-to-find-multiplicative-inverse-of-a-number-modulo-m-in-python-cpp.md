@@ -4,6 +4,7 @@ title: "How to find Multiplicative Inverse of a number modulo M?"
 description: "What is Multiplicative Inverse? What is Modular Multiplicative Inverse? How to find Modular Multiplicative Inverse? How to find Multiplicative Inverse of a number modulo M i.e. under M? How to find Modular Multiplicative Inverse in an efficient way? We will discuss and implement all of the above problems in Python and C++"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+related_posts: ['/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code', '/posts/cpp-python-code-to-find-gcd-of-a-list-of-numbers'] 
 ---
 
 

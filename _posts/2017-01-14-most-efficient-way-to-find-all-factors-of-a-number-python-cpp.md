@@ -4,6 +4,7 @@ title: "Most efficient way to find factors of a number - C++ and Python Code"
 description: "First, we will see how to find all factors of a number using brute force. Then we will improve upon that to find all factors of a number using the most efficient method and code it in C++ as well as Python"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+related_posts: ['/posts/how-to-compute-time-complexity-order-of-growth-of-any-program', '/posts/fastest-way-to-check-if-a-number-is-prime-or-not'] 
 ---
 
 A factor of a number `x` is a number `y` if `y` divides `x` without leaving a remainder. That is if `x % y == 0` we say that `y` is a factor of `x`. 

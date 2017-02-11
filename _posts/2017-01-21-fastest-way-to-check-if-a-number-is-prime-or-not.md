@@ -4,6 +4,7 @@ title: "Fastest way to check if a number is prime or not - Python and C++ Code"
 description: "How to check if a given number is a prime number? What is the most efficient way to check if a number is prime or not? How to find prime numbers in a given list of numbers? We will discuss and implement all of the above problems in Python and C++"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+related_posts: ['/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp', '/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp'] 
 ---
 
 A prime number is a natural number (greater than 1) that has exactly two factors, `1` and itself. In order to check if a number is prime or not, we can count the number of factors. If it is 2, then we say that the number is prime, else it is a composite number. Side note, non-prime numbers are called composite numbers.

@@ -4,6 +4,7 @@ title: "Greatest Common Divisor of a list of numbers - C++ and Python Implementa
 description: "First, we will see how to find GCD of two numbers. It is also known as Highest Common Factor - HCF. Then we will move on to find the GCD of a list of numbers and code it in both C++ as well as Python"
 og_image: "documentation/rookieslab-og.jpg"
 tags: [competitive-programming]
+related_posts: ['/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp', '/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp', '/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code'] 
 redirect_from:
   - /2013/05/c-or-c-plus-plus-and-python-program-to-find-gcd-hcf-of-a-list-array.html
 ---

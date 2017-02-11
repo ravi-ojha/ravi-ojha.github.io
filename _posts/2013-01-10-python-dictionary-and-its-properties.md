@@ -4,6 +4,7 @@ title: "Python: Dictionary and its properties"
 description: "Dictionary is a generalization of a List. Dictionary stores (key, value) pair for easier value access in future using the key. We see how it is different from a list and its properties."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [python, python-dict]
+related_posts: ['/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx', '/posts/python-objects-and-types']
 redirect_from:
   - /2012/12/python-objects-dictionary-dict-examples-insertion-lists.html
 ---

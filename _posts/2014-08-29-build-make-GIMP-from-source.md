@@ -4,6 +4,7 @@ title: "Open Source: Build and install GIMP from source code"
 description: "GNU Image Manipulation Program is one of the best open source projects out there as an alternative for PhotoShop. This post discusses how we can build and install GIMP from source code. I did it because I wanted to contribute to the project."
 og_image: "documentation/rookieslab-og.jpg"
 tags: [gimp, open-source]
+related_posts: ['/posts/ravi-ojha-computer-science-svnit-surat-life-post', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth', '/posts/playing-with-at-photoshop-and-gimp'] 
 redirect_from:
   - /2014/08/install-gimp-via-git-getting-started-contributing-to-GIMP.html
 ---

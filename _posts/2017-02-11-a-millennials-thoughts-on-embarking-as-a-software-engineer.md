@@ -13,7 +13,7 @@ Three years ago, when I completed a 3 month engineering internship, I had the pl
 
 ## Make it work!
 
-When I set out to build my [first software application](https://github.com/ravi-ojha/zigway), the priority list looked like:
+When I set out to build my <a href="https://github.com/ravi-ojha/zigway" target="_blank">first software application</a>, the priority list looked like:
 
  - Make it work!
 
@@ -25,7 +25,7 @@ As a new Software Engineer in any company, we are often asked to fix bugs. They 
 
 ## What is my impact?
 
-After a week of crawling through several dozens of files, I finally understand the flow. Now, I can start making the first changes in the codebase. I finally figured what caused the issue. It took a whole week. It requires a one-line fix and I spent one week on that. A 10x Software Engineer would have closed the ticket in minutes. I never felt so dull in a long time. We have hardcoded our minds towards making an impact, to create a dent in the universe. This isn't satisfying enough. We want to reach the end goal as fast as possible. We are looking for instant gratification! And this characteristic has an adverse effect on codebase in a long term. I recently saw this video in which [Simon Sinek talks about millennials](https://www.youtube.com/watch?v=hER0Qp6QJNU) and I could not help but agree with most of his statements. 
+After a week of crawling through several dozens of files, I finally understand the flow. Now, I can start making the first changes in the codebase. I finally figured what caused the issue. It took a whole week. It requires a one-line fix and I spent one week on that. A 10x Software Engineer would have closed the ticket in minutes. I never felt so dull in a long time. We have hardcoded our minds towards making an impact, to create a dent in the universe. This isn't satisfying enough. We want to reach the end goal as fast as possible. We are looking for instant gratification! And this characteristic has an adverse effect on codebase in a long term. I recently saw this video in which <a href="https://www.youtube.com/watch?v=hER0Qp6QJNU" target="_blank">Simon Sinek talks about millennials</a> and I could not help but agree with most of his statements. 
 
 Two of the characteristics that he talks about in the video are: Instant Gratification and Patience. I could very well relate it to the first few weeks at this new job right after graduation. Now when I start to write a new software application, the priority list looks more or less like:
 
@@ -45,4 +45,4 @@ It will take a few weeks (or months) to reach the *Make it work!* stage, and we 
 
 <img src="/assets/documentation/gary_vaynerchuk_quote_on_millennials.jpg" alt="Gary Vaynerchuk Millenial Tweet" />
 
-Till next time. [Evíva](http://en.wiktionary.org/wiki/evviva#Descendants)!
+Till next time. <a href="http://en.wiktionary.org/wiki/evviva#Descendants" target="_blank">Evíva</a>!

@@ -61,6 +61,10 @@
               {% endfor %}
           </div>
 
+          {% if page.subscription-form %}
+          {% include subscription-form.html %}
+          {% endif %}
+
           {% if site.discus_identifier %}
             <div id="disqus_thread" class="article-comments"></div>
             <script>

@@ -5,6 +5,7 @@ description: "During four years of Computer Engineering, I used to think about w
 og_image: "documentation/rookieslab-og.jpg"
 tags: [personal, competitive-programming, software-engineering]
 related_posts: ['/posts/what-it-takes-to-develop-test-and-release-a-software-product', '/posts/ravi-ojha-computer-science-svnit-surat-life-post', '/posts/a-millennials-thoughts-on-embarking-as-a-software-engineer'] 
+subscription-form: true
 redirect_from:
   - /2015/09/hobbyist-competitive-programmer-to-software-developer-at-hackerearth.html
 ---

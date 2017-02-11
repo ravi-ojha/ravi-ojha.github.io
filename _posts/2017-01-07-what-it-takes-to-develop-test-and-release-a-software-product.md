@@ -5,6 +5,7 @@ description: "When we talk about developing a software product, we often overloo
 og_image: "documentation/rookieslab-og.jpg"
 tags: [software-engineering, product-development]
 related_posts: ['/posts/a-millennials-thoughts-on-embarking-as-a-software-engineer', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth'] 
+subscription-form: true
 ---
 
 ## Prologue

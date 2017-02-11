@@ -5,6 +5,7 @@ description: "Life is like a real-time strategy game. Its great to know beforeha
 og_image: "documentation/rookieslab-og.jpg"
 tags: [personal]
 related_posts: ['/posts/what-it-takes-to-develop-test-and-release-a-software-product', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth', '/posts/playing-with-at-photoshop-and-gimp'] 
+subscription-form: true
 redirect_from:
   - /2015/08/four-years-of-computer-engineering-summed-up.html
 ---

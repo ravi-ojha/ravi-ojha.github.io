@@ -1179,7 +1179,7 @@ nav#slide-menu > ul li.sep {
   opacity: 0;
   margin-top: 12px;
   padding-top: 14px;
-  border-top: 1px solid #212121;
+  border-top: 1px solid #424242;
 }
 body.menu-active nav#slide-menu {
   left: 0px;

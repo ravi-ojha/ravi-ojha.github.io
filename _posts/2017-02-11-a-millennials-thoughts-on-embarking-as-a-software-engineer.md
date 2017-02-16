@@ -2,7 +2,7 @@
 layout: post
 title: "A millennial's thoughts on embarking as a Software Engineer"
 description: "We, the new generation of software engineers, love to talk about creating an impact. We attend overnight hackathons to build the next big thing. Good that we can build an app in 24 hours, but is it really a production ready codebase? Are we carried away with the agility brought in by our generation?"
-og_image: "documentation/millennials-thoughts-software.jpg"
+og_image: "documentation/millennials-thoughts-software-v2.jpg"
 tags: [software-engineering, product-development]
 related_posts: ['/posts/what-it-takes-to-develop-test-and-release-a-software-product', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth']
 subscription-form: true
@@ -26,7 +26,7 @@ As a new Software Engineer in any company, we are often asked to fix bugs. They 
 
 ## What is my impact?
 
-After a week of crawling through several dozens of files, I finally understand the flow. Now, I can start making the first changes in the codebase. I finally figured what caused the issue. It took a whole week. It requires a one-line fix and I spent one week on that. A 10x Software Engineer would have closed the ticket in minutes. I never felt so dull in a long time. We have hardcoded our minds towards making an impact, to create a dent in the universe. This isn't satisfying enough. We want to reach the end goal as fast as possible. We are looking for instant gratification! And this characteristic has an adverse effect on codebase in a long term. I recently saw this video in which <a href="https://www.youtube.com/watch?v=hER0Qp6QJNU" target="_blank">Simon Sinek talks about millennials</a> and I could not help but agree with most of his statements. 
+After a week of crawling through several dozens of files, I finally understand the flow. Now, I can start making the first changes in the codebase. I finally figured what caused the issue. It took a whole week. It requires a one-line fix and I spent one week on that. A 10x Software Engineer would have closed the ticket in minutes. I never felt so dull in a long time. We have hardcoded our minds towards making an impact, to create a dent in the universe. This isn't satisfying enough. We want to reach the end goal as fast as possible. We are looking for instant gratification! And this characteristic has an adverse effect on codebase in a long term. I recently saw this video in which <a href="https://www.youtube.com/watch?v=hER0Qp6QJNU" target="_blank">Simon Sinek talks about millennials</a> and I could not help but agree with most of his statements.
 
 Two of the characteristics that he talks about in the video are: Instant Gratification and Patience. I could very well relate it to the first few weeks at this new job right after graduation. Now when I start to write a new software application, the priority list looks more or less like:
 

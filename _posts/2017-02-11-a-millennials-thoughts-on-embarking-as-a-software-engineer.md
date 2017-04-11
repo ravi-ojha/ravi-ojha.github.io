@@ -47,3 +47,5 @@ It will take a few weeks (or months) to reach the *Make it work!* stage, and we 
 <img src="/assets/documentation/gary_vaynerchuk_quote_on_millennials.jpg" alt="Gary Vaynerchuk Millenial Tweet" />
 
 Till next time. <a href="http://en.wiktionary.org/wiki/evviva#Descendants" target="_blank">Evíva</a>!
+
+**Thanks** to [Abhinav Sharma](https://codeaccepted.wordpress.com/about/) for proofreading the drafts of this post and to [Vivek Prakash](https://twitter.com/vivekprakash) for sharing this video with the dev team at [HackerEarth](https://www.hackerearth.com/).

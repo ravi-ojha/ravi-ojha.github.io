@@ -412,7 +412,7 @@ html {
 
 body {
   margin: 0 auto;
-  font-family: "Lato", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   line-height: 1.8;
@@ -472,15 +472,15 @@ h6 {
   h3 {
     font-size: 21.6px; } }
 a {
-  color: #615b5b;
+  color: #fff;
   text-decoration: underline;
   -webkit-transition: color 0.2s linear;
   transition: color 0.2s linear; }
   a:hover, a:active {
-    color: #393636;
+    color: #fff;
     text-decoration: none; }
   a:focus {
-    color: #393636;
+    color: #fff;
     outline: none; }
 
 ul,
@@ -495,7 +495,7 @@ abbr {
 blockquote {
   padding: 0 0 4px 15px;
   margin: 0 0 0 20px;
-  font-family: "Lato", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-style: italic;
   line-height: 1.6;
@@ -531,6 +531,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-image: linear-gradient(135deg, #2d38a2 0%, #5f30b5 100%);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -539,6 +540,7 @@ img {
           justify-content: center; }
 
 .notfound-content {
+  color: #fff;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
@@ -547,13 +549,10 @@ img {
   .notfound-content h1 {
     display: inline-block;
     margin-bottom: 4px;
-    font-family: "Lato", serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-size: 36px; }
     .notfound-content h1 a {
-      color: #121111;
       text-decoration: none; }
   .notfound-content p {
     display: block;
     text-align: center; }
-    .notfound-content p a {
-      color: #121111; }

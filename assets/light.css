@@ -1083,8 +1083,17 @@ img {
 }
 .header-nav {
   display: block;
-  padding: 75px 0 20px;
-  border-bottom: 1px solid #F5F5F5;
+  padding: 150px 0 100px;
+  background-color: #2d38a2;
+  background-image: linear-gradient(135deg, #2d38a2 0%, #5f30b5 100%);
+}
+
+
+
+.header-nav > section {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .header-logo {
   display: inline-block;
@@ -1110,10 +1119,10 @@ img {
 }
 .header-links li a {
   font-size: 18px;
-  color: #353535;
+  color: #F5F5F5;
 }
 .header-links li a:hover {
-  color: #353535;
+  color: #FFFFFF;
 }
 @media all and (max-width:415px) {
   .header-nav {
@@ -1194,11 +1203,12 @@ body.menu-active nav#slide-menu ul li.sep {
 div.menu-trigger {
   position: fixed;
   top: 10px;
-  left: 10px;
-  width: 40px;
-  height: 40px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  color: #2d38a2;
+  color: #fff;
+  background-color: #2d38a2;
   z-index: 1001;
   -webkit-transition: all 300ms;
   transition: all 300ms;
@@ -1206,20 +1216,17 @@ div.menu-trigger {
 div.menu-trigger:before {
   content: '\f20e';
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  color: #2d38a2;
+  width: 50px;
+  height: 50px;
+  color: #fff;
   font-family: "ionicons";
   font-style: normal;
-  font-size: 2.2em;
+  font-size: 2.6em;
   font-weight: normal;
   font-variant: normal;
   text-align: center;
   text-transform: none;
-  line-height: 40px;
-}
-div.menu-trigger:hover {
-  color: #2d38a2;
+  line-height: 50px;
 }
 body.menu-active div.menu-trigger {
   left: 280px;

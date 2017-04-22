@@ -1106,7 +1106,7 @@ img {
 .header-links {
   float: right;
   padding: 0;
-  margin: 15px 0 0;
+  margin: 10px 0 0;
   list-style: none;
 }
 .header-links li {
@@ -1118,7 +1118,7 @@ img {
   margin-left: 0;
 }
 .header-links li a {
-  font-size: 18px;
+  font-size: 1.5em;
   color: #F5F5F5;
 }
 .header-links li a:hover {

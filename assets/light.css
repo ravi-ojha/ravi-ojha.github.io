@@ -1031,7 +1031,9 @@ img {
   margin-left: 5px;
 }
 .similar-articles {
-  padding-top: 50px;
+  border-top: 1px solid #F5F5F5;
+  padding-top: 30px;
+  margin-top: 30px;
   width: 100%;
 }
 .similar-articles .single-post {
@@ -1852,4 +1854,72 @@ body.menu-active div.menu-trigger {
 #mc-embed-signup p {
   color: #9E9E9E;
   font-size: 14px;
+}
+
+
+.post-author {
+  border: 0;
+  margin: 0 0 28px;
+  position: relative;
+  margin-top: 50px;
+}
+@media (min-width:768px) {
+  .post-author {
+
+  }
+}
+
+.post-author .fb-follow {
+  float: left;
+}
+
+.post-author .twitter-follow {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.post-author.has-avatar {
+  min-height: 56px;
+  padding-left: 76px;
+}
+@media (min-width:768px) {
+  .post-author.has-avatar {
+    min-height: 60px;
+    padding-left: 80px;
+  }
+}
+.post-author-avatar {
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 56px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 56px;
+}
+@media (min-width:768px) {
+  .post-author-avatar {
+    height: 60px;
+    width: 60px;
+  }
+}
+.post-author-name, .post-author-bio {
+  font-size: 14px;
+  line-height: 21px;
+}
+@media (min-width:768px) {
+  .post-author-name, .post-author-bio {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+.post-author-name {
+  display: block;
+  font-weight: 600;
+}
+.post-author-bio {
+  color: #424242;
 }

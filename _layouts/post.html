@@ -54,6 +54,19 @@
 <script type="text/javascript">var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
           </div>
 
+          <div class="post-author has-avatar">
+            <a href="{{ site.baseurl }}{% link about.html %}" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="{{ site.baseurl }}{% link about.html %}">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer at HackerEarth - Hobbyist Competitive Programmer, Graphic Designer, Blogger</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/RookiesLab" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
           <div class="similar-articles">
             <div class="similar-articles-label">Similar Articles</div>
               {% for related_post in page.related_posts %}

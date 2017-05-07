@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to become better at reading and debugging code"
-description: "Reading unknown code is usually intimidating, however, our ability to read and debug code matters more than we can write, yet we are never taught about it. Let's see how we can improve our ability to read and debug code."
+description: "Reading unknown code is usually intimidating, however, our ability to read and debug code matters more than we can write, yet we are never taught anything about it. Let's see how we can improve our ability to read and debug code."
 og_image: "documentation/reading-and-debugging.jpg"
 tags: [software-engineering]
 related_posts: ['/posts/is-it-boring-working-in-web-development-startups', '/posts/a-millennials-thoughts-on-embarking-as-a-software-engineer']

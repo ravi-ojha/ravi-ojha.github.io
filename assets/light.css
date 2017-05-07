@@ -648,10 +648,10 @@ blockquote {
   padding: 0 0 4px 15px;
   margin: 0 0 0 20px;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-style: italic;
   line-height: 1.6;
-  color: #9E9E9E;
+  color: rgba(66, 66, 66, 0.8);
   border-left: 3px solid #424242;
 }
 hr {

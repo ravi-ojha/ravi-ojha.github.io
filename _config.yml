@@ -41,6 +41,9 @@ collections:
   my_tags:
     output: true
     permalink: /tag/:slug/
+  projects:
+    output: true
+    permalink: /projects/:slug/
 defaults:
   -
     scope:

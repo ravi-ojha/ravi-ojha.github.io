@@ -1551,7 +1551,7 @@ body.menu-active div.menu-trigger {
 
 /* Material Cards */
 .material-cards {
-  padding: 100px 0px;
+  padding: 50px 0px;
 }
 .material-cards a {
   display: inline-block;
@@ -1922,4 +1922,35 @@ body.menu-active div.menu-trigger {
 }
 .post-author-bio {
   color: #424242;
+}
+
+
+.recent-posts-heading {
+  font-size: 32px;
+  color: #353535;
+  font-weight: 300;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.recent-posts-elem {
+  border-bottom: 1px solid #E8E8E8;
+  padding: 10px 0px 10px 0px;
+}
+
+.recent-posts .recent-posts-link {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 22px;
+  position: relative;
+  font-weight: 300;
+  display: block;
+  text-decoration: none;
+}
+
+.recent-posts-list-tag {
+  display: inline-block;
+  font-size: 12px;
+  color: #9E9E9E;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-decoration: none;
 }

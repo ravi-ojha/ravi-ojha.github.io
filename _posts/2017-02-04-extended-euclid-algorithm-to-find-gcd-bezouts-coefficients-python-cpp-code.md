@@ -53,7 +53,7 @@ def extended_euclid_gcd(a, b):
     r = b; old_r = a
 
     while r != 0:
-        quotient = old_r/r
+        quotient = old_r//r # In Python, // operator performs integer or floored division
         # This is a pythonic way to swap numbers
         # See the same part in C++ implementation below to know more
         old_r, r = r, old_r - quotient*r

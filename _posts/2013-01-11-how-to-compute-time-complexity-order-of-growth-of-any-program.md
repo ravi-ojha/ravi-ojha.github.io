@@ -72,7 +72,7 @@ Let's say we have a very large number which is a power of 2 i.e. we have 2^x. We
 def power_of_2(a):
     x = 0
     while a > 1:
-        a = a/2
+        a = a//2
         x = x+1
     return x
 {% endhighlight %}
@@ -101,7 +101,7 @@ def binary_search(x, search_list):
     iterations = 1
     left = 0 # Determines the starting index of the list we have to search in
     right = len(search_list)-1 # Determines the last index of the list we have to search in
-    mid = (right + left)/2
+    mid = (right + left)//2
     while search_list[mid] != x: # If this is not our search element
         # If the current middle element is less than x then move the left next to mid
         # Else we move right next to mid
@@ -109,7 +109,7 @@ def binary_search(x, search_list):
             left = mid + 1
         else:
             right = mid - 1
-        mid = (right + left)/2 # This is a very important line of code
+        mid = (right + left)//2 # This is a very important line of code
         iterations += 1
     print 'iterations = ',str(iterations)
     return mid

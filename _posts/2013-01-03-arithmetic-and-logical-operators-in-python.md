@@ -14,6 +14,8 @@ redirect_from:
 * TOC
 {:toc}
 
+**Note: Python snippets were tested and run in Python 2.7. They may require some changes to be compatible with Python 3**
+
 ## Arithmetic Operators in Python
 
 Addition, Subtraction, Division, Modulus, Power (number raised to some power)

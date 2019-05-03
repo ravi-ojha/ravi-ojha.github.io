@@ -137,7 +137,7 @@ def fast_power(base, power):
         # If power is even
         if power % 2 == 0:
             # Divide the power by 2
-            power = power / 2
+            power = power // 2
             # Multiply base to itself
             base = base * base
         else:
@@ -148,7 +148,7 @@ def fast_power(base, power):
             result = result * base
 
             # Now power is even, so we can follow our previous procedure
-            power = power / 2
+            power = power // 2
             base = base * base
 
     return result
@@ -167,7 +167,7 @@ print fast_power(2, 100)
 {% endhighlight %}
 
 Our above code is a bit repetitive and can be simplified. We also have to make changes to keep the final result less than `1000000007`.
-We will common out the code that is present in both `if` and `else`. Also, the two statements `power = power - 1` and `power = power / 2` can be simply merged into one like `power = power / 2`, because we are performing integers division.
+We will common out the code that is present in both `if` and `else`. Also, the two statements `power = power - 1` and `power = power // 2` can be simply merged into one like `power = power // 2`, because we are performing integers division.
 
 ## Efficient Python implementation to find base raised to the power
 
@@ -190,7 +190,7 @@ def fast_power(base, power):
             result = (result * base) % MOD
 
         # Divide the power by 2
-        power = power / 2
+        power = power // 2
         # Multiply base to itself
         base = (base * base) % MOD
 

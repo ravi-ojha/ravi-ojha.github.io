@@ -95,8 +95,8 @@ def factors(x):
         if x % i == 0:
             result.append(i)
             # Handle the case explained in the 4th
-            if x/i != i:
-                result.append(x/i)
+            if x//i != i: # In Python, // operator performs integer/floored division
+                result.append(x//i)
         i += 1
     # Return the list of factors of x
     return result

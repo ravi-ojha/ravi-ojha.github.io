@@ -695,7 +695,8 @@ figcaption {
   width: 100%;
   padding: 0 20px;
   margin: 0;
-  font-size: 18px;
+  line-height: 1.6;
+  font-size: 20px;
   text-align: left;
   vertical-align: top;
 }

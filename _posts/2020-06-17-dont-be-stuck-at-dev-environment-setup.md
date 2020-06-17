@@ -2,7 +2,7 @@
 layout: post
 title: "Don't be stuck at dev environment setup!"
 description: "One of the worst feelings as a developer is not able to work on what you set out to do. Instead, you spent the entire day setting up the repository on your local system. And what's worse? It's the first week of your new job."
-og_image: "documentation/dont-be-stuck-at-dev-setup.webp"
+og_image: "documentation/dont-be-stuck-at-dev-setup.jpg"
 tags: [software-engineering]
 related_posts: ['/posts/how-to-become-better-at-reading-and-debugging-code']
 subscription-form: true

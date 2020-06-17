@@ -143,7 +143,13 @@ hr {
 img {
   display: block;
   max-width: 100%;
-  margin: 0;
+  margin: auto;
+}
+
+figcaption {
+  font-size: 14px;
+  text-align: center;
+  color: $gray-light;
 }
 
 ::selection {

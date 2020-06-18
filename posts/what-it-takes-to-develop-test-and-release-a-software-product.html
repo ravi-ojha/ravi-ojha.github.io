@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>What it takes to develop, test and release a Software Product? | Rookie's Lab</title>
+  <meta name="description" content="When we talk about developing a software product, we often overlook what goes on in the life of an engineer. The software is not just about code, much like how a journey is not about destination.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="What it takes to develop, test and release a Software Product?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/what-it-takes-to-develop-test-and-release-a-software-product">
+  <meta property="og:description" content="When we talk about developing a software product, we often overlook what goes on in the life of an engineer. The software is not just about code, much like how a journey is not about destination.">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/what-it-takes-to-develop-test-and-release-a-software-product">
+  <meta name="twitter:title" content="What it takes to develop, test and release a Software Product?">
+  <meta name="twitter:description" content="When we talk about developing a software product, we often overlook what goes on in the life of an engineer. The software is not just about code, much like how a journey is not about destination.">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>What it takes to develop, test and release a Software Product?</h1>
+            <p>When we talk about developing a software product, we often overlook what goes on in the life of an engineer. The software is not just about code, much like how a journey is not about destination.</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 7, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  7 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/software-engineering">software-engineering</a>
+                
+                  <a href="/tag/product-development">product-development</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="prologue">Prologue</h2>
+
+<p>As a human being you are always pleased when someone appreciates your work. It was that day at work when appreciations were flooding from all directions! Mentor, Manager, HR, CTO everyone seems happy with your performance throughout the year. You’re overwhelmed with their response and after a short one-to-one with every concerned party, you go back to your desk, feeling delightful. 4 quarters of development, 512+ commits in production, features shipped within reasonable time. The feeling of being on top of the tiny little world!</p>
+
+<h2 id="software-breaks">Software Breaks</h2>
+
+<p>There’s some hitch in the company’s product that serves the business needs of enterprise clients. Sales team is facing some heat from the clients. Drop-off has touched a new height. CEO is furious. The same product used to work seamlessly a year ago. You’re curious. You go back and use that product as a client. The product works flawlessly! But what do you say to the client? <em>“IT WORKS!”</em> NO! You read support tickets, analyze user activity logs, get on call with clients, go onsite and watch the product being used right then and there! You finally figure out why it doesn’t work. When 1000 users share a 100 MBPS lease line, which has been poorly distributed, your website takes forever to load.</p>
+
+<p>Again, what do you say to the client? <em>“Our website isn’t made to handle such a scenario.”</em> YES and NO! You have an enterprise product. This wasn’t the problem you initially set out to solve, but it is now a problem for your client. Now it is YOUR problem and you solve it to retain the client. So, it is decided. We get back to work and optimize the hell out of every single line of code.</p>
+
+<h2 id="wired-in">Wired In</h2>
+
+<p>You have a small team of engineers, countable on fingertips. You cannot make everyone go out of their way to work on one single project. The company has to keep innovating to keep up with the competition. Can’t afford to loose the client, can’t afford to get the whole team to work on it, it goes without saying, it has to be fixed, and fixed fast! And you’re the man to do it.</p>
+
+<p>You, your mentor and a fresh recruit roll up the sleeves and identify all the pain points. You don’t have the liberty, in terms of time, to fix all of them. You highlight the major ones. After exhaustive five days of architectural discussions, you spend the weekend in identifying the solutions to the technical challenges you figured so far.</p>
+
+<p>Initial plan is set up. You’ll build a prototype in a week using a new framework you found that will drastically improve the site performance. Your mentor is not just your mentor, he’s got more burden on his shoulders. He left you there, with the new kid. You are not yet sure how things would wind up, junior is equally bewildered. You pull down the list of all the bugs and tiny feature requests and ask him to choose any of those. You have him sorted. A week passed and you have a basic prototype ready, it is not exactly what you expected, but hey, at-least now you know how to use that framework. You three huddle up again. Figure out the exact classes and relations. Now starts a two week cycle.</p>
+
+<p>You create a design document using the pictures of white-boards you took during those discussions. You get into the zone. After a week, you have coded down the classes. However, when you revisit the design doc, you find that the implementation has been done differently than what you thought initially. Not a problem, it happens. You go back and edit the doc to reflect what you had implemented. You stroll back to home, on a Friday night, thinking you have finished a two week job in a week. You’re satisfied with yourself and give yourself a break. You spend two days goofing around, having your favorite dishes, messing up with LSPD in GTA V and making up for sleeping only 24 hours in last 5 days.</p>
+
+<p>Another week, you take a look at the specs again, you don’t want to lose out on some feature that you had in the old architecture while building a new one. You found a few things and make amends for that, in code and doc. You get back to the new teammate and help him push his first commit to production. Meanwhile, you start looking at how the codebase might look like at the end of this quarter. And there’s another weekend.</p>
+
+<h2 id="time-flies">Time Flies</h2>
+
+<p>Time flies, half past quarter of the year. Product Manager is looking for an exact date of release, because sales is asking for it, because they have to say <em>“something”</em> to the client. And you sit there thinking about a rough estimation. Your company has a policy that the one who is actually working on the project names the release date. You have to give some date by the end of day. You have only modeled the architecture and it’s hard to explain why it is so hard to estimate the time to release. You have no clue how many obstacles lie ahead. It is end of day and you shoot an email saying that you’ll release it in the first week of new quarter.</p>
+
+<p>Everyone seems happy about that. Your mentor is worried because he knows you made a very ambitious timeline. You both get back on the white-board and figure out the exact implementation details. You start to categorize features: <em>must have</em>, <em>good to have</em>, <em>great to have</em>. You have covered <em>must have</em> and implement them with 2 weeks of buffer time. New kid is doing great, he is learning fast and delivers within reasonable time, and well, plays along with your occasional bitching about the old architecture.</p>
+
+<p>Meanwhile, you add a few of the <em>good to have</em> features in the new implementation. The only QA in the team has started doing terrible things to your website. You yell, <em>“Why are you trying to submit an integer when I have provided you with auto-suggestions in that goddamn location field!”</em>. You get a list of 40 something bugs. You stop adding the <em>good to have</em> features and get back on fixing those bugs. You and your teammate divide 50-50. Some of them are very critical. And there doesn’t exist a quick fix. You have been working 60 hours a week since last 5 weeks and are still on it this weekend. You are cursing yourself and swear that you’ll perform an extensive research before shouting out the release date for the next project.</p>
+
+<h2 id="final-push">Final Push</h2>
+
+<p>The first week of the new quarter is here. Everyone is looking at you. They are not saying anything, but you can see expectations in their eyes. Your mentor casually passes by saying <em>“Let me know if you need any help, I’m always here”</em>. You feel good to know that someone’s got your back.</p>
+
+<p>You’re done with <em>almost</em> all the bugs. There were some easy fixes, ugly fixes and terrible fixes. Now, everyone involved in the project starts testing the product. There are some minor bugs and UI changes. The QA comes up with 10 more functionality issues. You go through each of them. You’re frustrated. Some new <em>good to have</em> features have broken some <em>must have</em> features. Meanwhile, the sales team had also promised those <em>good to have</em> features. You cannot just rollback the changes. But it’s not just that, you as a developer like to own the product and cannot afford compromises yourself. You sheepishly ask for a week’s extension.</p>
+
+<p>Another week passes by and you declare that you’ll release the product and replace the one in place on early Saturday morning. But hey! We forgot about one important part of the whole software development process. What about code review? Ahh.. yes! Code review. Your mentor had a good look at it. You have been working for quite a while with him and know what is expected of you in terms of code quality. There were some suggestions, but you make a call to try and rework on it in the next 2-week cycle after launch. Let’s ship the product, we have already delayed by a week.</p>
+
+<p>You had prepared a release checklist in the last quarter: database migrations, new framework, new packages, dependencies, tests, scripts that syncs the new and old tables, and the final <code class="language-plaintext highlighter-rouge">git push origin master</code>.</p>
+
+<p>You were awake all night and waiting for your window of opportunity. At around 4 in the morning, you start the release process. It took 3 long hours to setup and deploy the product. Those 3 hours were the most intense 3 continuous hours of your life. You had sat and written hundreds of 3 hour examinations in your life, but this doesn’t compare with any of them. You were nervous, scared, drowsy, yet delighted, thrilled to see the new dashboard live in production. Finally, the new, lightning fast product was up and running.</p>
+
+<h2 id="epilogue">Epilogue</h2>
+
+<p>It is 7:00 AM now, the all-nighter had taken its toll. Your body cannot take it anymore, however, you write down a long email highlighting all the improvements, full with emotions, sipping a cup of coffee. Before you hit the send button you get a gtalk ping from your mentor <em>“I’m very proud of you”</em>. You’re glad to know that he was watching you, all this time. You end the email mentioning the contribution of every single person, highlight the new kid’s work and hit the send button. Everyone is so happy to start their day with such a good news. Emails with <em>Kudos \m/</em>, <em>Exceptional Job</em>, <em>Superb work</em> pour in. You’re having the most soul satisfying moment of your life. You pack your bags and leisurely walk your way to home. You take the long awaited sweetest sleep.</p>
+
+<p><strong>Thanks</strong> to <a href="https://codeaccepted.wordpress.com/about/">Abhinav Sharma</a>, <a href="https://twitter.com/vivekprakash">Vivek Prakash</a> and <a href="https://twitter.com/sachingupta006">Sachin Gupta</a> for proofreading the drafts of this post.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="What it takes to develop, test and release a So..." data-url="https://www.rookieslab.com/posts/what-it-takes-to-develop-test-and-release-a-software-product" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/a-millennials-thoughts-on-embarking-as-a-software-engineer">A millennial's thoughts on embarking as a Software Engineer</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth">Hobbyist Competitive Programmer to Software Developer at HackerEarth</a>
+              </div>
+              
+          </div>
+
+          
+          <!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//rookieslab.us15.list-manage.com/subscribe/post?u=17f5e5fa3cb27afa8905cf0b9&amp;id=e1a1386d1d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+    <h2>Liked what you read? Subscribe via email!</h2>
+    
+    <div class="mc-field-group">
+        <input type="email" value="" placeholder="Email address" name="EMAIL" class="required email" id="mce-EMAIL">
+    </div>
+    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_17f5e5fa3cb27afa8905cf0b9_e1a1386d1d" tabindex="-1" value=""></div>
+    <p> One newsletter on 10th of the month. No spam. *pinky swear*.</p>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

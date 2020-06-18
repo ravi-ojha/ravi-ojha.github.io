@@ -1,4 +1,0 @@
----
-slug: semantics
-name: Semantics
----

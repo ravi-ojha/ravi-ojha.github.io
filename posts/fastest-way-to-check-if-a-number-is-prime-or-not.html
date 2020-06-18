@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Fastest way to check if a number is prime or not - Python and C++ Code | Rookie's Lab</title>
+  <meta name="description" content="How to check if a given number is a prime number? What is the most efficient way to check if a number is prime or not? How to find prime numbers in a given list of numbers? We will discuss and implement all of the above problems in Python and C++">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Fastest way to check if a number is prime or not - Python and C++ Code">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/fastest-way-to-check-if-a-number-is-prime-or-not">
+  <meta property="og:description" content="How to check if a given number is a prime number? What is the most efficient way to check if a number is prime or not? How to find prime numbers in a given list of numbers? We will discuss and implement all of the above problems in Python and C++">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/fastest-way-to-check-if-a-number-is-prime-or-not">
+  <meta name="twitter:title" content="Fastest way to check if a number is prime or not - Python and C++ Code">
+  <meta name="twitter:description" content="How to check if a given number is a prime number? What is the most efficient way to check if a number is prime or not? How to find prime numbers in a given list of numbers? We will discuss and implement all of the above problems in Python and C++">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Fastest way to check if a number is prime or not - Python and C++ Code</h1>
+            <p>How to check if a given number is a prime number? What is the most efficient way to check if a number is prime or not? How to find prime numbers in a given list of numbers? We will discuss and implement all of the above problems in Python and C++</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 21, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  12 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/competitive-programming">competitive-programming</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>A prime number is a natural number (greater than 1) that has exactly two factors, <code class="language-plaintext highlighter-rouge">1</code> and itself. In order to check if a number is prime or not, we can count the number of factors. If it is 2, then we say that the number is prime, else it is a composite number. Side note, non-prime numbers are called composite numbers.</p>
+
+<h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#how-to-check-if-a-number-is-prime-or-not" id="markdown-toc-how-to-check-if-a-number-is-prime-or-not">How to check if a number is prime or not?</a></li>
+  <li><a href="#brute-force-python-implementation-to-check-if-a-number-is-prime---on" id="markdown-toc-brute-force-python-implementation-to-check-if-a-number-is-prime---on">Brute Force Python Implementation to check if a number is prime - <em>O(N)</em></a></li>
+  <li><a href="#osqrtn-method-to-check-if-a-number-is-prime-or-not" id="markdown-toc-osqrtn-method-to-check-if-a-number-is-prime-or-not"><em>O(sqrt(N))</em> method to check if a number is prime or not</a>    <ul>
+      <li><a href="#python-implementation---osqrtn" id="markdown-toc-python-implementation---osqrtn">Python Implementation - <em>O(sqrt(N))</em></a></li>
+      <li><a href="#c-implementation---osqrtn" id="markdown-toc-c-implementation---osqrtn">C++ Implementation - <em>O(sqrt(N))</em></a></li>
+    </ul>
+  </li>
+  <li><a href="#sieve-of-eratosthenes" id="markdown-toc-sieve-of-eratosthenes">Sieve of Eratosthenes</a>    <ul>
+      <li><a href="#python-implementation-of-sieve-of-eratosthenes" id="markdown-toc-python-implementation-of-sieve-of-eratosthenes">Python implementation of Sieve of Eratosthenes</a></li>
+      <li><a href="#c-implementation-of-sieve-of-eratosthenes" id="markdown-toc-c-implementation-of-sieve-of-eratosthenes">C++ implementation of Sieve of Eratosthenes</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="how-to-check-if-a-number-is-prime-or-not">How to check if a number is prime or not?</h2>
+
+<p>To check if a number is prime, we count its factors (or divisors). If the count is 2 then it is a prime number. So effectively, it seems like the problem of primality testing is as difficult as <a href="/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp">finding factors of a number</a>. However, in case of prime numbers, we don’t really need to find all the factors, we just need the count.</p>
+
+<p>The brute force method to check if <code class="language-plaintext highlighter-rouge">n</code> is prime would be to iterate from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">n</code> and check if any number divides <code class="language-plaintext highlighter-rouge">n</code>. If the count is exactly 2 (<code class="language-plaintext highlighter-rouge">1</code> and <code class="language-plaintext highlighter-rouge">n</code> itself) then <code class="language-plaintext highlighter-rouge">n</code> is a prime number.</p>
+
+<h2 id="brute-force-python-implementation-to-check-if-a-number-is-prime---on">Brute Force Python Implementation to check if a number is prime - <em>O(N)</em></h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+    <span class="s">"""
+    Assumes that n is a positive natural number
+    """</span>
+    <span class="c1"># We know 1 is not a prime number
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="c1"># We store the number of factors in this variable
+</span>    <span class="n">factors</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># This will loop from 1 to n
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Check if `i` divides `n`, if yes then we increment the factors
+</span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">factors</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># If total factors are exactly 2
+</span>    <span class="k">if</span> <span class="n">factors</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+
+<span class="c1"># Test the above function
+</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">'%d: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Output:
+# 1: False
+# 2: True
+# 3: True
+# 4: False
+# 5: True
+# 6: False
+# 7: True
+# 8: False
+# 9: False
+# 10: False</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Time Complexity of the above approach is <em>O(N)</em>, <code class="language-plaintext highlighter-rouge">N</code> is the number being tested for primality. So in case our number is of the order of 1000000000, then this method fails to return in feasible time. How can we optimize it? We can probably iterate from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">N/2</code>, still the complexity is <em>O(N)</em>.</p>
+
+<h2 id="osqrtn-method-to-check-if-a-number-is-prime-or-not"><em>O(sqrt(N))</em> method to check if a number is prime or not</h2>
+
+<p>While finding <a href="/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp">factors of a number</a> we found that it is enough to iterate from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">sqrt(N)</code> to find all the factors of <code class="language-plaintext highlighter-rouge">N</code>. So, from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">sqrt(N)</code> we would find exactly 1 factor, i.e. <code class="language-plaintext highlighter-rouge">1</code> itself. Let’s iterate from <code class="language-plaintext highlighter-rouge">2</code> to <code class="language-plaintext highlighter-rouge">sqrt(N)</code>. We won’t find any factor in this range. So, if we find any factor in this range, then we call that number a non-prime number, else it is a prime number.</p>
+
+<h3 id="python-implementation---osqrtn">Python Implementation - <em>O(sqrt(N))</em></h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s">"""
+    Assumes that n is a positive natural number
+    """</span>
+    <span class="c1"># We know 1 is not a prime number
+</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="c1"># This will loop from 2 to int(sqrt(x))
+</span>    <span class="k">while</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="c1"># Check if i divides x without leaving a remainder
+</span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># This means that n has a factor in between 2 and sqrt(n)
+</span>            <span class="c1"># So it is not a prime number
+</span>            <span class="k">return</span> <span class="bp">False</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># If we did not find any factor in the above loop,
+</span>    <span class="c1"># then n is a prime number
+</span>    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">'%d: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Output:
+# 1: False
+# 2: True
+# 3: True
+# 4: False
+# 5: True
+# 6: False
+# 7: True
+# 8: False
+# 9: False
+# 10: False
+</span>
+<span class="k">print</span> <span class="s">'%d: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000000000</span><span class="p">,</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">1000000000</span><span class="p">))</span>
+<span class="c1"># Output: 1000000000: False
+</span>
+<span class="k">print</span> <span class="s">'%d: %s'</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000000007</span><span class="p">,</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">1000000007</span><span class="p">))</span>
+<span class="c1"># Output: 1000000007: True</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="c-implementation---osqrtn">C++ Implementation - <em>O(sqrt(N))</em></h3>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">is_prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Assumes that n is a positive natural number</span>
+    <span class="c1">// We know 1 is not a prime number</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="c1">// This will loop from 2 to int(sqrt(x))</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Check if i divides x without leaving a remainder</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// This means that n has a factor in between 2 and sqrt(n)</span>
+            <span class="c1">// So it is not a prime number</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// If we did not find any factor in the above loop,</span>
+    <span class="c1">// then n is a prime number</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">11</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">": "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">?</span> <span class="s">"true"</span> <span class="o">:</span> <span class="s">"false"</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="c1">// Output:</span>
+        <span class="c1">// 1: false</span>
+        <span class="c1">// 2: true</span>
+        <span class="c1">// 3: true</span>
+        <span class="c1">// 4: false</span>
+        <span class="c1">// 5: true</span>
+        <span class="c1">// 6: false</span>
+        <span class="c1">// 7: true</span>
+        <span class="c1">// 8: false</span>
+        <span class="c1">// 9: false</span>
+        <span class="c1">// 10: false</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">1000000000</span> <span class="o">&lt;&lt;</span> <span class="s">": "</span> <span class="o">&lt;&lt;</span>  <span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">1000000000</span><span class="p">)</span> <span class="o">?</span> <span class="s">"true"</span> <span class="o">:</span> <span class="s">"false"</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 1000000000: false</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">1000000007</span> <span class="o">&lt;&lt;</span> <span class="s">": "</span> <span class="o">&lt;&lt;</span>  <span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="mi">1000000007</span><span class="p">)</span> <span class="o">?</span> <span class="s">"true"</span> <span class="o">:</span> <span class="s">"false"</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 1000000007: true</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Time Complexity of the above algorithm is <em>O(sqrt(N))</em>. Go ahead, try to check for a number as large as 1000000000, this implementation will return the result in flash.
+However, at times, we might need to find prime numbers in a given range. Let’s say the range is <code class="language-plaintext highlighter-rouge">i</code> to <code class="language-plaintext highlighter-rouge">j</code>. In this case, we loop from <code class="language-plaintext highlighter-rouge">i</code> to <code class="language-plaintext highlighter-rouge">j</code> and for each number we check if it is prime or not in <em>O(sqrt(N))</em>. So overall, we will end up with a solution with time complexity <em>O((j-i) * sqrt(N))</em>. Can we do any better?</p>
+
+<h2 id="sieve-of-eratosthenes">Sieve of Eratosthenes</h2>
+
+<p>The idea behind Sieve of Eratosthenes is to cross out all the composites in the given range. Once we are sure that all composites are crossed out, we are left with all the primes in the given range. How do we cross out all the composites?</p>
+
+<p>Let’s create a process to find all primes in the range <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">N</code>.</p>
+
+<ul>
+  <li>Iterate from <code class="language-plaintext highlighter-rouge">2</code> to <code class="language-plaintext highlighter-rouge">sqrt(N)</code>, call it <code class="language-plaintext highlighter-rouge">i</code></li>
+  <li>For each <code class="language-plaintext highlighter-rouge">i</code>, we cross out all the multiples of <code class="language-plaintext highlighter-rouge">i</code>, i.e. <code class="language-plaintext highlighter-rouge">2*i</code>, <code class="language-plaintext highlighter-rouge">3*i</code> .. and so on</li>
+  <li>If <code class="language-plaintext highlighter-rouge">i</code> is already crossed out, we don’t do anything, because if <code class="language-plaintext highlighter-rouge">i</code> is already crossed out, we are ensured that all multiples of <code class="language-plaintext highlighter-rouge">i</code> are already crossed out in our previous iterations</li>
+  <li>In the end, we print out all the numbers that are not crossed out</li>
+</ul>
+
+<p>Example: Let’s take a range [2, 25] and find all the primes in this list.</p>
+
+<p>[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]</p>
+
+<ul>
+  <li>Iterate from <code class="language-plaintext highlighter-rouge">2</code> to <code class="language-plaintext highlighter-rouge">sqrt(25)</code>, call it <code class="language-plaintext highlighter-rouge">i</code>
+    <ul>
+      <li>So we iterate from <code class="language-plaintext highlighter-rouge">2</code> to <code class="language-plaintext highlighter-rouge">5</code></li>
+    </ul>
+  </li>
+  <li>For 2, cross all multiples of 2 i.e. <code class="language-plaintext highlighter-rouge">2*2</code>, <code class="language-plaintext highlighter-rouge">3*2</code>, <code class="language-plaintext highlighter-rouge">4*2</code> .. and so on</li>
+</ul>
+
+<p>[2, 3, <del>4,</del> 5, <del>6,</del> 7, <del>8,</del> 9, <del>10,</del> 11, <del>12,</del> 13, <del>14,</del> 15, <del>16,</del> 17, <del>18,</del> 19, <del>20,</del> 21, <del>22,</del> 23, <del>24,</del> 25]</p>
+
+<ul>
+  <li>For 3, cross all multiples of 3 i.e. <code class="language-plaintext highlighter-rouge">2*3</code>, <code class="language-plaintext highlighter-rouge">3*3</code>, <code class="language-plaintext highlighter-rouge">4*3</code> .. and so on</li>
+</ul>
+
+<p>[2, 3, <del>4,</del> 5, <del>6,</del> 7, <del>8,</del> <del>9,</del> <del>10,</del> 11, <del>12,</del> 13, <del>14,</del> <del>15,</del> <del>16,</del> 17, <del>18,</del> 19, <del>20,</del> <del>21,</del> <del>22,</del> 23, <del>24,</del> 25]</p>
+
+<ul>
+  <li>
+    <p>For 4, Ohh! 4 itself is already crossed out, so we are ensured that all its multiples are also crossed out</p>
+  </li>
+  <li>
+    <p>For 5, cross all multiples of 3 i.e. <code class="language-plaintext highlighter-rouge">2*5</code>, <code class="language-plaintext highlighter-rouge">3*5</code>, <code class="language-plaintext highlighter-rouge">4*5</code> .. and so on</p>
+  </li>
+</ul>
+
+<p>[2, 3, <del>4,</del> 5, <del>6,</del> 7, <del>8,</del> <del>9,</del> <del>10,</del> 11, <del>12,</del> 13, <del>14,</del> <del>15,</del> <del>16,</del> 17, <del>18,</del> 19, <del>20,</del> <del>21,</del> <del>22,</del> 23, <del>24,</del> <del>25</del>]</p>
+
+<p>Now, all the numbers that are not crossed out are prime numbers in the range [2, 25]. They are: [2, 3, 5, 7, 11, 13, 17, 19, 23]</p>
+
+<p>A beautiful visualization of the above process was found on wikipedia<sup><a href="#wiki-sieve">2</a></sup>.</p>
+
+<p><img src="/assets/documentation/Sieve-of-Eratosthenes-animation.gif" alt="Sieve of Eratosthenes animation" /></p>
+
+<p>Let’s convert the above process into code.</p>
+
+<h3 id="python-implementation-of-sieve-of-eratosthenes">Python implementation of Sieve of Eratosthenes</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="code"><pre><span class="c1"># We will find all primes in the range 1 to 120
+# is_prime[i] = 1 means that i is prime and is_prime[i] = 0 means that i is composite
+# Initially, we say all of them are prime
+</span><span class="n">N</span> <span class="o">=</span> <span class="mi">121</span>
+<span class="n">is_prime</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">N</span>
+<span class="c1"># We know 0 and 1 are composites
+</span><span class="n">is_prime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">is_prime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">sieve</span><span class="p">():</span>
+    <span class="s">"""
+    We cross out all composites from 2 to sqrt(N)
+    """</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="c1"># This will loop from 2 to int(sqrt(x))
+</span>    <span class="k">while</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
+        <span class="c1"># If we already crossed out this number, then continue
+</span>        <span class="k">if</span> <span class="n">is_prime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span>
+            <span class="c1"># Cross out this as it is composite
+</span>            <span class="n">is_prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="c1"># j is incremented by i, because we want to cover all multiples of i
+</span>            <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span>
+
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">sieve</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">i</span><span class="p">,</span> 
+<span class="c1"># Output: 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="c-implementation-of-sieve-of-eratosthenes">C++ implementation of Sieve of Eratosthenes</h3>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// We will find all primes in the range 1 to 120</span>
+<span class="kt">int</span> <span class="k">const</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">121</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">is_prime</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="kt">bool</span> <span class="nf">sieve</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// We cross out all composites from 2 to sqrt(N)</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+    <span class="c1">// This will loop from 2 to int(sqrt(x))</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// If we already crossed out this number, then continue</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">is_prime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Cross out this as it is composite</span>
+            <span class="n">is_prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="c1">// j is incremented by i, because we want to cover all multiples of i</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// is_prime[i] = 1 means that i is prime and is_prime[i] = 0 means that i is composite</span>
+    <span class="c1">// Initially, we say all of them are prime</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">is_prime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// We know 0 and 1 are composites</span>
+    <span class="n">is_prime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">is_prime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">sieve</span><span class="p">();</span>
+    <span class="c1">// Print all the primes in between 1 and 121</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">is_prime</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// Output: 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Analysis of complexity:</p>
+
+<ul>
+  <li><strong>Space Complexity:</strong> We consume <em>O(N)</em> space for initializing <code class="language-plaintext highlighter-rouge">is_prime</code> array.</li>
+  <li><strong>Time Complexity:</strong> From the reference paper<sup><a href="#reference-paper">1</a></sup>, the first loop iterates from <code class="language-plaintext highlighter-rouge">2</code> to <code class="language-plaintext highlighter-rouge">sqrt(N)</code>, so it is at most <em>O(sqrt(N))</em>. And the time spent in removing the multiples is at most:</li>
+</ul>
+
+<p><img style="margin: auto;" src="/assets/documentation/sieve-time-complexity.svg" alt="Sieve of Eratosthenes time complexity" /></p>
+
+<p>Hence, the overall upper bound for time complexity turns out to be <em>O(N log log N)</em>. This is a bit confusing at first glance, however, with practice of analysis we will eventually feel comfortable with such proofs and BigO derivations.</p>
+
+<p>References:</p>
+
+<ul>
+  <li><a name="reference-paper">[1]</a>: http://research.cs.wisc.edu/techreports/1990/TR909.pdf</li>
+  <li><a name="wiki-sieve">[2]</a>: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes</li>
+</ul>
+
+<p>Got a burning question you might wanna get answered? Ask it in the comments.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Fastest way to check if a number is prime or no..." data-url="https://www.rookieslab.com/posts/fastest-way-to-check-if-a-number-is-prime-or-not" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp">Most efficient way to find factors of a number - C++ and Python Code</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp">How to find Multiplicative Inverse of a number modulo M?</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Extended Euclid Algorithm to find GCD and Bézout's coefficients | Rookie's Lab</title>
+  <meta name="description" content="We will see how to use Extended Euclid's Algorithm to find GCD of two numbers. It also gives us Bézout's coefficients (x, y) such that ax + by = gcd(a, b). We will discuss and implement all of the above problems in Python and C++">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Extended Euclid Algorithm to find GCD and Bézout's coefficients">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code">
+  <meta property="og:description" content="We will see how to use Extended Euclid's Algorithm to find GCD of two numbers. It also gives us Bézout's coefficients (x, y) such that ax + by = gcd(a, b). We will discuss and implement all of the above problems in Python and C++">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code">
+  <meta name="twitter:title" content="Extended Euclid Algorithm to find GCD and Bézout's coefficients">
+  <meta name="twitter:description" content="We will see how to use Extended Euclid's Algorithm to find GCD of two numbers. It also gives us Bézout's coefficients (x, y) such that ax + by = gcd(a, b). We will discuss and implement all of the above problems in Python and C++">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Extended Euclid Algorithm to find GCD and Bézout's coefficients</h1>
+            <p>We will see how to use Extended Euclid's Algorithm to find GCD of two numbers. It also gives us Bézout's coefficients (x, y) such that ax + by = gcd(a, b). We will discuss and implement all of the above problems in Python and C++</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                February 4, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  8 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/competitive-programming">competitive-programming</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#what-is-euclids-algorithm" id="markdown-toc-what-is-euclids-algorithm">What is Euclid’s Algorithm?</a></li>
+  <li><a href="#what-is-extended-euclids-algorithm" id="markdown-toc-what-is-extended-euclids-algorithm">What is Extended Euclid’s Algorithm?</a></li>
+  <li><a href="#python-code-to-find-gcd-using-extended-euclids-algorithm" id="markdown-toc-python-code-to-find-gcd-using-extended-euclids-algorithm">Python Code to find GCD using Extended Euclid’s Algorithm</a></li>
+  <li><a href="#c-code-to-find-gcd-using-extended-euclids-algorithm" id="markdown-toc-c-code-to-find-gcd-using-extended-euclids-algorithm">C++ Code to find GCD using Extended Euclid’s Algorithm</a></li>
+</ul>
+
+<h2 id="what-is-euclids-algorithm">What is Euclid’s Algorithm?</h2>
+
+<p>Euclid’s Algorithm is an efficient method to find GCD of two numbers. In one of the previous posts, we discussed <a href="http://rookieslab.com/posts/cpp-python-code-to-find-gcd-of-a-list-of-numbers#how-to-find-gcd-of-two-numbers">how to find GCD of two numbers using Euclid’s Algorithm</a>.</p>
+
+<p>A simple C++ code to find GCD using Euclid’s Algorithm is as follows:</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="what-is-extended-euclids-algorithm">What is Extended Euclid’s Algorithm?</h2>
+
+<p>As the name suggests, Extended Euclid’s Algorithm is an extension of <a href="http://rookieslab.com/posts/cpp-python-code-to-find-gcd-of-a-list-of-numbers#how-to-find-gcd-of-two-numbers">Euclid’s Algorithm</a> to find GCD of two numbers. Along with GCD of two numbers, say <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>, it also finds <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> such that <code class="language-plaintext highlighter-rouge">ax + by = gcd(a, b)</code>. Here, <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> are known as Bézout’s coefficients.</p>
+
+<p>But why should we learn Extended Euclid’s Algorithm if we can find GCD of two numbers using simple Euclid’s Algorithm? Extended Euclid’s Algorithm<sup><a href="#extended-euclid-wiki">1</a></sup> is particularly useful when we have to find <a href="http://rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp">Modular Multiplicative Inverse of a number A in the range M</a>, where A and M are co-prime numbers and M is not necessarily a prime number. If M is a prime number then there’s a very easy method to find <a href="http://rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp#modular-multiplicative-inverse-using-fast-power-algorithm">Multiplicative Inverse using Fast Power Algorithm</a>.</p>
+
+<h2 id="python-code-to-find-gcd-using-extended-euclids-algorithm">Python Code to find GCD using Extended Euclid’s Algorithm</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">extended_euclid_gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s">"""
+    Returns a list `result` of size 3 where:
+    Referring to the equation ax + by = gcd(a, b)
+        result[0] is gcd(a, b)
+        result[1] is x
+        result[2] is y 
+    """</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">old_s</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">old_t</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="n">old_r</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="k">while</span> <span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">quotient</span> <span class="o">=</span> <span class="n">old_r</span><span class="o">//</span><span class="n">r</span> <span class="c1"># In Python, // operator performs integer or floored division
+</span>        <span class="c1"># This is a pythonic way to swap numbers
+</span>        <span class="c1"># See the same part in C++ implementation below to know more
+</span>        <span class="n">old_r</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="p">,</span> <span class="n">old_r</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">r</span>
+        <span class="n">old_s</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">,</span> <span class="n">old_s</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">s</span>
+        <span class="n">old_t</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">old_t</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">t</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">old_r</span><span class="p">,</span> <span class="n">old_s</span><span class="p">,</span> <span class="n">old_t</span><span class="p">]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'GCD of 24 and 18 is %d. x = %d and y = %d in 24x + 18y = gcd(24, 18)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1"># Output: GCD of 24 and 18 is 6. x = 1 and y = -1 in 24x + 18y = gcd(24, 18)
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">54</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'GCD of 54 and 36 is %d. x = %d and y = %d in 54x + 36y = gcd(54, 36)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1"># Output: GCD of 54 and 36 is 18. x = 1 and y = -1 in 54x + 36y = gcd(54, 36)
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">428860</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'GCD of 120 and 428860 is %d. x = %d and y = %d in 120x + 428860y = gcd(120, 428860)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1"># Output: GCD of 120 and 428860 is 20. x = 3574 and y = -1 in 120x + 428860y = gcd(120, 428860)
+</span><span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">95642</span><span class="p">,</span> <span class="mi">1681</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'GCD of 95642 and 1681 is %d. x = %d and y = %d in 95642x + 1681y = gcd(95642, 1681)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1"># Output: GCD of 95642 and 1681 is 1. x = 682 and y = -38803 in 95642x + 1681y = gcd(95642, 1681)</span></code></pre></figure>
+
+<h2 id="c-code-to-find-gcd-using-extended-euclids-algorithm">C++ Code to find GCD using Extended Euclid’s Algorithm</h2>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Returns a vector `result` of size 3 where:</span>
+    <span class="c1">// Referring to the equation ax + by = gcd(a, b)</span>
+    <span class="c1">//     result[0] is gcd(a, b)</span>
+    <span class="c1">//     result[1] is x</span>
+    <span class="c1">//     result[2] is y </span>
+    
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">old_s</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">old_t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">old_r</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="n">quotient</span> <span class="o">=</span> <span class="n">old_r</span><span class="o">/</span><span class="n">r</span><span class="p">;</span>
+        <span class="c1">// We are overriding the value of r, before that we store it"s current</span>
+        <span class="c1">// value in temp variable, later we assign it to old_r</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">old_r</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">r</span><span class="p">;</span>
+        <span class="n">old_r</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="c1">// We treat s and t in the same manner we treated r</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">old_s</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">s</span><span class="p">;</span>
+        <span class="n">old_s</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">old_t</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">t</span><span class="p">;</span>
+        <span class="n">old_t</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">old_r</span><span class="p">);</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">old_s</span><span class="p">);</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">old_t</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"GCD of 24 and 18 is "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">". x = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" and y = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" in 24x + 18y = gcd(24, 18)"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: GCD of 24 and 18 is 6. x = 1 and y = -1 in 24x + 18y = gcd(24, 18)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">54</span><span class="p">,</span> <span class="mi">36</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"GCD of 54 and 36 is "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">". x = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" and y = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" in 54x + 36y = gcd(54, 36)"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: GCD of 54 and 36 is 18. x = 1 and y = -1 in 54x + 36y = gcd(54, 36)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">428860</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"GCD of 120 and 428860 is "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">". x = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" and y = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" in 120x + 428860y = gcd(120, 428860)"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: GCD of 120 and 428860 is 20. x = 3574 and y = -1 in 120x + 428860y = gcd(120, 428860)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="mi">95642</span><span class="p">,</span> <span class="mi">1681</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"GCD of 95642 and 1681 is "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">". x = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" and y = "</span> <span class="o">&lt;&lt;</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" in 95642x + 1681y = gcd(95642, 1681)"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: GCD of 95642 and 1681 is 1. x = 682 and y = -38803 in 95642x + 1681y = gcd(95642, 1681)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Simulation of one of the sample test cases 95642 and 1681:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>quotient</th>
+      <th>remainder</th>
+      <th>s</th>
+      <th>t</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>95642/1681 = 56</td>
+      <td>95642 - 56*1681 = 1506</td>
+      <td>1 - 56*0 = 1</td>
+      <td>0 - 56*1 = -56</td>
+    </tr>
+    <tr>
+      <td>1681/1506 = 1</td>
+      <td>1681 - 1*1506 = 175</td>
+      <td>0 - 1*1 = -1</td>
+      <td>1 - 1*-56 = 57</td>
+    </tr>
+    <tr>
+      <td>1506/175 = 8</td>
+      <td>1506 - 8*175 = 106</td>
+      <td>1 - 8*-1 = 9</td>
+      <td>-56 - 8*57 = -512</td>
+    </tr>
+    <tr>
+      <td>175/106 = 1</td>
+      <td>175 - 1*106 = 69</td>
+      <td>-1 - 1*9 = -10</td>
+      <td>57 - 1*-512 = 569</td>
+    </tr>
+    <tr>
+      <td>106/69 = 1</td>
+      <td>106 - 1*69 = 37</td>
+      <td>9 - 1*-10 = 19</td>
+      <td>-512 - 1*569 = -1081</td>
+    </tr>
+    <tr>
+      <td>69/37 = 1</td>
+      <td>69 - 1*37 = 32</td>
+      <td>-10 - 1*19 = -29</td>
+      <td>569 - 1*-1081 = 1650</td>
+    </tr>
+    <tr>
+      <td>37/32 = 1</td>
+      <td>37 - 1*32 = 5</td>
+      <td>19 - 1*-29 = 48</td>
+      <td>-1081 - 1*1650 = -2731</td>
+    </tr>
+    <tr>
+      <td>32/5 = 6</td>
+      <td>32 - 6*5 = 2</td>
+      <td>-29 - 6*48 = -317</td>
+      <td>1650 - 6*-2731 = 18036</td>
+    </tr>
+    <tr>
+      <td>5/2 = 2</td>
+      <td>5 - 2*2 = 1</td>
+      <td>48 - 2*-317 = 682</td>
+      <td>-2731 - 2*18036 = -38803</td>
+    </tr>
+    <tr>
+      <td>2/1 = 2</td>
+      <td>2 - 2*1 = 0</td>
+      <td>-317 - 2*682 = -1681</td>
+      <td>18036 - 2*-38803 = 95642</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>References:</p>
+
+<ul>
+  <li><a name="extended-euclid-wiki">[1]</a>: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</li>
+</ul>
+
+<p>Got a burning question you wanna get answered? Ask it in the comments.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Extended Euclid Algorithm to find GCD and Bézou..." data-url="https://www.rookieslab.com/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp">How to find Multiplicative Inverse of a number modulo M?</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/cpp-python-code-to-find-gcd-of-a-list-of-numbers">Greatest Common Divisor of a list of numbers - C++ and Python Implementation</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

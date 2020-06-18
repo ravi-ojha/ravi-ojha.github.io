@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Fast Power Algorithm - Exponentiation by Squaring - C++ and Python Implementation | Rookie's Lab</title>
+  <meta name="description" content="We know how to find 2 raised to the power 10. But what if we have to find 2 raised to the power very large number such as 1000000000? We discuss how to find solution to such a problem using an fast, efficient algorithm">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Fast Power Algorithm - Exponentiation by Squaring - C++ and Python Implementation">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/fast-power-algorithm-exponentiation-by-squaring-cpp-python-implementation">
+  <meta property="og:description" content="We know how to find 2 raised to the power 10. But what if we have to find 2 raised to the power very large number such as 1000000000? We discuss how to find solution to such a problem using an fast, efficient algorithm">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/fast-power-algorithm-exponentiation-by-squaring-cpp-python-implementation">
+  <meta name="twitter:title" content="Fast Power Algorithm - Exponentiation by Squaring - C++ and Python Implementation">
+  <meta name="twitter:description" content="We know how to find 2 raised to the power 10. But what if we have to find 2 raised to the power very large number such as 1000000000? We discuss how to find solution to such a problem using an fast, efficient algorithm">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Fast Power Algorithm - Exponentiation by Squaring - C++ and Python Implementation</h1>
+            <p>We know how to find 2 raised to the power 10. But what if we have to find 2 raised to the power very large number such as 1000000000? We discuss how to find solution to such a problem using an fast, efficient algorithm</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                May 18, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  9 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/competitive-programming">competitive-programming</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>Programming helps us in solving repetitive tasks by using loop constructs. However, sometimes, our loops may run forever! Let’s discuss one such example.</p>
+
+<h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#how-to-find-a-raised-to-the-power-b" id="markdown-toc-how-to-find-a-raised-to-the-power-b">How to find A raised to the power B?</a></li>
+  <li><a href="#brute-force-python-implementation" id="markdown-toc-brute-force-python-implementation">Brute force Python implementation</a></li>
+  <li><a href="#exponentiation-by-squaring-or-binary-exponentiation" id="markdown-toc-exponentiation-by-squaring-or-binary-exponentiation">Exponentiation by Squaring or Binary Exponentiation</a></li>
+  <li><a href="#efficient-python-implementation-to-find-base-raised-to-the-power" id="markdown-toc-efficient-python-implementation-to-find-base-raised-to-the-power">Efficient Python implementation to find base raised to the power</a></li>
+  <li><a href="#efficient-c-implementation-to-find-exponent-raised-to-a-power" id="markdown-toc-efficient-c-implementation-to-find-exponent-raised-to-a-power">Efficient C++ implementation to find exponent raised to a power</a></li>
+</ul>
+
+<h2 id="how-to-find-a-raised-to-the-power-b">How to find A raised to the power B?</h2>
+
+<p>We multiply <code class="language-plaintext highlighter-rouge">a</code> to itself, <code class="language-plaintext highlighter-rouge">b</code> times. That is, <code class="language-plaintext highlighter-rouge">a^b = a * a * a * ... * a</code> (<code class="language-plaintext highlighter-rouge">b</code> occurrences of <code class="language-plaintext highlighter-rouge">a</code>).
+A simple python implementation of that would be:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">iterative_power</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s">"""
+    Returns the result of a^b i.e. a**b
+    We assume that a &gt;= 1 and b &gt;= 0
+    """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">*</span> <span class="n">a</span>
+        <span class="n">b</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Output: 2
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Output: 4
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 16
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 81
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Output: 1267650600228229401496703205376</span></code></pre></figure>
+
+<p>Notice that the answer to <code class="language-plaintext highlighter-rouge">2^100</code> is way too large to fit in <code class="language-plaintext highlighter-rouge">int</code> data-type of other languages. To be fair, let’s modify our code to print the result modulo <code class="language-plaintext highlighter-rouge">1000000007</code>. You’d ask why <code class="language-plaintext highlighter-rouge">1000000007</code>? There’s a long story behind that, read it <a href="https://codeaccepted.wordpress.com/2014/02/15/output-the-answer-modulo-109-7/">here</a>. TLDR, we want to contain the result within the range of 32 bit <code class="language-plaintext highlighter-rouge">int</code>.</p>
+
+<h2 id="brute-force-python-implementation">Brute force Python implementation</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">MOD</span> <span class="o">=</span> <span class="mi">1000000007</span>
+<span class="k">def</span> <span class="nf">iterative_power</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s">"""
+    Returns the result of a^b i.e. a**b
+    We assume that a &gt;= 1 and b &gt;= 0
+    """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span>
+        <span class="n">b</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">result</span> <span class="o">%</span> <span class="n">MOD</span>
+<span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Output: 2
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Output: 4
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 16
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 81
+</span><span class="k">print</span> <span class="n">iterative_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Output: 976371285</span></code></pre></figure>
+
+<p>By the way, in Python we could have simply used <code class="language-plaintext highlighter-rouge">**</code> operator to find <code class="language-plaintext highlighter-rouge">a^b</code> like <code class="language-plaintext highlighter-rouge">a**b</code>. However, I just wanted to implement the code so that we can easily port the code in other languages.</p>
+
+<p>Now, try and call that function for <code class="language-plaintext highlighter-rouge">a = 2</code> and <code class="language-plaintext highlighter-rouge">b = 1000000000</code> i.e. <code class="language-plaintext highlighter-rouge">iterative_power(2, 1000000000)</code>. The code will keep running forever. If we analyze the code, Time Complexity is <em>O(power)</em> or in general terms <em>O(N)</em> where <code class="language-plaintext highlighter-rouge">N</code> is <code class="language-plaintext highlighter-rouge">power</code> or <code class="language-plaintext highlighter-rouge">b</code>.</p>
+
+<p>So how do we find the base raised to the power for large numbers, as large as a billion! There’s an algorithm for that, it’s called Exponentiation by Squaring, fast power algorithm. Also known as Binary Exponentiation.</p>
+
+<h2 id="exponentiation-by-squaring-or-binary-exponentiation">Exponentiation by Squaring or Binary Exponentiation</h2>
+
+<p>Exponentiation by Squaring helps us in finding the powers of large positive integers. Idea is to the divide the power in half at each step.</p>
+
+<p>Let’s take an example:</p>
+
+<figure class="highlight"><pre><code class="language-fuck" data-lang="fuck">3 ^ 10 = 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3
+// Try to divide the power by 2
+3 ^ 10 = (3 * 3) * (3 * 3) * (3 * 3) * (3 * 3) * (3 * 3)
+3 ^ 10 = ((3 * 3) ^ 5)
+3 ^ 10 = 9 ^ 5</code></pre></figure>
+
+<p>Effectively, power is divided by 2 and base is multiplied to itself. So we can write <code class="language-plaintext highlighter-rouge">3 ^ 10 = 9 ^ 5</code>.</p>
+
+<p>Now, our problem is to find <code class="language-plaintext highlighter-rouge">9 ^ 5</code></p>
+
+<figure class="highlight"><pre><code class="language-fuck" data-lang="fuck">9 ^ 5 = 9 * 9 * 9 * 9 * 9
+// Try to divide the power by 2
+// Since the power is an odd number here, we cannot do so.
+// However there's another way to represent 9 ^ 5
+9 ^ 5 = (9 ^ 4) * 9
+// Now we can find 9 ^ 4 and later multiple the extra 9 to the result
+9 ^ 5 = (81 ^ 2) * 9</code></pre></figure>
+
+<p>Effectively, when power is not divisible by 2, we make power even by taking out the extra 9. Then we already know the solution when power is divisible by 2. Divide the power by 2 and multiply the base to itself.</p>
+
+<p>Now our problem is to find <code class="language-plaintext highlighter-rouge">(81 ^ 2) * 9</code></p>
+
+<figure class="highlight"><pre><code class="language-fuck" data-lang="fuck">(81 ^ 2) * 9 = (81 * 81) * 9
+// Try to divide the power by 2
+(81 ^ 2) * 9 = (6561 ^ 1) * 9</code></pre></figure>
+
+<p>Finally, we have our solution <code class="language-plaintext highlighter-rouge">3 ^ 10 = (6561 ^ 1) * 9 = 6561 * 9 = 59049</code></p>
+
+<p>Let’s try and implement this algorithm in Python.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fast_power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
+    <span class="s">"""
+    Returns the result of a^b i.e. a**b
+    We assume that a &gt;= 1 and b &gt;= 0
+
+    Remember two things!
+     - Divide power by 2 and multiply base to itself (if the power is even)
+     - Decrement power by 1 to make it even and then follow the first step
+    """</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">power</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># If power is even
+</span>        <span class="k">if</span> <span class="n">power</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Divide the power by 2
+</span>            <span class="n">power</span> <span class="o">=</span> <span class="n">power</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="c1"># Multiply base to itself
+</span>            <span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">base</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Decrement the power by 1 and make it even
+</span>            <span class="n">power</span> <span class="o">=</span> <span class="n">power</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="c1"># Take care of the extra value that we took out
+</span>            <span class="c1"># We will store it directly in result
+</span>            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">*</span> <span class="n">base</span>
+
+            <span class="c1"># Now power is even, so we can follow our previous procedure
+</span>            <span class="n">power</span> <span class="o">=</span> <span class="n">power</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">base</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Output: 2
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Output: 4
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 16
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 81
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Output: 1267650600228229401496703205376</span></code></pre></figure>
+
+<p>Our above code is a bit repetitive and can be simplified. We also have to make changes to keep the final result less than <code class="language-plaintext highlighter-rouge">1000000007</code>.
+We will common out the code that is present in both <code class="language-plaintext highlighter-rouge">if</code> and <code class="language-plaintext highlighter-rouge">else</code>. Also, the two statements <code class="language-plaintext highlighter-rouge">power = power - 1</code> and <code class="language-plaintext highlighter-rouge">power = power // 2</code> can be simply merged into one like <code class="language-plaintext highlighter-rouge">power = power // 2</code>, because we are performing integers division.</p>
+
+<h2 id="efficient-python-implementation-to-find-base-raised-to-the-power">Efficient Python implementation to find base raised to the power</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">MOD</span> <span class="o">=</span> <span class="mi">1000000007</span>
+<span class="k">def</span> <span class="nf">fast_power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
+    <span class="s">"""
+    Returns the result of a^b i.e. a**b
+    We assume that a &gt;= 1 and b &gt;= 0
+
+    Remember two things!
+     - Divide power by 2 and multiply base to itself (if the power is even)
+     - Decrement power by 1 to make it even and then follow the first step
+    """</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">power</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># If power is odd
+</span>        <span class="k">if</span> <span class="n">power</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span>
+
+        <span class="c1"># Divide the power by 2
+</span>        <span class="n">power</span> <span class="o">=</span> <span class="n">power</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="c1"># Multiply base to itself
+</span>        <span class="n">base</span> <span class="o">=</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Output: 2
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Output: 4
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 16
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: 81
+</span><span class="k">print</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Output: 976371285</span></code></pre></figure>
+
+<p>See how we can use Fast Power Algorithm to <a href="/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp">find Modular Multiplicative Inverse of a number</a>.</p>
+
+<h2 id="efficient-c-implementation-to-find-exponent-raised-to-a-power">Efficient C++ implementation to find exponent raised to a power</h2>
+
+<p>A lot of competitive programmers prefer C++ during the contest. So a C++ implementation would always be there for any of my post targeting competitive programmer.</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;
+#define MOD 1000000007
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">fast_power</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">power</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">power</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Can also use (power &amp; 1) to make code even faster</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span><span class="o">*</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="n">power</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Can also use power &gt;&gt;= 1; to make code even faster</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// Output: 2</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// Output: 4</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// Output: 16</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// Output: 81</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fast_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// Output: 976371285</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Time Complexity of the above implementation is <em>O(log power)</em> or we can <em>O(log N)</em> (where <code class="language-plaintext highlighter-rouge">N</code> is <code class="language-plaintext highlighter-rouge">power</code>). But how? Notice that we keep dividing the value of power in half in each iteration. Please refer the article that discusses <a href="/posts/how-to-compute-time-complexity-order-of-growth-of-any-program">Time Complexity or Order of Growth of various types</a>.</p>
+
+<p>Got a burning question you might wanna get answered?  Ask it in the comments.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Fast Power Algorithm - Exponentiation by Squari..." data-url="https://www.rookieslab.com/posts/fast-power-algorithm-exponentiation-by-squaring-cpp-python-implementation" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/fastest-way-to-check-if-a-number-is-prime-or-not">Fastest way to check if a number is prime or not - Python and C++ Code</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp">Most efficient way to find factors of a number - C++ and Python Code</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Don't be stuck at dev environment setup! | Rookie's Lab</title>
+  <meta name="description" content="One of the worst feelings as a developer is not able to work on what you set out to do. Instead, you spent the entire day setting up the repository on your local system. And what's worse? It's the first week of your new job.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Don't be stuck at dev environment setup!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/dont-be-stuck-at-dev-environment-setup">
+  <meta property="og:description" content="One of the worst feelings as a developer is not able to work on what you set out to do. Instead, you spent the entire day setting up the repository on your local system. And what's worse? It's the first week of your new job.">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/dont-be-stuck-at-dev-setup.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/dont-be-stuck-at-dev-environment-setup">
+  <meta name="twitter:title" content="Don't be stuck at dev environment setup!">
+  <meta name="twitter:description" content="One of the worst feelings as a developer is not able to work on what you set out to do. Instead, you spent the entire day setting up the repository on your local system. And what's worse? It's the first week of your new job.">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/dont-be-stuck-at-dev-setup.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Don't be stuck at dev environment setup!</h1>
+            <p>One of the worst feelings as a developer is not able to work on what you set out to do. Instead, you spent the entire day setting up the repository on your local system. And what's worse? It's the first week of your new job.</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                June 17, 2020
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  6 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/software-engineering">software-engineering</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>One of the worst feelings as a developer is not being able to work on what you set out to do. Instead, you spent the entire day setting up the repository on your local system. And what’s worse? It’s the first week of your new job and you’re already struggling, hastily googling the errors thrown by the terminal and running random commands from StackOverflow. This is not entirely your fault. <em>Instruction unclear, fried the system.</em> In this post, we discuss a few approaches and throw in advice (albeit some common ones but not-so-common) for the team as a whole, not just you or team leader, or engineering manager for that matter.</p>
+
+<h2 id="dev-onboarding">Dev onboarding</h2>
+
+<p>In most cases, you’re struggling because you still don’t have enough permissions and in some cases you’re not even sure if that’s a permission issue. As a team lead, make sure that the new dev has:</p>
+
+<ul>
+  <li>All the accounts in different environments (dev/staging/testing/qa) with enough permissions, of course for the services they will be working with</li>
+  <li>Accounts, access and configured way to VPNs required to access remote instances</li>
+  <li>Permissions to access the necessary remote instances i.e. ssh keys</li>
+  <li>And just to add a fourth point, don’t forget about the accounts in all the third-party services you use as a dev; like VCS, build service, error logger, metrics watcher; the list could go on but you get the point</li>
+</ul>
+
+<p>Once the permissions are sorted, next up on the list is find the right README to follow!</p>
+
+<h2 id="leave-it-better-than-you-found-it">Leave it better than you found it</h2>
+
+<p>When going through the setup README, you may find yourself stuck at an issue that isn’t mentioned there. You spend hours trying to figure out what went wrong and finally fix it. Once you get everything right and working, update the docs! Six months down the line, another dev will repeat it and god forbid if they ask you, and you answer “Aahhh.. I faced the exact same error but I can’t recall how I fixed it”. That’s as good as u/denvercoder9 from this xkcd</p>
+
+<figure class="image">
+  <img src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="XKCD 979" />
+  <figcaption>Credits: https://xkcd.com/979/</figcaption>
+</figure>
+
+<p>Why aren’t the docs updating? It’s because sometimes they are hard to locate in a bunch of Confluence articles or Google Drive. It’s harder to review the updates. An alternative solution to this is to git track the docs. The ability to easily update and commit makes it easier. There will never be a moment, where you say <em>“I’ll do it later”</em> and then get on with business-as-usual. Another reason is just slacking off. Ingraining the culture as a part of the code-review process solves it. And you can always host the markdown files as a static site internally.</p>
+
+<h2 id="dockerise">Dockerise!</h2>
+
+<p>Thyself be blessed by every developer setting up the service on their local when it works flawlessly with just one command <code class="language-plaintext highlighter-rouge">docker-compose up</code>. The command may take some time but letting a single command run for an hour is better than running multiple commands yourself for an entire day. Plus, in the meantime, install your own daily dev tools, chat up with the rest of your teammates, make new water cooler friends, or play ping-pong.</p>
+
+<p>Although this advice doesn’t apply to every developer’s job, it still holds enough weight to be mentioned.</p>
+
+<p>And when you can’t containerize stuff, don’t resort to installing packages and services system wide. Make use of virtual environments, venv managers and language version managers such as nvm, pyenv, rustup, rbenv, jabba.</p>
+
+<h2 id="developer-workflow">Developer workflow</h2>
+
+<p>Every dev has their own work environment setup, which they’ve optimised and mastered over the years. Collection of tools, favorite terminal client, preferred editor to name a few. With a new project, and especially if it’s a new language/framework, those tools might lack in one way or another. You’ll have to figure out new tools to help with development and debugging. One of the best ways to learn and go about this is to pair-program! Watch someone on your team when they’re working. Sit side-by-side and solve it together. Or have them share screen while they code, if you’re remote.</p>
+
+<p>One personal experience for me was with Clojure ecosystem. I couldn’t figure out the right dev workflow and tools myself and ended up being super unproductive and I’m entirely to blame for it. Never got around to using REPL to its full potential. I might give it another shot sometime in future.</p>
+
+<h2 id="dont-install-every-microservice-in-your-local">Don’t install every microservice in your local</h2>
+
+<p>Every dev in the team is setting up every microservice their service interacts with. Unless you’ll be modifying the source in those microservices, don’t do that. Setup a test instance for devs and install all the services there. Point your local to those services and you’re done. I wonder why this is not a common practice in most startups. The server cost will be way less than the time-cost all the devs will be paying collectively.</p>
+
+<p>Also, don’t create hundreds of microservices. It’s better to have 5 large services than to have 25 micro services. Otherwise, and this is not an issue by the way, your half the git history will have version bump commits. This warrants a separate post and if you have strong feelings against the idea, my answer would be to meet me over chai. Although, like most engineering questions, we could get away with <em>“It depends”</em>, you might like reading <a href="https://segment.com/blog/goodbye-microservices/">this</a>.</p>
+
+<h2 id="did-i-mention-local-dbs-yet">Did I mention local DBs yet?</h2>
+
+<p>This is my favorite problem to fix whenever I start on any new project. Worst case scenario is, there’s no db migration history, no local schema and no fixtures for local. And no access to prod/qa/staging databases to source the db dump from. So you track down the last person who had that service up and get the dump from their local machine, given that they didn’t nuke it.</p>
+
+<p>First of all, create a db migration history. Then create db fixtures for the local system to work out of the box. And for other random data, maintain a shared SQL db dump, and don’t forget to update it regularly. Or write factory methods/scripts that generate such data and running that becomes part of local setup.</p>
+
+<p>Be loud and clear in communicating the changes in db schema, you don’t want the next person to pull the repo and panic because their local was working yesterday evening. This is mostly solved by maintaining migration history, however, there are some cases when you might have to run some manual commands.</p>
+
+<h2 id="dont-take-security-for-granted">Don’t take security for granted</h2>
+
+<p>Share credentials to services via encrypted password managers or fallback to sharing PGP keys with internal teams. Don’t trust any service/person no matter how convincing it sounds, you’ll develop trust issues when you’re betrayed by one. It’s not a bad quality to have. <em>Trust, but verify.</em> Yeah, that’s just a nice way to put <em>“Don’t trust”</em>.</p>
+
+<video autoplay="" loop="" muted="" playsinline="">
+    <source src="https://thumbs.gfycat.com/HideousMintyCuckoo-mobile.mp4" type="video/mp4" />
+    <p>Please use a browser that supports embedded video.</p>
+</video>
+
+<h2 id="be-humble-to-your-new-teammates">Be humble to your new teammates</h2>
+
+<p>When you’re helping a new teammate who has more experience than you but you find that they don’t know some of the stuff that you use daily, don’t get annoyed when they ask you the most obvious of the questions. It takes a bit of time to get used to a new tool/service/product. If you do, they’ll hesitate to ask further questions and those questions will arise again when another dev joins the team after a few months. And if the present new dev is helping the future new dev, an answer “I don’t know man, that’s how it is. It just works.” is a bad bad first impression to make.</p>
+
+<p>Be humble, even if you have to explain it twice. They were smart enough to clear the interview process as you did. Initial support will go a long way, you may even end up making lifelong friends.</p>
+
+<p><strong>Many thanks</strong> to <a href="https://codeaccepted.wordpress.com/about/" target="_blank">Abhinav Sharma</a> and Shubham Jain for proofreading the drafts of this post.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Don't be stuck at dev environment setup!" data-url="https://www.rookieslab.com/posts/dont-be-stuck-at-dev-environment-setup" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/how-to-become-better-at-reading-and-debugging-code">How to become better at reading and debugging code</a>
+              </div>
+              
+          </div>
+
+          
+          <!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="//rookieslab.us15.list-manage.com/subscribe/post?u=17f5e5fa3cb27afa8905cf0b9&amp;id=e1a1386d1d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+    <h2>Liked what you read? Subscribe via email!</h2>
+    
+    <div class="mc-field-group">
+        <input type="email" value="" placeholder="Email address" name="EMAIL" class="required email" id="mce-EMAIL">
+    </div>
+    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_17f5e5fa3cb27afa8905cf0b9_e1a1386d1d" tabindex="-1" value=""></div>
+    <p> One newsletter on 10th of the month. No spam. *pinky swear*.</p>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

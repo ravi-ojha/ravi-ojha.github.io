@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Idiom of the Day | Rookie's Lab</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Idiom of the Day">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/projects/idiom-of-the-day/">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/og-image.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/projects/idiom-of-the-day/">
+  <meta name="twitter:title" content="Idiom of the Day">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/og-image.jpg">
+
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/idiom-of-the-day.css">
+</head>
+
+
+<body>
+  <main>
+  <header class="extension-title">
+    <h2> IDIOM OF THE DAY </h2>
+    <h3> Consume an idiom, one in every 24 hours! </h3>
+  </header>
+  <section id="idiom-demo" class="idiom-demo">
+    <img src="/assets/idiom-of-the-day-v0.3.gif" alt="Idiom of the Day Demo" title="Idiom of the Day Demo" />
+  </section>
+  <section id="idiom-why" class="idiom-why">
+    <h2> WHY? </h2>
+    <p> The idea hit me while I was reading The Martian by Andy Weir. Rich Purnell, a character in the book, is portrayed as an autistic person, having difficulty in understanding the meaning of the abstract concepts of the language. So here goes, a chrome extension that would help me and the likes of Rich Purnell become better at such play of words. Concept is to show one idiom per day, so that it gets hard-wired in our memory.</p>
+  </section>
+  <section id="idiom-div-for-hackers" class="idiom-div-for-hackers hidden">
+    <h2> FOR HACKERS </h2>
+    <p> Concept is to show one idiom per day. So that it gets hard-wired in our memory. The data is stored in browser local storage for the day, after the first network call. Also, in the first network call, it fetches data from memcache. Everyone in the world will see only one particular idiom on a given day. You get it right? If the memcache hit misses, then I read from database and set it in memcache for 48 hours (24 + 24 buffer for the entire world clock). </p>
+  </section>
+  <section id="idiom-cta" class="idiom-cta">
+    <a href="https://chrome.google.com/webstore/detail/idioms-and-phrases/ddmdooeeiphjmbcoaonbbkcadneggphh/" target="_blank" class="button add"> Add to Chrome </a>
+  </section>
+  <footer>
+    <div class="right-footer">
+      Maintained by <a href="http://raviojha.com" target="_blank">Ravi Ojha</a>
+    </div>
+  </footer>
+</main>
+
+
+  
+    <script>
+      window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+      ga('create','UA-28915915-2','auto');ga('send','pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  
+
+</body>
+</html>

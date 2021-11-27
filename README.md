@@ -6,3 +6,15 @@ Personal Blog
 ```
 bin/setup
 ```
+
+Serve locally with
+
+```
+jekyll serve
+```
+
+## Deploy
+
+```
+bin/deploy
+```

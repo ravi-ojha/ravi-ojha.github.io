@@ -2,7 +2,7 @@
 layout: post
 title: "How to sweep a multi-account Bitcoin Electrum wallet"
 description: "How to sweep a multi-account Bitcoin Electrum wallet through Trezor if you can't export the mnemonic."
-og_image: "documentation/og-image.jpg"
+og_image: "og-image.jpg"
 tags: [software-engineering, blockchain]
 related_posts: ['/posts/how-to-become-better-at-reading-and-debugging-code']
 subscription-form: true

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most efficient way to find factors of a number - C++ and Python Code | Rookie's Lab</title>
+  <meta name="description" content="First, we will see how to find all factors of a number using brute force. Then we will improve upon that to find all factors of a number using the most efficient method and code it in C++ as well as Python">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Most efficient way to find factors of a number - C++ and Python Code">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp">
+  <meta property="og:description" content="First, we will see how to find all factors of a number using brute force. Then we will improve upon that to find all factors of a number using the most efficient method and code it in C++ as well as Python">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp">
+  <meta name="twitter:title" content="Most efficient way to find factors of a number - C++ and Python Code">
+  <meta name="twitter:description" content="First, we will see how to find all factors of a number using brute force. Then we will improve upon that to find all factors of a number using the most efficient method and code it in C++ as well as Python">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Most efficient way to find factors of a number - C++ and Python Code</h1>
+            <p>First, we will see how to find all factors of a number using brute force. Then we will improve upon that to find all factors of a number using the most efficient method and code it in C++ as well as Python</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 14, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  7 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/competitive-programming">competitive-programming</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>A factor of a number <code class="language-plaintext highlighter-rouge">x</code> is a number <code class="language-plaintext highlighter-rouge">y</code> if <code class="language-plaintext highlighter-rouge">y</code> divides <code class="language-plaintext highlighter-rouge">x</code> without leaving a remainder. That is if <code class="language-plaintext highlighter-rouge">x % y == 0</code> we say that <code class="language-plaintext highlighter-rouge">y</code> is a factor of <code class="language-plaintext highlighter-rouge">x</code>.</p>
+
+<h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#how-to-find-the-factors-of-a-number" id="markdown-toc-how-to-find-the-factors-of-a-number">How to find the factors of a number?</a></li>
+  <li><a href="#brute-force-python-implementation-to-find-factors-of-a-number" id="markdown-toc-brute-force-python-implementation-to-find-factors-of-a-number">Brute Force Python Implementation to find factors of a number</a></li>
+  <li><a href="#efficient-method-to-find-factors-of-a-number" id="markdown-toc-efficient-method-to-find-factors-of-a-number">Efficient method to find factors of a number</a></li>
+  <li><a href="#efficient-python-implementation-to-find-factors-of-a-number" id="markdown-toc-efficient-python-implementation-to-find-factors-of-a-number">Efficient Python Implementation to find factors of a number</a></li>
+  <li><a href="#efficient-c-implementation-to-find-factors-of-a-number" id="markdown-toc-efficient-c-implementation-to-find-factors-of-a-number">Efficient C++ Implementation to find factors of a number</a></li>
+</ul>
+
+<h2 id="how-to-find-the-factors-of-a-number">How to find the factors of a number?</h2>
+
+<p>Let’s find all factors of 24. We know all the factors of <code class="language-plaintext highlighter-rouge">24</code> are <code class="language-plaintext highlighter-rouge">1, 2, 3, 4, 6, 8, 12, 24</code>. How can we find them programmatically?</p>
+
+<p>Common factors are 1, 2, 3, and 6. Since 6 is the highest of them, GCD of 24 and 18 is 6.</p>
+
+<p>The breakdown of the process of finding factors of a number <code class="language-plaintext highlighter-rouge">x</code> is:</p>
+
+<ul>
+  <li>Iterate from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">x</code>, call that number <code class="language-plaintext highlighter-rouge">i</code></li>
+  <li>Check if <code class="language-plaintext highlighter-rouge">x % i == 0</code>, we add it to our list of factors</li>
+</ul>
+
+<h2 id="brute-force-python-implementation-to-find-factors-of-a-number">Brute Force Python Implementation to find factors of a number</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">factors</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># We will store all factors in `result`
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># This will loop from 1 to x
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Check if i divides x without leaving a remainder
+</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1"># Return the list of factors of x
+</span>    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Output: [1]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: [1, 2, 4]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Output: [1, 2, 5, 10]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="c1"># Output: [1, 2, 3, 4, 6, 12]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="c1"># Output: [1, 2, 4, 8, 16]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Time Complexity of the above algorithm is <em>O(N)</em>, <code class="language-plaintext highlighter-rouge">N</code> being the number for which we want to find all factors. If we were to find factors of a number as large as billion i.e. of the order of 1000000000, above code will not produce result within reasonable time. Go ahead, try it out!</p>
+
+<p>How can improve upon that? We notice that the factor of any number <code class="language-plaintext highlighter-rouge">x</code> is always less than <code class="language-plaintext highlighter-rouge">x/2</code>. So instead of looping up to <code class="language-plaintext highlighter-rouge">x</code>, we can loop up to <code class="language-plaintext highlighter-rouge">x/2</code>. This will bring down the time to half but it is still not every efficient. Also, <em>O(N/2)</em> boils down to <em>O(N)</em>.</p>
+
+<h2 id="efficient-method-to-find-factors-of-a-number">Efficient method to find factors of a number</h2>
+
+<p>If we analyze the factors of <code class="language-plaintext highlighter-rouge">24</code>, they are <code class="language-plaintext highlighter-rouge">1, 2, 3, 4, 6, 8, 12, 24</code>. We notice that, <code class="language-plaintext highlighter-rouge">1 x 24 = 24</code>, so when we found that <code class="language-plaintext highlighter-rouge">1</code> is a factor of <code class="language-plaintext highlighter-rouge">24</code>, we also know that <code class="language-plaintext highlighter-rouge">24</code> is yet another factor. Similarly, <code class="language-plaintext highlighter-rouge">2 x 12 = 24</code>. So when we found that <code class="language-plaintext highlighter-rouge">2</code> is a factor of <code class="language-plaintext highlighter-rouge">24</code>, we also know that <code class="language-plaintext highlighter-rouge">12</code> is also a factor of <code class="language-plaintext highlighter-rouge">24</code>. This applies for <code class="language-plaintext highlighter-rouge">3 x 8</code> and <code class="language-plaintext highlighter-rouge">4 x 6</code> as well. This means that we can find all factors of <code class="language-plaintext highlighter-rouge">24</code> by looping till <code class="language-plaintext highlighter-rouge">4</code>.</p>
+
+<p>Let’s take another example, <code class="language-plaintext highlighter-rouge">16</code>:</p>
+
+<figure class="highlight"><pre><code class="language-fuck" data-lang="fuck">16 = 1 x 16
+16 = 2 x 8
+16 = 4 x 4
+16 = 8 x 2
+16 = 16 x 1</code></pre></figure>
+
+<p>Again, we can loop till <code class="language-plaintext highlighter-rouge">4</code> and find all the factors of <code class="language-plaintext highlighter-rouge">16</code>. In this way, in order to find factors of <code class="language-plaintext highlighter-rouge">x</code>, we have to loop till <code class="language-plaintext highlighter-rouge">sqrt(x)</code>.</p>
+
+<p>Process of finding all factors of <code class="language-plaintext highlighter-rouge">x</code> in efficient way;</p>
+
+<ol>
+  <li>Loop from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">sqrt(x)</code>, call it <code class="language-plaintext highlighter-rouge">i</code></li>
+  <li>If <code class="language-plaintext highlighter-rouge">x % i == 0</code>, then add <code class="language-plaintext highlighter-rouge">i</code> to the list of factors</li>
+  <li>Now if <code class="language-plaintext highlighter-rouge">x % i == 0</code>, we can say for sure that, <code class="language-plaintext highlighter-rouge">x/i</code> is also a factor of <code class="language-plaintext highlighter-rouge">x</code>. So, add <code class="language-plaintext highlighter-rouge">x/i</code> to the list of factors.
+    <ul>
+      <li>For example: in case of <code class="language-plaintext highlighter-rouge">16</code>, we see that <code class="language-plaintext highlighter-rouge">16 % 2 == 0</code>, now <code class="language-plaintext highlighter-rouge">16/2</code> which is <code class="language-plaintext highlighter-rouge">8</code> is also a factor of <code class="language-plaintext highlighter-rouge">16</code>.</li>
+    </ul>
+  </li>
+  <li>There is one catch in the above step. What if <code class="language-plaintext highlighter-rouge">i</code> is same as <code class="language-plaintext highlighter-rouge">x/i</code>?
+    <ul>
+      <li>For example: in case of <code class="language-plaintext highlighter-rouge">16</code>, when <code class="language-plaintext highlighter-rouge">i = 4</code>, <code class="language-plaintext highlighter-rouge">16 % 4 == 0</code>, so we add <code class="language-plaintext highlighter-rouge">i</code> and <code class="language-plaintext highlighter-rouge">16/i</code> to list of factors, but <code class="language-plaintext highlighter-rouge">16/i</code> is also <code class="language-plaintext highlighter-rouge">4</code>. We will have to handle this case while converting the process into code</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="efficient-python-implementation-to-find-factors-of-a-number">Efficient Python Implementation to find factors of a number</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">factors</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># We will store all factors in `result`
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># This will loop from 1 to int(sqrt(x))
+</span>    <span class="k">while</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">:</span>
+        <span class="c1"># Check if i divides x without leaving a remainder
+</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="c1"># Handle the case explained in the 4th
+</span>            <span class="k">if</span> <span class="n">x</span><span class="o">//</span><span class="n">i</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span> <span class="c1"># In Python, // operator performs integer/floored division
+</span>                <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">//</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># Return the list of factors of x
+</span>    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Output: [1]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Output: [1, 4, 2]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Output: [1, 10, 2, 5]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="c1"># Output: [1, 12, 2, 6, 3, 4]
+</span><span class="k">print</span> <span class="n">factors</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="c1"># Output: [1, 16, 2, 8, 4]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="efficient-c-implementation-to-find-factors-of-a-number">Efficient C++ Implementation to find factors of a number</h2>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+</span><span class="c1">// Switch DEBUG to false if you don't want to print the factors</span>
+<span class="cp">#define DEBUG true
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">factors</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// We will store all factors in `result`</span>
+    <span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// This will loop from 1 to int(sqrt(x))</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Check if i divides x without leaving a remainder</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="c1">// Handle the case explained in the 4th</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">i</span> <span class="o">!=</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Print in case of debug mode</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">result</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Return the list of factors of x</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">factors</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="c1">// Output: 1</span>
+    <span class="n">factors</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="c1">// Output: 1 4 2 </span>
+    <span class="n">factors</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="c1">// Output: 1 10 2 5 </span>
+    <span class="n">factors</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span> 
+    <span class="c1">// Output: 1 12 2 6 3 4 </span>
+    <span class="n">factors</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+    <span class="c1">// Output: 1 16 2 8 4 </span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Time Complexity of the above algorithm to find factors is <em>O(sqrt(N))</em>. Go ahead, try to find factors of a number as large as 1000000000, this implementation will return the result in flash.</p>
+
+<p>Got a burning question you might wanna get answered? Ask it in the comments.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Most efficient way to find factors of a number ..." data-url="https://www.rookieslab.com/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/how-to-compute-time-complexity-order-of-growth-of-any-program">How to compute Time Complexity or Order of Growth of any program</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/fastest-way-to-check-if-a-number-is-prime-or-not">Fastest way to check if a number is prime or not - Python and C++ Code</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

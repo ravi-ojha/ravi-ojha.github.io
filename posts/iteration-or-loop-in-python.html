@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Python: Perform repetitive tasks using Iteration or Loop | Rookie's Lab</title>
+  <meta name="description" content="For and While loop constructs in Python enable us to perform repetitive tasks or help us iterate over a string or a list or any iterable object">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Python: Perform repetitive tasks using Iteration or Loop">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/iteration-or-loop-in-python">
+  <meta property="og:description" content="For and While loop constructs in Python enable us to perform repetitive tasks or help us iterate over a string or a list or any iterable object">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/iteration-or-loop-in-python">
+  <meta name="twitter:title" content="Python: Perform repetitive tasks using Iteration or Loop">
+  <meta name="twitter:description" content="For and While loop constructs in Python enable us to perform repetitive tasks or help us iterate over a string or a list or any iterable object">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Python: Perform repetitive tasks using Iteration or Loop</h1>
+            <p>For and While loop constructs in Python enable us to perform repetitive tasks or help us iterate over a string or a list or any iterable object</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 6, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  4 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/python">python</a>
+                
+                  <a href="/tag/python-loop">python-loop</a>
+                
+                  <a href="/tag/python-iteration">python-iteration</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>Iterations in programs allow us to perform repetitive tasks in a loop. Let’s have look at the following flow diagram.</p>
+
+<p><a href="/assets/documentation/iteration-in-python.jpg" class="fluidbox-trigger">
+  <img src="/assets/documentation/iteration-in-python.jpg" alt="Iteration or Looping in Python" />
+</a></p>
+
+<p>Observing the flow diagram:</p>
+
+<ul>
+  <li>A test (expression that evaluates to <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>)</li>
+  <li>If the test is <code class="language-plaintext highlighter-rouge">True</code>, then execute the loop body once and go back to re-evaluate the test</li>
+  <li>Repeat until test evaluates to <code class="language-plaintext highlighter-rouge">False</code>, after which code following iteration statement is executed</li>
+</ul>
+
+<h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#a-simple-example-of-iteration-using-while-construct-in-python" id="markdown-toc-a-simple-example-of-iteration-using-while-construct-in-python">A simple example of iteration using <code class="language-plaintext highlighter-rouge">while</code> construct in Python:</a></li>
+  <li><a href="#a-simple-example-of-iteration-using-for-construct-in-python" id="markdown-toc-a-simple-example-of-iteration-using-for-construct-in-python">A simple example of iteration using <code class="language-plaintext highlighter-rouge">for</code> construct in Python:</a></li>
+  <li><a href="#what-to-use--when" id="markdown-toc-what-to-use--when">What to use &amp; When?</a></li>
+</ul>
+
+<h2 id="a-simple-example-of-iteration-using-while-construct-in-python">A simple example of iteration using <code class="language-plaintext highlighter-rouge">while</code> construct in Python:</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">upper_limit</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">upper_limit</span><span class="p">):</span> <span class="c1"># Looping condition
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span> <span class="c1"># Incrementing x by 1
+</span><span class="k">print</span> <span class="s">'Sum of first '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">upper_limit</span><span class="p">)</span> <span class="o">+</span> <span class="s">' numbers is '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></code></pre></figure>
+
+<p>On execution, the above program prints:</p>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">Sum of first 10 numbers is 55</code></pre></figure>
+
+<p>Analysis of the above code:</p>
+
+<ul>
+  <li>First, we declare 3 integer variables, <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">result</code> and <code class="language-plaintext highlighter-rouge">upper_limit</code></li>
+  <li>In the <code class="language-plaintext highlighter-rouge">while</code> loop we have a condition, and the code block inside the loop gets executed as long as the condition is <code class="language-plaintext highlighter-rouge">True</code></li>
+  <li>Inside the code block we add <code class="language-plaintext highlighter-rouge">x</code> to <code class="language-plaintext highlighter-rouge">result</code> and increment <code class="language-plaintext highlighter-rouge">x</code> by 1
+    <ul>
+      <li>We are actually trying to find the sum of first 10 numbers</li>
+    </ul>
+  </li>
+  <li>As soon as <code class="language-plaintext highlighter-rouge">x</code> becomes 11, the condition inside <code class="language-plaintext highlighter-rouge">while</code> loop evaluated to <code class="language-plaintext highlighter-rouge">False</code> and hence the loop breaks</li>
+  <li>Lastly we print out the sum of first 10 numbers</li>
+</ul>
+
+<p>In programming, a code performing similar task can be written in multiple ways.
+For instance, we can write the above code using <code class="language-plaintext highlighter-rouge">for</code> construct as well.</p>
+
+<h2 id="a-simple-example-of-iteration-using-for-construct-in-python">A simple example of iteration using <code class="language-plaintext highlighter-rouge">for</code> construct in Python:</h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># range() function explained below
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">x</span>
+<span class="k">print</span> <span class="s">'Sum of first 10 numbers is '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></code></pre></figure>
+
+<p>Analysis of the above code:</p>
+
+<ul>
+  <li>Let’s first see how <code class="language-plaintext highlighter-rouge">range()</code> works</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#returns a list that contains numbers from 0 to (10-1)
+</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>  <span class="c1"># This is a 'list' of integers
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Here we force range() to start from 1 and end before 10
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="c1"># This is what we used in the for loop above
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Third argument 2 says that it will jump 2 steps. 2 is called 'step argument'
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 3 makes it jump 3 steps at a time
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span></code></pre></figure>
+
+<ul>
+  <li>Now that we know what range does, <code class="language-plaintext highlighter-rouge">for</code> simple iterates over each value in the the list returned by range and assigns it to <code class="language-plaintext highlighter-rouge">x</code></li>
+  <li>Inside the <code class="language-plaintext highlighter-rouge">for</code> loop we add <code class="language-plaintext highlighter-rouge">x</code> to <code class="language-plaintext highlighter-rouge">result</code></li>
+  <li>Finally, we print out the result</li>
+</ul>
+
+<p>See? How easy it was to perform the same task in a different way.</p>
+
+<h2 id="what-to-use--when">What to use &amp; When?</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">while</code> when you don’t know the number of times the loop should repeat. It’s only used when you know the condition when loop should break.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">for</code> when you know the fixed number of times the loop should repeat.</li>
+</ul>
+
+<p>Next we will apply the knowledge gained so far to solve an interesting problem. <a href="/posts/finding-square-root-using-guess-and-check-algorithm-in-python">How to find square root of any number?</a></p>
+
+<hr />
+
+<p>Note:
+This is a part of what I learned in an online Open Course Ware offered by MIT on edX.
+Its for my personal reference &amp; also for those who would like to revisit the course.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Python: Perform repetitive tasks using Iteratio..." data-url="https://www.rookieslab.com/posts/iteration-or-loop-in-python" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Collection of Python posts for beginners</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/python-lists-and-list-methods">Python: Lists and List methods</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/linear-search-vs-bisection-search-in-python">Python: Linear Search v/s Bisection (Binary) Search</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

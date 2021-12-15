@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Python: Dictionary and its properties | Rookie's Lab</title>
+  <meta name="description" content="Dictionary is a generalization of a List. Dictionary stores (key, value) pair for easier value access in future using the key. We see how it is different from a list and its properties.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Python: Dictionary and its properties">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/python-dictionary-and-its-properties">
+  <meta property="og:description" content="Dictionary is a generalization of a List. Dictionary stores (key, value) pair for easier value access in future using the key. We see how it is different from a list and its properties.">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/python-dictionary-and-its-properties">
+  <meta name="twitter:title" content="Python: Dictionary and its properties">
+  <meta name="twitter:description" content="Dictionary is a generalization of a List. Dictionary stores (key, value) pair for easier value access in future using the key. We see how it is different from a list and its properties.">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Python: Dictionary and its properties</h1>
+            <p>Dictionary is a generalization of a List. Dictionary stores (key, value) pair for easier value access in future using the key. We see how it is different from a list and its properties.</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 10, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  9 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/python">python</a>
+                
+                  <a href="/tag/python-dict">python-dict</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#what-is-a-dictionary" id="markdown-toc-what-is-a-dictionary">What is a Dictionary?</a></li>
+  <li><a href="#declaring-a-dictionary" id="markdown-toc-declaring-a-dictionary">Declaring a Dictionary</a></li>
+  <li><a href="#accessing-elements-of-a-dictionary" id="markdown-toc-accessing-elements-of-a-dictionary">Accessing elements of a Dictionary</a></li>
+  <li><a href="#updating-a-value-against-a-key-in-python-dict" id="markdown-toc-updating-a-value-against-a-key-in-python-dict">Updating a value against a key in Python dict</a></li>
+  <li><a href="#deleting-elements-of-a-list" id="markdown-toc-deleting-elements-of-a-list">Deleting elements of a List</a></li>
+  <li><a href="#looping-over-a-dictionary-in-python" id="markdown-toc-looping-over-a-dictionary-in-python">Looping over a Dictionary in Python</a></li>
+  <li><a href="#frequently-used-dictionary-methods" id="markdown-toc-frequently-used-dictionary-methods">Frequently used Dictionary methods</a></li>
+</ul>
+
+<h2 id="what-is-a-dictionary">What is a Dictionary?</h2>
+
+<p>In Python, Dictionary is a generalization of a List. Values in a list are accessed using index that start from 0, whereas values in a Dictionary are accessed using a <code class="language-plaintext highlighter-rouge">key</code>. A key can be any immutable python object. Dictionaries are surrounded by curly braces.</p>
+
+<p>An example comparing a <code class="language-plaintext highlighter-rouge">list</code> and <code class="language-plaintext highlighter-rouge">dict</code> would be helpful:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s">'zero'</span><span class="p">,</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s">'zero'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="s">'one'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s">'zero'</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s">'one'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s">'two'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s">'zero'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="s">'one'</span></code></pre></figure>
+
+<p>Now, why should I use a dictionary if I can use a list? Good question!
+We see that accessing an element in a list requires us to use specific index, which is an integer. However, we can have any other immutable Python object in case of dictionary!</p>
+
+<p>For example:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">'i'</span><span class="p">:</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'ii'</span><span class="p">:</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'iii'</span><span class="p">:</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'iv'</span><span class="p">:</span> <span class="s">'four'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s">'ii'</span><span class="p">]</span>
+<span class="s">'two'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">'rose'</span><span class="p">:</span> <span class="s">'red'</span><span class="p">,</span> <span class="s">'violet'</span><span class="p">:</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'python'</span><span class="p">:</span> <span class="s">'fun'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s">'python'</span><span class="p">]</span>
+<span class="s">'fun'</span></code></pre></figure>
+
+<p>In dictionary, we can define our own keys. In <code class="language-plaintext highlighter-rouge">d = {'i': 'one', 'ii': 'two', 'iii': 'three', 'iv': 'four'} </code>, keys are <code class="language-plaintext highlighter-rouge">['i', 'ii', 'iii', 'iv']</code>.</p>
+
+<h2 id="declaring-a-dictionary">Declaring a Dictionary</h2>
+
+<p>Empty dictionary is declared by empty curly braces.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+<span class="p">{}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'dict'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Generalized form of declaring a dictionary is <code class="language-plaintext highlighter-rouge">d = {key1: value1, key2: value2 .. .. }</code>:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">[</span><span class="s">'Apr'</span><span class="p">]</span>
+<span class="mi">4</span></code></pre></figure>
+
+<h2 id="accessing-elements-of-a-dictionary">Accessing elements of a Dictionary</h2>
+
+<p>We use square brackets along with the key whose value we want to access.</p>
+
+<p>Examples:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">[</span><span class="s">'Apr'</span><span class="p">]</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">[</span><span class="s">'Dec'</span><span class="p">]</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">KeyError</span><span class="p">:</span> <span class="s">'Dec'</span></code></pre></figure>
+
+<p>We get a <code class="language-plaintext highlighter-rouge">KeyError</code> if we try to access using some key which is not present in the dictionary.
+A safer way to use the <code class="language-plaintext highlighter-rouge">get()</code> method on a dictionary.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Apr'</span><span class="p">)</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Dec'</span><span class="p">)</span> <span class="c1"># This won't print anything</span></code></pre></figure>
+
+<p><code class="language-plaintext highlighter-rouge">get()</code> returns <code class="language-plaintext highlighter-rouge">None</code> in case the key is not found in the <code class="language-plaintext highlighter-rouge">dict</code>. If you want to verify this, use <code class="language-plaintext highlighter-rouge">print()</code> function.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">month</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Dec'</span><span class="p">)</span>
+<span class="bp">None</span></code></pre></figure>
+
+<h2 id="updating-a-value-against-a-key-in-python-dict">Updating a value against a key in Python dict</h2>
+
+<p>Dictionaries are mutable, just like lists. We can update a value at using a specific key.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">[</span><span class="s">'Jan'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'One'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Jan'</span><span class="p">)</span>
+<span class="s">'One'</span></code></pre></figure>
+
+<p>Unlike a List or Tuple, Dictionary does not maintain the order in which you added the keys and values. For instance, if you try to print the dict in the above example, you’ll see a random order.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span>
+<span class="p">{</span><span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">'Jan'</span><span class="p">:</span> <span class="s">'One'</span><span class="p">,</span> <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span></code></pre></figure>
+
+<p>If we try to update a key which does not exist in the dictionary, python will create a new key and add it to the <code class="language-plaintext highlighter-rouge">dict</code>. For example:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">[</span><span class="s">'July'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span>
+<span class="p">{</span><span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">'Jan'</span><span class="p">:</span> <span class="s">'One'</span><span class="p">,</span> <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'July'</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span></code></pre></figure>
+
+<h2 id="deleting-elements-of-a-list">Deleting elements of a List</h2>
+
+<p>We can delete a value in a <code class="language-plaintext highlighter-rouge">dict</code> by using a key. For example:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span>
+<span class="p">{</span><span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">month</span><span class="p">[</span><span class="s">'Mar'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span>
+<span class="p">{</span><span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span></code></pre></figure>
+
+<p>We can also delete an entire <code class="language-plaintext highlighter-rouge">dict</code> using <code class="language-plaintext highlighter-rouge">del</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">month</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="c1"># If we try to access the dict after deleting it, python will raise an error
+</span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s">'month'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span></code></pre></figure>
+
+<p>In case we want to remove all key: value pairs inside the <code class="language-plaintext highlighter-rouge">dict</code>, we can use <code class="language-plaintext highlighter-rouge">dict.clear()</code> method. This way, the variable will not be destroyed and we can use it in future.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span>
+<span class="p">{}</span></code></pre></figure>
+
+<p>In case we don’t want to delete the key: value pair but would like to remove the value against the key, we can set <code class="language-plaintext highlighter-rouge">None</code> value against that key.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">month</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Jan'</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">[</span><span class="s">'Jan'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">month</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Jan'</span><span class="p">)</span>
+<span class="bp">None</span></code></pre></figure>
+
+<h2 id="looping-over-a-dictionary-in-python">Looping over a Dictionary in Python</h2>
+
+<p><code class="language-plaintext highlighter-rouge">dict.items()</code> returns a list of (key, value) tuples of the dictionary. We can use it iterate/loop over the dictionary.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">[(</span><span class="s">'Mar'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s">'Feb'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'Apr'</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s">'June'</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="s">'Jan'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'May'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">month</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span>
+
+<span class="n">Mar</span> <span class="mi">3</span>
+<span class="n">Feb</span> <span class="mi">2</span>
+<span class="n">Apr</span> <span class="mi">4</span>
+<span class="n">June</span> <span class="mi">6</span>
+<span class="n">Jan</span> <span class="n">One</span>
+<span class="n">May</span> <span class="mi">5</span>
+<span class="n">July</span> <span class="mi">7</span></code></pre></figure>
+
+<h2 id="frequently-used-dictionary-methods">Frequently used Dictionary methods</h2>
+
+<p>Get a list of all the keys of the dictionary.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="p">[</span><span class="s">'Mar'</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">,</span> <span class="s">'June'</span><span class="p">,</span> <span class="s">'Jan'</span><span class="p">,</span> <span class="s">'May'</span><span class="p">]</span></code></pre></figure>
+
+<p>Similarly, we can get a list of the all the values of the dictionary.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Jan'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'Feb'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'Mar'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'Apr'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>  <span class="s">'May'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">'June'</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">month</span><span class="p">.</span><span class="n">values</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span></code></pre></figure>
+
+<p>Creating a copy of a dictionary.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'i'</span><span class="p">:</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'ii'</span><span class="p">:</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'iii'</span><span class="p">:</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'iv'</span><span class="p">:</span> <span class="s">'four'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">d1</span> <span class="c1"># This is assignment, not copying
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span><span class="p">[</span><span class="s">'i'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span>
+<span class="p">{</span><span class="s">'i'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'ii'</span><span class="p">:</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'iii'</span><span class="p">:</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'iv'</span><span class="p">:</span> <span class="s">'four'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span>
+<span class="p">{</span><span class="s">'i'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'ii'</span><span class="p">:</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'iii'</span><span class="p">:</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'iv'</span><span class="p">:</span> <span class="s">'four'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'i'</span><span class="p">:</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'ii'</span><span class="p">:</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'iii'</span><span class="p">:</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'iv'</span><span class="p">:</span> <span class="s">'four'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">d1</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># This is copying
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span><span class="p">[</span><span class="s">'i'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span>
+<span class="p">{</span><span class="s">'i'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'ii'</span><span class="p">:</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'iii'</span><span class="p">:</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'iv'</span><span class="p">:</span> <span class="s">'four'</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span>
+<span class="p">{</span><span class="s">'i'</span><span class="p">:</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'ii'</span><span class="p">:</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'iii'</span><span class="p">:</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'iv'</span><span class="p">:</span> <span class="s">'four'</span><span class="p">}</span></code></pre></figure>
+
+<p>Dictionaries are yet another widely used data-structures in Python, just like <a href="/posts/python-lists-and-list-methods">Lists</a>. It would be interesting to know how it is possible to have various types of keys in dictionary and yet have a fast lookup while accessing the value for that key. Python creates a hash for the key and created internal hash: value map. Let’s not get deeper into this, it’s a post for some other day.</p>
+
+<hr />
+
+<p>Note:
+This is a part of what I learned in an online Open Course Ware offered by MIT on edX.
+Its for my personal reference &amp; also for those who would like to revisit the course.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Python: Dictionary and its properties" data-url="https://www.rookieslab.com/posts/python-dictionary-and-its-properties" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Collection of Python posts for beginners</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/python-objects-and-types">Python: Objects and Types</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

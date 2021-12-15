@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Python: Objects and Types | Rookie's Lab</title>
+  <meta name="description" content="Everything in Python is an object! Every object in Python has a type. This post discusses some of them with examples">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Python: Objects and Types">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/python-objects-and-types">
+  <meta property="og:description" content="Everything in Python is an object! Every object in Python has a type. This post discusses some of them with examples">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/python-objects-and-types">
+  <meta name="twitter:title" content="Python: Objects and Types">
+  <meta name="twitter:description" content="Everything in Python is an object! Every object in Python has a type. This post discusses some of them with examples">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Python: Objects and Types</h1>
+            <p>Everything in Python is an object! Every object in Python has a type. This post discusses some of them with examples</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 2, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  3 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/python">python</a>
+                
+                  <a href="/tag/python-objects">python-objects</a>
+                
+                  <a href="/tag/python-types">python-types</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="what-are-python-objects">What are Python Objects?</h2>
+
+<p>First rule of Python. Everything is an object. But what is an object?
+Let’s take a few examples:</p>
+
+<ul>
+  <li>A number <code class="language-plaintext highlighter-rouge">5</code> is an object</li>
+  <li>A word <code class="language-plaintext highlighter-rouge">"susan"</code> is an object</li>
+</ul>
+
+<h2 id="what-are-python-types">What are Python Types?</h2>
+
+<p>Every object has a type. There are numerous <a href="https://docs.python.org/2/library/types.html">built-in types in Python</a>.
+We will some of the basic types here to get familiar with the language. Before continuing, please download and install Python 2.7 from the <a href="https://www.python.org/download/releases/2.7/">official website</a>.</p>
+
+<p>Everything that is preceded with <code class="language-plaintext highlighter-rouge">&gt;&gt;&gt;</code> assumes that the statement is being run inside Python shell.</p>
+
+<p>This is an assignment statement since <code class="language-plaintext highlighter-rouge">5</code> is being assigned to <code class="language-plaintext highlighter-rouge">a</code>. <code class="language-plaintext highlighter-rouge">a</code> is known as a variable and it holds a value <code class="language-plaintext highlighter-rouge">5</code> in it.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">5</span></code></pre></figure>
+
+<p><code class="language-plaintext highlighter-rouge">type()</code> is built-in function that returns ‘type’ of the object passed in it</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'int'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Also, we can directly pass value to <code class="language-plaintext highlighter-rouge">type()</code> to know that value’s type.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'int'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>So <code class="language-plaintext highlighter-rouge">a</code> or <code class="language-plaintext highlighter-rouge">5</code> is of type <code class="language-plaintext highlighter-rouge">int</code> i.e. integer type.</p>
+
+<p>Let’s try a decimal number.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mf">7.166666</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'float'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Decimal numbers are called <code class="language-plaintext highlighter-rouge">float</code> type.</p>
+
+<p>Let’s try and pass a word to <code class="language-plaintext highlighter-rouge">type()</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">susan</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s">'susan'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span></code></pre></figure>
+
+<p>What’s that? Python raises error when we make mistakes. A word is surrounded by either <code class="language-plaintext highlighter-rouge">"</code> or <code class="language-plaintext highlighter-rouge">'</code> (quotes).</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="s">"susan"</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'str'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Such words are of type <code class="language-plaintext highlighter-rouge">str</code> i.e. string. <a href="#">Read more about Python strings</a>.</p>
+
+<p>Let’s take a look at one more type before we wrap up this post.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'bool'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>This is called Boolean type. They are either <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>. This type is widely used in programming.</p>
+
+<p>There are many more types in Python, we will see them one at a time in future posts. Some important ones are: <a href="/posts/python-lists-and-list-methods">List</a>, <a href="/posts/python-dictionary-and-its-properties">Dictionary</a>, <a href="/posts/python-tuples-and-basic-operations-on-tuples">Tuple</a>.</p>
+
+<p>Next post will discuss some arithmetic and logical operations](/posts/arithmetic-and-logical-operators-in-python) we can perform on various data-types.</p>
+
+<hr />
+
+<p>Note:
+This is a part of what I learned in an online Open Course Ware offered by MIT on edX.
+Its for my personal reference &amp; also for those who would like to revisit the course.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Python: Objects and Types" data-url="https://www.rookieslab.com/posts/python-objects-and-types" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Collection of Python posts for beginners</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/iteration-or-loop-in-python">Python: Perform repetitive tasks using Iteration or Loop</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

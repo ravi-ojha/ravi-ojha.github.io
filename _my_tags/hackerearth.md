@@ -1,4 +1,0 @@
----
-slug: hackerearth
-name: HackerEarth
----

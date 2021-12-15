@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>What is Memoization? What is Dynamic Programming? Let's take an example | Rookie's Lab</title>
+  <meta name="description" content="Memoization or Dynamic Programming is a technique of remembering solutions to sub-problems which will help us solve a larger problem.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="What is Memoization? What is Dynamic Programming? Let's take an example">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/what-is-memoization-what-is-dynamic-programming">
+  <meta property="og:description" content="Memoization or Dynamic Programming is a technique of remembering solutions to sub-problems which will help us solve a larger problem.">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/what-is-memoization-what-is-dynamic-programming">
+  <meta name="twitter:title" content="What is Memoization? What is Dynamic Programming? Let's take an example">
+  <meta name="twitter:description" content="Memoization or Dynamic Programming is a technique of remembering solutions to sub-problems which will help us solve a larger problem.">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>What is Memoization? What is Dynamic Programming? Let's take an example</h1>
+            <p>Memoization or Dynamic Programming is a technique of remembering solutions to sub-problems which will help us solve a larger problem.</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                July 7, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  8 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/competitive-programming">competitive-programming</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>Memoization or Dynamic Programming is a technique of solving a larger problem by breaking it down into simpler subproblems, solve subproblems, remember their results and use them solve the larger problem. In <a href="/posts/basics-of-recursion-in-programming-using-a-simple-example">Basics of Recursion</a>, we learned that, to solve a larger problem we create subproblems out of the larger problem. We keep creating sub-problems until we reach the smallest subproblem, a base case, to which we already know the solution. Then we use that to solve slightly larger sub-problem and so on. In the end, we will have the solution to the larger problem.</p>
+
+<p>Let’s take an example to get a better understanding. How about the example of factorial that we saw in <a href="/posts/basics-of-recursion-in-programming-using-a-simple-example">Basics of Recursion</a>.</p>
+
+<p>We know factorial of 4 is <code class="language-plaintext highlighter-rouge">4! = 1 * 2 * 3 * 4  = 24</code>. Now, if I were to ask you to find <code class="language-plaintext highlighter-rouge">5!</code>, what would you do? You’d instantly say that <em>Well, I just calculated up to 4! why not simply multiply 5 to the answer of 4!</em>. You’re damn right!</p>
+
+<p>Another example, shall we? I cannot help but quote an answer I once read an <a href="https://www.quora.com/How-should-I-explain-dynamic-programming-to-a-4-year-old/answer/Jonathan-Paulson">Quora</a> that beautifully explained the concept behind dynamic programming.</p>
+
+<blockquote>
+  <p>*writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper*<br />
+“What’s that equal to?”<br />
+*counting* “Eight!”<br />
+*writes down another “1+” on the left*<br />
+“What about that?”<br />
+*quickly* “Nine!”<br />
+“How’d you know it was nine so fast?”<br />
+“You just added one more”<br />
+“So you didn’t need to recount because you remembered there were eight! Dynamic Programming is just a fancy way to say ‘remembering stuff to save time later’”</p>
+</blockquote>
+
+<p>Now, we have to write code in such a way that it remembers answers to previous answers.
+Let’s say we have to find factorial of first 10 numbers.</p>
+
+<p>A totally brute force way to do this would be:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">bad_factorial</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">11</span>
+    <span class="c1"># This will loop from 1 to 10, we already know 0! = 1
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+        <span class="c1"># ifactorial will be used to store the factorial of ith number
+</span>        <span class="n">ifactorial</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c1"># This loop will run from 1 to i
+</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">ifactorial</span> <span class="o">=</span> <span class="n">ifactorial</span> <span class="o">*</span> <span class="n">j</span>
+
+        <span class="c1"># Store the ifactorial in result[i]
+</span>        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ifactorial</span>
+
+    <span class="c1"># Print out the result 
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">'! = '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">bad_factorial</span><span class="p">()</span>
+<span class="c1"># Output:
+# 0! = 1
+# 1! = 1
+# 2! = 2
+# 3! = 6
+# 4! = 24
+# 5! = 120
+# 6! = 720
+# 7! = 5040
+# 8! = 40320
+# 9! = 362880
+# 10! = 3628800</span></code></pre></figure>
+
+<p>Above code has Time Complexity <em>O(n<sup>2</sup>)</em>.</p>
+
+<p>We just learned above that if we know 4!, we can find 5! instantly. Because <code class="language-plaintext highlighter-rouge">5! = 4! * 5</code>. Generalizing this, <code class="language-plaintext highlighter-rouge">x! = (x-1)! * x</code>. We will use this knowledge to reduce the Time Complexity down to <em>O(n)</em>.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">memoized_factorial</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">11</span>
+    <span class="c1"># This will loop from 1 to 10, we already know 0! = 1
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+
+        <span class="c1"># Use the previous value of result to find answer to current problem
+</span>        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span>
+
+    <span class="c1"># Print out the result 
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">'! = '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">memoized_factorial</span><span class="p">()</span>
+<span class="c1"># Output:
+# 0! = 1
+# 1! = 1
+# 2! = 2
+# 3! = 6
+# 4! = 24
+# 5! = 120
+# 6! = 720
+# 7! = 5040
+# 8! = 40320
+# 9! = 362880
+# 10! = 3628800</span></code></pre></figure>
+
+<p>Usually, problems in competitive programming contests are not as easy as this. Let’s take one of the questions where we make use of Memoization.</p>
+
+<p><em><strong>Q:</strong> We have a triangle of numbers, starting from top of a triangle we are allowed to move exactly below or right-to-exactly-below (see example). Reaching till the last row of triangle we have to find out which way got you the largest sum.</em></p>
+
+<p>For example:</p>
+
+<figure class="highlight"><pre><code class="language-fuck" data-lang="fuck">3
+2 5
+6 4 1</code></pre></figure>
+
+<p>In the above triangle, we start with <code class="language-plaintext highlighter-rouge">3</code> and according to the given conditions we can go either to <code class="language-plaintext highlighter-rouge">2</code> or <code class="language-plaintext highlighter-rouge">5</code>, if we go towards <code class="language-plaintext highlighter-rouge">2</code> we can either go to <code class="language-plaintext highlighter-rouge">6</code> or <code class="language-plaintext highlighter-rouge">4</code> and if we went towards <code class="language-plaintext highlighter-rouge">5</code>, we could either go to <code class="language-plaintext highlighter-rouge">4</code> or <code class="language-plaintext highlighter-rouge">1</code>. So, we have 4 paths in total.</p>
+
+<ul>
+  <li>Path #1: <code class="language-plaintext highlighter-rouge">3 -&gt; 2 -&gt; 6</code>   Sum is 3+2+6 = 11</li>
+  <li>Path #2: <code class="language-plaintext highlighter-rouge">3 -&gt; 2 -&gt; 4</code>   Sum is 3+2+4 =  9</li>
+  <li>Path #3: <code class="language-plaintext highlighter-rouge">3 -&gt; 5 -&gt; 4</code>   Sum is 3+5+4 = 12</li>
+  <li>Path #4: <code class="language-plaintext highlighter-rouge">3 -&gt; 5 -&gt; 1</code>   Sum is 3+5+1 =  9</li>
+</ul>
+
+<p>One with the maximum sum is Path #3, we simply have to find this sum i.e. 12</p>
+
+<p>(Few questions around web that are exactly similar and from where I got idea to write down this article are Codechef’s <a href="http://www.codechef.com/problems/SUMTRIAN/">SUMTRAIN</a>, Problem <a href="http://projecteuler.net/problem=18">18</a> on ProjectEuler.net)</p>
+
+<p>Normally, we would go through all possible paths and find the maximum sum, but that would definitely eat up a lot of time. It would result into <a href="/posts/how-to-compute-time-complexity-order-of-growth-of-any-program">Exponential Time Complexity</a>. So here we jump into Memoization or DP. We’ll store the last maximum sum we found till now at each step. You might feel <em>“what the hell is he talking!”</em>. Let’s take the example above.</p>
+
+<p>First of all lets assign it to a 2D array like this.</p>
+
+<figure class="highlight"><pre><code class="language-fuck" data-lang="fuck">a[0][0]
+a[1][0]   a[1][1]
+a[2][0]   a[2][1]   a[2][2]</code></pre></figure>
+
+<p>Hence <code class="language-plaintext highlighter-rouge">a[0][0] = 3</code>, <code class="language-plaintext highlighter-rouge">a[1][0] = 2</code>, <code class="language-plaintext highlighter-rouge">a[1][1] = 5</code>, …. and so on.</p>
+
+<p>Starting from <code class="language-plaintext highlighter-rouge">a[0][0]</code>, we can move to <code class="language-plaintext highlighter-rouge">a[1][0]</code> or <code class="language-plaintext highlighter-rouge">a[1][1]</code>. So we can arrive to <code class="language-plaintext highlighter-rouge">a[1][0]</code> only from <code class="language-plaintext highlighter-rouge">a[0][0]</code>. Lets store the sum till now, store <code class="language-plaintext highlighter-rouge">3+2 = 5</code> into <code class="language-plaintext highlighter-rouge">a[1][0]</code>, similarly we can arrive at position <code class="language-plaintext highlighter-rouge">a[1][1]</code> from <code class="language-plaintext highlighter-rouge">a[0][0]</code> only, so store <code class="language-plaintext highlighter-rouge">3+5 = 8</code> into <code class="language-plaintext highlighter-rouge">a[1][1]</code>.</p>
+
+<p>Now moving to <code class="language-plaintext highlighter-rouge">a[2][0]</code>, we can arrive here only from <code class="language-plaintext highlighter-rouge">a[1][0]</code>, so store <code class="language-plaintext highlighter-rouge">5+6 = 11</code> into <code class="language-plaintext highlighter-rouge">a[2][0]</code>. Here comes <code class="language-plaintext highlighter-rouge">a[2][1]</code>, we can arrive <code class="language-plaintext highlighter-rouge">a[2][1]</code> from either <code class="language-plaintext highlighter-rouge">a[1][0]</code> or <code class="language-plaintext highlighter-rouge">a[1][1]</code>, since we want sum to be maximum we’ll choose the one with greater value i.e. <code class="language-plaintext highlighter-rouge">a[1][1] = 8</code>. Store <code class="language-plaintext highlighter-rouge">8+4 = 12</code> in <code class="language-plaintext highlighter-rouge">a[2][1]</code>. Similarly <code class="language-plaintext highlighter-rouge">a[2][2]</code> can only reached from <code class="language-plaintext highlighter-rouge">a[1][1]</code>, so store <code class="language-plaintext highlighter-rouge">8+1 = 9</code> in <code class="language-plaintext highlighter-rouge">a[2][2]</code>.</p>
+
+<p>Now our array looks like this.</p>
+
+<figure class="highlight"><pre><code class="language-fuck" data-lang="fuck"> 3
+ 5  8
+11 12  9</code></pre></figure>
+
+<p>Maximum of the last row of this array is our answer. Viola its done. We found it without going through all different paths. And believe me its a much better optimization if we take even larger triangles and compare the time taken.</p>
+
+<p>Now we simply have to implement this in code. I’ll do it in Python because it is more readable.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">sum_triangle</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> 
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">subA</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">subA</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">raw_input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">subA</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+                <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">print</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sum_triangle</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Let’s analyze the above code:</p>
+
+<ul>
+  <li>Line #2: <code class="language-plaintext highlighter-rouge">n</code> is number of rows in our triangle.</li>
+  <li>Line #3 &amp; #4: creating an empty lists, read <a href="/posts/python-lists-and-list-methods">how lists work in python</a></li>
+  <li>Line #5 to #7: taking input in the form of 2D array.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">for i in xrange(3)</code> means it’ll go through 0, 1 and 2.</li>
+    </ul>
+  </li>
+  <li>Line #8 to #18 is our logic implementation:</li>
+  <li>Line #10: This condition is for <code class="language-plaintext highlighter-rouge">a[1][0]</code>, <code class="language-plaintext highlighter-rouge">a[2][0]</code> .. <code class="language-plaintext highlighter-rouge">a[n][0]</code> where we can only arrive from just above element.</li>
+  <li>Line #12: This condition is for <code class="language-plaintext highlighter-rouge">a[1][1]</code>, <code class="language-plaintext highlighter-rouge">a[2][2]</code> .. <code class="language-plaintext highlighter-rouge">a[n][n]</code> where we can only arrive from element present at the diagonal edge of the triangle.</li>
+  <li>Line #19: Prints out the max of the last row of our array.</li>
+</ul>
+
+<p>Try it out in your own programming language and verify the results.</p>
+
+<p>Got a burning question you wanna get answered? Ask it in the comments.</p>
+
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="What is Memoization? What is Dynamic Programmin..." data-url="https://www.rookieslab.com/posts/what-is-memoization-what-is-dynamic-programming" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/basics-of-recursion-in-programming-using-a-simple-example">Basics of Recursion with an example in Python</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth">Hobbyist Competitive Programmer to Software Developer at HackerEarth</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

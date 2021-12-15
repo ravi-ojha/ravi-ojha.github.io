@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Rookie&apos;s Lab</title>
+    <description></description>
+    <link>https://www.rookieslab.com</link>
+    <atom:link href="https://www.rookieslab.com/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>How to sweep a multi-account Bitcoin Electrum wallet</title>
+        <description>How to sweep a multi-account Bitcoin Electrum wallet through Trezor if you can&apos;t export the mnemonic.</description>
+        <pubDate>Sun, 28 Nov 2021 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/how-to-sweep-a-multi-account-bitcoin-electrum-wallet</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/how-to-sweep-a-multi-account-bitcoin-electrum-wallet</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Don&apos;t be stuck at dev environment setup!</title>
+        <description>One of the worst feelings as a developer is not able to work on what you set out to do. Instead, you spent the entire day setting up the repository on your local system. And what&apos;s worse? It&apos;s the first week of your new job.</description>
+        <pubDate>Wed, 17 Jun 2020 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/dont-be-stuck-at-dev-environment-setup</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/dont-be-stuck-at-dev-environment-setup</guid>
+      </item>
+    
+      <item>
+        <title>Python Caveats #1: How to put multiline comments in Python dict?</title>
+        <description>How to put multiline comments in python dict? Should we use triple quotes style or multiline hashes?</description>
+        <pubDate>Wed, 22 May 2019 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/python-caveats-multiline-comment-inside-a-dict</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/python-caveats-multiline-comment-inside-a-dict</guid>
+      </item>
+    
+      <item>
+        <title>T-shaped smart creatives</title>
+        <description>What do they bring to the table?</description>
+        <pubDate>Thu, 02 May 2019 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/t-shaped-smart-creatives</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/t-shaped-smart-creatives</guid>
+      </item>
+    
+      <item>
+        <title>So long, HackerEarth!</title>
+        <description>Thank you, HackerEarth. I&apos;ll always cherish the memories we&apos;ve created. Goodbye!</description>
+        <pubDate>Tue, 31 Oct 2017 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/ravi-ojha-on-leaving-hackerearth</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/ravi-ojha-on-leaving-hackerearth</guid>
+      </item>
+    
+      <item>
+        <title>How to become better at reading and debugging code</title>
+        <description>Reading unknown code is usually intimidating, however, our ability to read and debug code matters more than we can write, yet we are never taught anything about it. Let&apos;s see how we can improve our ability to read and debug code.</description>
+        <pubDate>Sun, 07 May 2017 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/how-to-become-better-at-reading-and-debugging-code</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/how-to-become-better-at-reading-and-debugging-code</guid>
+      </item>
+    
+      <item>
+        <title>Is it boring working in Web Development startups?</title>
+        <description>Whenever I get in conversation with junior undergrads, they often ask if it is monotonous and boring working on web technologies. I used to think the same way 3-4 years ago, however, after having the first hand experience, I think otherwise.</description>
+        <pubDate>Sat, 15 Apr 2017 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/is-it-boring-working-in-web-development-startups</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/is-it-boring-working-in-web-development-startups</guid>
+      </item>
+    
+      <item>
+        <title>A millennial&apos;s thoughts on embarking as a Software Engineer</title>
+        <description>We, the new generation of software engineers, love to talk about creating an impact. We attend overnight hackathons to build the next big thing. Good that we can build an app in 24 hours, but is it really a production ready codebase? Are we carried away with the agility brought in by our generation?</description>
+        <pubDate>Sat, 11 Feb 2017 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/a-millennials-thoughts-on-embarking-as-a-software-engineer</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/a-millennials-thoughts-on-embarking-as-a-software-engineer</guid>
+      </item>
+    
+      <item>
+        <title>Extended Euclid Algorithm to find GCD and Bézout&apos;s coefficients</title>
+        <description>We will see how to use Extended Euclid&apos;s Algorithm to find GCD of two numbers. It also gives us Bézout&apos;s coefficients (x, y) such that ax + by = gcd(a, b). We will discuss and implement all of the above problems in Python and C++</description>
+        <pubDate>Sat, 04 Feb 2017 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code</guid>
+      </item>
+    
+      <item>
+        <title>How to find Multiplicative Inverse of a number modulo M?</title>
+        <description>What is Multiplicative Inverse? What is Modular Multiplicative Inverse? How to find Modular Multiplicative Inverse? How to find Multiplicative Inverse of a number modulo M i.e. under M? How to find Modular Multiplicative Inverse in an efficient way? We will discuss and implement all of the above problems in Python and C++</description>
+        <pubDate>Sat, 28 Jan 2017 00:00:00 +0530</pubDate>
+        <link>https://www.rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp</link>
+        <guid isPermaLink="true">https://www.rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp</guid>
+      </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Python: Tuples and Basic Operations on Tuples | Rookie's Lab</title>
+  <meta name="description" content="What is a tuple? How is it different from a list? And some basic methods on Tuples">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Python: Tuples and Basic Operations on Tuples">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/python-tuples-and-basic-operations-on-tuples">
+  <meta property="og:description" content="What is a tuple? How is it different from a list? And some basic methods on Tuples">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/python-tuples-and-basic-operations-on-tuples">
+  <meta name="twitter:title" content="Python: Tuples and Basic Operations on Tuples">
+  <meta name="twitter:description" content="What is a tuple? How is it different from a list? And some basic methods on Tuples">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Python: Tuples and Basic Operations on Tuples</h1>
+            <p>What is a tuple? How is it different from a list? And some basic methods on Tuples</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 9, 2013
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  7 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/python">python</a>
+                
+                  <a href="/tag/python-tuple">python-tuple</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#what-is-a-tuple" id="markdown-toc-what-is-a-tuple">What is a Tuple?</a></li>
+  <li><a href="#declaring-a-tuple" id="markdown-toc-declaring-a-tuple">Declaring a Tuple</a></li>
+  <li><a href="#accessing-elements-of-a-tuple" id="markdown-toc-accessing-elements-of-a-tuple">Accessing elements of a Tuple</a></li>
+  <li><a href="#updating-elements-of-a-tuple" id="markdown-toc-updating-elements-of-a-tuple">Updating elements of a Tuple</a></li>
+  <li><a href="#deleting-a-tuple" id="markdown-toc-deleting-a-tuple">Deleting a Tuple</a></li>
+  <li><a href="#slicing-a-tuple" id="markdown-toc-slicing-a-tuple">Slicing a Tuple</a></li>
+  <li><a href="#frequently-used-tuple-methods" id="markdown-toc-frequently-used-tuple-methods">Frequently used Tuple methods</a></li>
+</ul>
+
+<h2 id="what-is-a-tuple">What is a Tuple?</h2>
+
+<p>Tuple is a sequence of elements. A tuple is immutable, unlike a list in Python. By immutable, we mean that it is not possible to update a tuple after declaring one. The elements inside a tuple can be any Python object such a string, integer etc. Tuples are surrounded by parenthesis.</p>
+
+<p>Examples:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"abc"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">'abc'</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'tuple'</span><span class="o">&gt;</span></code></pre></figure>
+
+<h2 id="declaring-a-tuple">Declaring a Tuple</h2>
+
+<p>Empty Tuple is declared by empty parenthesis.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t2</span>
+<span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'tuple'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>It is important to note that declaring a tuple consisting a single element requires a comma after the first element.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t3</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'tuple'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>If we miss out on that comma, <code class="language-plaintext highlighter-rouge">t3</code> would become an integer because 1 itself is an integer.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'int'</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t3</span> <span class="o">=</span> <span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">t3</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'str'</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Do keep this in mind. In future, a lot of people will judge your basic python knowledge on the above knowledge.</p>
+
+<h2 id="accessing-elements-of-a-tuple">Accessing elements of a Tuple</h2>
+
+<p>We use square brackets along with the index which we want to access.</p>
+
+<p>Examples:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"abc"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="s">'abc'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="mf">3.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">IndexError</span><span class="p">:</span> <span class="nb">tuple</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span></code></pre></figure>
+
+<p>If you try accessing some index that doesn’t exist, Python raises appropriate error.
+We can also access elements using negative indexing.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="mf">3.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="s">'abc'</span></code></pre></figure>
+
+<p>Index table indicating positive and negative index values.</p>
+
+<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="p">---------------------------</span>
+tuple      |  1  "abc"  3.0
++ve index  |  0     1     2
+-ve index  | -3    -2    -1
+<span class="p">---------------------------</span></code></pre></figure>
+
+<h2 id="updating-elements-of-a-tuple">Updating elements of a Tuple</h2>
+
+<p>We saw in the definition of a tuple that tuples are immutable. It is not possible to update them once declared. but what happens if we try to do so?</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"abc"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">'xyz'</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">TypeError</span><span class="p">:</span> <span class="s">'tuple'</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span></code></pre></figure>
+
+<p>If we try to update the element by using index, it raises an error saying that ‘tuple’ object does not support item assignment.</p>
+
+<p>However, if you add mutable elements such as a list inside a tuple, we can mutate them.
+For example:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span></code></pre></figure>
+
+<p>A tuple can also be nested, i.e. just like a list inside a tuple, we can have tuples inside a tuple.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
+
+<p>However, now that tuples are not mutable, we cannot update the tuple inside a tuple either.</p>
+
+<p>If we really want to update a tuple, we can use that tuple to create another tuple.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t2</span>
+<span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></pre></figure>
+
+<h2 id="deleting-a-tuple">Deleting a Tuple</h2>
+
+<p>Since tuples are immutable, it is not possible to delete individual elements of a tuple, however, we can delete the whole tuple itself.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"abc"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">t</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="c1"># If we try to access the tuple after deleting it, python will raise an error
+</span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nb">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s">'t'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span></code></pre></figure>
+
+<h2 id="slicing-a-tuple">Slicing a Tuple</h2>
+
+<p>Tuple slicing is similar to string slicing. Using slicing we can extract out elements of any tuple. We have to provide the starting index and the ending index i.e. <code class="language-plaintext highlighter-rouge">tuple[start:end]</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="s">'s'</span><span class="p">,</span> <span class="s">'u'</span><span class="p">,</span> <span class="s">'s'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'n'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="p">(</span><span class="s">'u'</span><span class="p">,</span> <span class="s">'s'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">)</span></code></pre></figure>
+
+<p>It starts from <code class="language-plaintext highlighter-rouge">start</code> and ends right before <code class="language-plaintext highlighter-rouge">end</code>. It won’t print the element at the index <code class="language-plaintext highlighter-rouge">end</code>. As in the example above, we have <code class="language-plaintext highlighter-rouge">n</code> at the 4th index of tuple <code class="language-plaintext highlighter-rouge">t</code>, however, it printed only till <code class="language-plaintext highlighter-rouge">a</code>.</p>
+
+<p>If the <code class="language-plaintext highlighter-rouge">start</code> is out of the range of the tuple, then it prints empty tuple.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>
+<span class="p">()</span></code></pre></figure>
+
+<p>If you don’t provide <code class="language-plaintext highlighter-rouge">start</code>, then it will print from <code class="language-plaintext highlighter-rouge">start</code> till <code class="language-plaintext highlighter-rouge">end-1</code> element.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">(</span><span class="s">'s'</span><span class="p">,</span> <span class="s">'u'</span><span class="p">,</span> <span class="s">'s'</span><span class="p">)</span></code></pre></figure>
+
+<p>Similarly, if <code class="language-plaintext highlighter-rouge">end</code> is not provided, it prints till the last element of the tuple.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="p">(</span><span class="s">'s'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'n'</span><span class="p">)</span></code></pre></figure>
+
+<p>And if we don’t provide either of them? You guessed it right! It prints the whole tuple as is.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="p">[:]</span>
+<span class="p">(</span><span class="s">'s'</span><span class="p">,</span> <span class="s">'u'</span><span class="p">,</span> <span class="s">'s'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'n'</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="frequently-used-tuple-methods">Frequently used Tuple methods</h2>
+
+<p>Depending on the elements inside a tuple, there are certain useful methods we can use with a tuple.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Returns the minimum element
+</span><span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Returns the maximum element
+</span><span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Returns the length of the tuple
+</span><span class="mi">4</span></code></pre></figure>
+
+<p>Using <code class="language-plaintext highlighter-rouge">+</code> to create a new tuple using existing tuples. This is called concatenation.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></pre></figure>
+
+<p>In Python, you will notice so many similarities between the methods on <a href="/posts/python-strings-and-frequently-used-str-methods">strings</a>, <a href="/posts/python-tuples-and-basic-operations-on-tuples">tuples</a> and <a href="/posts/python-lists-and-list-methods">lists</a>. It is so easy to understand them one you understand one of them. Next, we will see <a href="/posts/python-lists-and-list-methods">Lists in Python</a>.</p>
+
+<hr />
+
+<p>Note:
+This is a part of what I learned in an online Open Course Ware offered by MIT on edX.
+Its for my personal reference &amp; also for those who would like to revisit the course.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Python: Tuples and Basic Operations on Tuples" data-url="https://www.rookieslab.com/posts/python-tuples-and-basic-operations-on-tuples" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Collection of Python posts for beginners</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/python-strings-and-frequently-used-str-methods">Python: Strings and it's frequently used methods</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

@@ -1,4 +1,0 @@
----
-slug: recursion
-name: Recursion
----

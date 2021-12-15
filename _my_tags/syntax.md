@@ -1,4 +1,0 @@
----
-slug: syntax
-name: Syntax
----

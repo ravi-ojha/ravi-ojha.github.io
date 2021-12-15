@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>How to find Multiplicative Inverse of a number modulo M? | Rookie's Lab</title>
+  <meta name="description" content="What is Multiplicative Inverse? What is Modular Multiplicative Inverse? How to find Modular Multiplicative Inverse? How to find Multiplicative Inverse of a number modulo M i.e. under M? How to find Modular Multiplicative Inverse in an efficient way? We will discuss and implement all of the above problems in Python and C++">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="How to find Multiplicative Inverse of a number modulo M?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp">
+  <meta property="og:description" content="What is Multiplicative Inverse? What is Modular Multiplicative Inverse? How to find Modular Multiplicative Inverse? How to find Multiplicative Inverse of a number modulo M i.e. under M? How to find Modular Multiplicative Inverse in an efficient way? We will discuss and implement all of the above problems in Python and C++">
+  <meta property="og:site_name" content="Rookie's Lab">
+  <meta property="og:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp">
+  <meta name="twitter:title" content="How to find Multiplicative Inverse of a number modulo M?">
+  <meta name="twitter:description" content="What is Multiplicative Inverse? What is Modular Multiplicative Inverse? How to find Modular Multiplicative Inverse? How to find Multiplicative Inverse of a number modulo M i.e. under M? How to find Modular Multiplicative Inverse in an efficient way? We will discuss and implement all of the above problems in Python and C++">
+  <meta name="twitter:image" content="https://www.rookieslab.com/assets/documentation/rookieslab-og.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://www.rookieslab.com/feed.xml" type="application/rss+xml" rel="alternate" title="Rookie's Lab Last 10 blog posts" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/assets/light.css?v=0.1">
+</head>
+
+<body>
+  <main role="main">
+    <header class="header-nav">
+  <section>
+    <a href="/" class="header-logo" title="Rookie's Lab">
+    <img src="/assets/documentation/rookieslab_2017_trans_white_horizontal_320_x_64_v2.png" alt="Rookie's Lab"/></a>
+    <ul class="header-links">
+      
+      
+        <li>
+          <a href="https://twitter.com/ivarojha" target="_blank" title="Twitter">
+            <span class="icon icon-social-twitter"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="https://github.com/ravi-ojha" target="_blank" title="GitHub">
+            <span class="icon icon-social-github"></span>
+          </a>
+        </li>
+      
+        
+        <li>
+          <a href="https://www.linkedin.com/in/raviojha" target="_blank" title="LinkedIn">
+            <span class="icon icon-social-linkedin"></span>
+          </a>
+        </li>
+      
+      
+        <li>
+          <a href="/feed.xml" target="_blank" title="RSS">
+            <span class="icon icon-social-rss"></span>
+          </a>
+        </li>
+      
+
+    </ul>
+  </section>
+</header>
+
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <!-- Navigation -->
+<nav id="slide-menu">
+  <ul>
+    <li><a href="https://www.rookieslab.com">Home</a></li>
+    <li><a href="/tag/software-engineering/">Software Engineering</a></li>
+    <li><a href="/tag/competitive-programming/">Competitive Programming</a></li>
+    <li><a href="/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx">Beginner's Python</a></li>
+    <li class="sep"><a href="/about">About</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- Content panel -->
+<div class="menu-trigger"></div>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>How to find Multiplicative Inverse of a number modulo M?</h1>
+            <p>What is Multiplicative Inverse? What is Modular Multiplicative Inverse? How to find Modular Multiplicative Inverse? How to find Multiplicative Inverse of a number modulo M i.e. under M? How to find Modular Multiplicative Inverse in an efficient way? We will discuss and implement all of the above problems in Python and C++</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                January 28, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  12 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/competitive-programming">competitive-programming</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2> Table of Contents </h2>
+
+<ul id="markdown-toc">
+  <li><a href="#what-is-multiplicative-inverse" id="markdown-toc-what-is-multiplicative-inverse">What is Multiplicative Inverse?</a></li>
+  <li><a href="#what-is-modular-multiplicative-inverse" id="markdown-toc-what-is-modular-multiplicative-inverse">What is Modular Multiplicative Inverse?</a></li>
+  <li><a href="#how-to-find-multiplicative-inverse-of-a-number-modulo-m-ie-under-m" id="markdown-toc-how-to-find-multiplicative-inverse-of-a-number-modulo-m-ie-under-m">How to find Multiplicative Inverse of a number modulo M i.e. under M?</a></li>
+  <li><a href="#brute-force-python-code-to-find-multiplicative-inverse-of-a-number-modulo-m---om" id="markdown-toc-brute-force-python-code-to-find-multiplicative-inverse-of-a-number-modulo-m---om">Brute Force Python Code to find Multiplicative Inverse of a number modulo M - <em>O(M)</em></a></li>
+  <li><a href="#modular-multiplicative-inverse-using-extended-euclids-algorithm" id="markdown-toc-modular-multiplicative-inverse-using-extended-euclids-algorithm">Modular Multiplicative Inverse using Extended Euclid’s Algorithm</a>    <ul>
+      <li><a href="#python-implementation---olog-m" id="markdown-toc-python-implementation---olog-m">Python Implementation - <em>O(log M)</em></a></li>
+      <li><a href="#c-implementation---olog-m" id="markdown-toc-c-implementation---olog-m">C++ Implementation - <em>O(log M)</em></a></li>
+    </ul>
+  </li>
+  <li><a href="#modular-multiplicative-inverse-using-fast-power-algorithm" id="markdown-toc-modular-multiplicative-inverse-using-fast-power-algorithm">Modular Multiplicative Inverse using Fast Power Algorithm</a>    <ul>
+      <li><a href="#python-implementation---olog-m-1" id="markdown-toc-python-implementation---olog-m-1">Python Implementation - <em>O(log M)</em></a></li>
+      <li><a href="#c-implementation---osqrtn" id="markdown-toc-c-implementation---osqrtn">C++ Implementation - <em>O(sqrt(N))</em></a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="what-is-multiplicative-inverse">What is Multiplicative Inverse?</h2>
+
+<p>Multiplicative Inverse of a number A is another number B, such that A x B equals 1. Multiplicative Inverse of a number A is denoted as A<sup>-1</sup>, and A x A<sup>-1</sup> = 1. For example: multiplicative inverse of 3 is 1/3 because 3 x 1/3 = 1.</p>
+
+<h2 id="what-is-modular-multiplicative-inverse">What is Modular Multiplicative Inverse?</h2>
+
+<p>In modular arithmetic, we don’t have the <code class="language-plaintext highlighter-rouge">/</code> division operator. However, we have <code class="language-plaintext highlighter-rouge">%</code> modulo operator which helps in finding Modular Multiplicative Inverse.</p>
+
+<p>Modular Multiplicative Inverse of a number A in the range M is defined as a number B such that (A x B) % M = 1.</p>
+
+<p>Important points to note:</p>
+
+<ul>
+  <li>Modulo inverse exists only for numbers that are co-prime to M.</li>
+  <li>If (A x B) % M = 1, then B lies in the range [0, M-1]</li>
+</ul>
+
+<h2 id="how-to-find-multiplicative-inverse-of-a-number-modulo-m-ie-under-m">How to find Multiplicative Inverse of a number modulo M i.e. under M?</h2>
+
+<p>We know for a fact that, if multiplicative inverse for a number exists then it lies in the range [0, M-1]. So the basic approach to find multiplicative inverse of A under M is:</p>
+
+<ul>
+  <li>Iterate from <code class="language-plaintext highlighter-rouge">0</code> to <code class="language-plaintext highlighter-rouge">M-1</code>, call it <code class="language-plaintext highlighter-rouge">i</code></li>
+  <li>Check if <code class="language-plaintext highlighter-rouge">(A x i) % M</code> equals <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li>If yes, then we have <code class="language-plaintext highlighter-rouge">i</code> as multiplicative inverse of <code class="language-plaintext highlighter-rouge">A</code> under <code class="language-plaintext highlighter-rouge">M</code></li>
+</ul>
+
+<h2 id="brute-force-python-code-to-find-multiplicative-inverse-of-a-number-modulo-m---om">Brute Force Python Code to find Multiplicative Inverse of a number modulo M - <em>O(M)</em></h2>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">modulo_multiplicative_inverse</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="s">"""
+    Returns multiplicative modulo inverse of A under M, if exists
+    Returns -1 if doesn't exist
+    """</span>
+    <span class="c1"># This will iterate from 0 to M-1
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+        <span class="c1"># If we have our multiplicative inverse then return it
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">M</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+    <span class="c1"># If we didn't find the multiplicative inverse in the loop above
+</span>    <span class="c1"># then it doesn't exist for A under M
+</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="c1"># Output: 9 (Because 5*9 % 11 =&gt; 45 % 11 = 1)
+</span><span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="c1"># Output: 3 (Because 3*3 % 8 =&gt; 9 % 8 = 1)
+</span><span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="c1"># Output: -1 (Because 5 and 25 are not co-primes, so it doesn't exist)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The above implementation is a brute force approach to find Modular Multiplicative Inverse. Time Complexity is <em>O(M)</em>, where M is the range under which we are looking for the multiplicative inverse. However, this method fails to produce results when M is as large as a billion, say 1000000000. Try out using A = 23 and M = 1000000007. Can we do any better?</p>
+
+<h2 id="modular-multiplicative-inverse-using-extended-euclids-algorithm">Modular Multiplicative Inverse using Extended Euclid’s Algorithm</h2>
+
+<p>We will not get deeper into Extended Euclid’s Algorithm right now, however, let’s accept the fact that it finds <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> such that <code class="language-plaintext highlighter-rouge">a*x + b*y = gcd(a, b)</code>. Let’s see how we can use it to find Multiplicative Inverse of a number A modulo M, assuming that A and M are co-prime.</p>
+
+<ul>
+  <li>Using A in place of <code class="language-plaintext highlighter-rouge">a</code> and M in place of <code class="language-plaintext highlighter-rouge">b</code> in the equation, we have <code class="language-plaintext highlighter-rouge">A*x + M*y = gcd(A, M)</code>.</li>
+  <li>We know Greatest Common Divisor (GCD) of two co-prime numbers is 1. So now we have, <code class="language-plaintext highlighter-rouge">A*x + M*y = 1</code></li>
+  <li>Taking modulo with M on both sides we have, <code class="language-plaintext highlighter-rouge">(A*x) % M + (M*y) % M = 1 % M</code>, which results into <code class="language-plaintext highlighter-rouge">(A*x) % M = 1 % M</code> (because <code class="language-plaintext highlighter-rouge">(M*y) % M</code> is 0)</li>
+  <li>Voila, what do we call <code class="language-plaintext highlighter-rouge">x</code> if <code class="language-plaintext highlighter-rouge">(A*x) % M = 1 % M</code>? <code class="language-plaintext highlighter-rouge">x</code> is our answer, i.e. multiplicative inverse of A under M.</li>
+</ul>
+
+<p>Now, for any two numbers <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code> Extended Euclid’s Algorithm finds three things: <code class="language-plaintext highlighter-rouge">gcd(a, b)</code>, <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> such that <code class="language-plaintext highlighter-rouge">a*x + b*y = gcd(a, b)</code>.
+Please consider reading about Extended Euclid’s Algorithm<sup><a href="#extended-euclid-wiki">1</a></sup>.</p>
+
+<h3 id="python-implementation---olog-m">Python Implementation - <em>O(log M)</em></h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">modulo_multiplicative_inverse</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="s">"""
+    Assumes that A and M are co-prime
+    Returns multiplicative modulo inverse of A under M
+    """</span>
+    <span class="c1"># Find gcd using Extended Euclid's Algorithm
+</span>    <span class="n">gcd</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+
+    <span class="c1"># In case x is negative, we handle it by adding extra M
+</span>    <span class="c1"># Because we know that multiplicative inverse of A in range M lies
+</span>    <span class="c1"># in the range [0, M-1]
+</span>    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">M</span>
+    
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">extended_euclid_gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s">"""
+    Returns a list `result` of size 3 where:
+    Referring to the equation ax + by = gcd(a, b)
+        result[0] is gcd(a, b)
+        result[1] is x
+        result[2] is y 
+    """</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">old_s</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">old_t</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="n">old_r</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="k">while</span> <span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">quotient</span> <span class="o">=</span> <span class="n">old_r</span><span class="o">//</span><span class="n">r</span> <span class="c1"># In Python, // operator performs integer or floored division
+</span>        <span class="c1"># This is a pythonic way to swap numbers
+</span>        <span class="c1"># See the same part in C++ implementation below to know more
+</span>        <span class="n">old_r</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="p">,</span> <span class="n">old_r</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">r</span>
+        <span class="n">old_s</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">,</span> <span class="n">old_s</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">s</span>
+        <span class="n">old_t</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">old_t</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">t</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">old_r</span><span class="p">,</span> <span class="n">old_s</span><span class="p">,</span> <span class="n">old_t</span><span class="p">]</span>
+
+
+<span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="c1"># Output: 9 (Because 5*9 % 11 =&gt; 45 % 11 = 1)
+</span><span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="c1"># Output: 3 (Because 3*3 % 8 =&gt; 9 % 8 = 1)
+</span><span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">1000000007</span><span class="p">)</span>
+<span class="c1"># Output: 739130440 (Because 739130440*23 = 17000000120 and 17000000120 % 1000000007 is 1)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Time Complexity of the above approach is <em>O(log(A) + log(M))</em>.</p>
+
+<h3 id="c-implementation---olog-m">C++ Implementation - <em>O(log M)</em></h3>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Returns a vector `result` of size 3 where:</span>
+    <span class="c1">// Referring to the equation ax + by = gcd(a, b)</span>
+    <span class="c1">//     result[0] is gcd(a, b)</span>
+    <span class="c1">//     result[1] is x</span>
+    <span class="c1">//     result[2] is y </span>
+    
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">old_s</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">old_t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">old_r</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="n">quotient</span> <span class="o">=</span> <span class="n">old_r</span><span class="o">/</span><span class="n">r</span><span class="p">;</span>
+        <span class="c1">// We are overriding the value of r, before that we store it's current</span>
+        <span class="c1">// value in temp variable, later we assign it to old_r</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">old_r</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">r</span><span class="p">;</span>
+        <span class="n">old_r</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="c1">// We treat s and t in the same manner we treated r</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">old_s</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">s</span><span class="p">;</span>
+        <span class="n">old_s</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">old_t</span> <span class="o">-</span> <span class="n">quotient</span><span class="o">*</span><span class="n">t</span><span class="p">;</span>
+        <span class="n">old_t</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">old_r</span><span class="p">);</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">old_s</span><span class="p">);</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">old_t</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">modulo_multiplicative_inverse</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">A</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Assumes that A and M are co-prime</span>
+    <span class="c1">// Returns multiplicative modulo inverse of A under M</span>
+    
+    <span class="c1">// Find gcd using Extended Euclid's Algorithm</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">extended_euclid_gcd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">gcd</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">y</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// We don't really need this though</span>
+
+    <span class="c1">// In case x is negative, we handle it by adding extra M</span>
+    <span class="c1">// Because we know that multiplicative inverse of A in range M lies</span>
+    <span class="c1">// in the range [0, M-1]</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">M</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span>  <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 9 (Because 5*9 % 11 =&gt; 45 % 11 = 1)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span>  <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 3 (Because 3*3 % 8 =&gt; 9 % 8 = 1)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span>  <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">1000000007</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 739130440 (Because 739130440*23 = 17000000120 and 17000000120 % 1000000007 is 1)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>At times, Extended Euclid’s algorithm is hard to understand. There is one easy way to find multiplicative inverse of a number A under M. We can use <a href="/posts/fast-power-algorithm-exponentiation-by-squaring-cpp-python-implementation">fast power algorithm</a> for that.</p>
+
+<h2 id="modular-multiplicative-inverse-using-fast-power-algorithm">Modular Multiplicative Inverse using Fast Power Algorithm</h2>
+
+<p>Pierre de Fermat<sup><a href="#fermat-wiki">2</a></sup> once stated that, if M is prime then, A<sup>-1</sup> = A<sup>M-2</sup> % M. Now from <a href="/posts/fast-power-algorithm-exponentiation-by-squaring-cpp-python-implementation">Fast Power Algorithm</a>, we can find A<sup>M-2</sup> % M in <em>O(log M)</em> time.</p>
+
+<h3 id="python-implementation---olog-m-1">Python Implementation - <em>O(log M)</em></h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">modulo_multiplicative_inverse</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="s">"""
+    Assumes that M is a prime number
+    Returns multiplicative modulo inverse of A under M
+    """</span>
+    <span class="k">return</span> <span class="n">fast_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">M</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">fast_power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">MOD</span><span class="p">):</span>
+    <span class="s">"""
+    Returns the result of a^b i.e. a**b
+    We assume that a &gt;= 1 and b &gt;= 0
+
+    Remember two things!
+     - Divide power by 2 and multiply base to itself (if the power is even)
+     - Decrement power by 1 to make it even and then follow the first step
+    """</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">power</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># If power is odd
+</span>        <span class="k">if</span> <span class="n">power</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span>
+
+        <span class="c1"># Divide the power by 2
+</span>        <span class="n">power</span> <span class="o">=</span> <span class="n">power</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="c1"># Multiply base to itself
+</span>        <span class="n">base</span> <span class="o">=</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="c1"># Output: 9 (Because 5*9 % 11 =&gt; 45 % 11 = 1)
+</span><span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="c1"># Output: 3 (Because 3*3 % 8 =&gt; 9 % 8 = 1)
+</span><span class="k">print</span> <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">1000000007</span><span class="p">)</span>
+<span class="c1"># Output: 739130440 (Because 739130440*23 = 17000000120 and 17000000120 % 1000000007 is 1)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="c-implementation---osqrtn">C++ Implementation - <em>O(sqrt(N))</em></h3>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">fast_power</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">power</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">MOD</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">power</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">power</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Can also use (power &amp; 1) to make code even faster</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span><span class="o">*</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="n">power</span> <span class="o">=</span> <span class="n">power</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Can also use power &gt;&gt;= 1; to make code even faster</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">modulo_multiplicative_inverse</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">A</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Assumes that M is a prime number</span>
+    <span class="c1">// Returns multiplicative modulo inverse of A under M</span>
+    <span class="k">return</span> <span class="n">fast_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">M</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span>  <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 9 (Because 5*9 % 11 =&gt; 45 % 11 = 1)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span>  <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 3 (Because 3*3 % 8 =&gt; 9 % 8 = 1)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span>  <span class="n">modulo_multiplicative_inverse</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">1000000007</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// Output: 739130440 (Because 739130440*23 = 17000000120 and 17000000120 % 1000000007 is 1)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Note that this method works when M is a prime number. Time Complexity of the above algorithm is also <em>O(log M)</em>.</p>
+
+<p>References:</p>
+
+<ul>
+  <li><a name="extended-euclid-wiki">[1]</a>: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm</li>
+  <li><a name="fermat-wiki">[2]</a>: https://en.wikipedia.org/wiki/Fermat%27s_little_theorem</li>
+</ul>
+
+<p>Got a burning question you wanna get answered? Ask it in the comments.</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-text="How to find Multiplicative Inverse of a number ..." data-url="https://www.rookieslab.com/posts/how-to-find-multiplicative-inverse-of-a-number-modulo-m-in-python-cpp" data-via="ivarojha" data-show-count="false">Tweet</a></div>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+          <div class="post-author has-avatar">
+            <a href="/about" class="post-author-avatar" aria-hidden="true" style="background-image: url(/assets/documentation/me_itachi.jpg)"></a>
+            <div class="post-author-name">
+              <a href="/about">Ravi Ojha</a>
+            </div>
+            <p class="post-author-bio">Software Engineer, a product person, delves into graphic designs on lazy weekends or writes blog posts about software engineering and life experiences. Retired competitive programmer.</p>
+            <div class="fb-follow" data-href="https://www.facebook.com/ivarojha" data-layout="button" data-size="small" data-show-faces="false"></div>
+            <div class="twitter-follow">
+              <a class="twitter-follow-button" href="https://twitter.com/ivarojha" data-show-count=false>Follow @ivarojha</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="similar-articles">
+            <div class="similar-articles-label">Similar Articles</div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/extended-euclid-algorithm-to-find-gcd-bezouts-coefficients-python-cpp-code">Extended Euclid Algorithm to find GCD and Bézout's coefficients</a>
+              </div>
+              
+              
+              <div class="single-post">
+                <a href="/posts/cpp-python-code-to-find-gcd-of-a-list-of-numbers">Greatest Common Divisor of a list of numbers - C++ and Python Implementation</a>
+              </div>
+              
+          </div>
+
+          
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//rookieslab.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+        </article>
+        <div class="clear"></div>
+<footer class="footer reveal">
+  <div>
+      <p style="float: left;">
+        &copy; 2012-2017 Rookie's Lab
+      </p>
+      <p style="float: right;">
+        <a href="/about" title="About me">About</a>
+        <span> &middot; </span>
+        <a href="/privacy" title="Privacy Policy">Privacy</a>
+      </p>
+  </div>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-28915915-2','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>

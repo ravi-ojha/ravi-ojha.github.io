@@ -1,0 +1,83 @@
+body {
+  font-family: 'Inter Variable', sans-serif;
+}
+
+a {
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  transition-property: all;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.min-h-first-fold {
+  min-height: calc(100vh - 130px);
+}
+
+.link-navbar-1 {
+  @apply w-fit text-gray-600 dark:text-gray-400 text-sm no-underline hover:text-gray-950 dark:hover:text-white;
+}
+
+.link-footer-1 {
+  @apply w-fit text-gray-500 dark:text-gray-500 text-sm no-underline hover:text-gray-950 dark:hover:text-white;
+}
+
+/* Sugar-high syntax highlighting - Light theme */
+:root {
+  --sh-class: #2d5e9d;
+  --sh-identifier: #354150;
+  --sh-sign: #8996a3;
+  --sh-property: #0550ae;
+  --sh-entity: #249a97;
+  --sh-jsxliterals: #6266d1;
+  --sh-string: #00a99a;
+  --sh-keyword: #f47067;
+  --sh-comment: #a0adb8;
+}
+
+/* Sugar-high syntax highlighting - Dark theme */
+.dark {
+  --sh-class: #4c97f8;
+  --sh-identifier: #d8dce0;
+  --sh-sign: #8996a3;
+  --sh-property: #79c0ff;
+  --sh-entity: #67cdcc;
+  --sh-jsxliterals: #a78bfa;
+  --sh-string: #7ee787;
+  --sh-keyword: #f47067;
+  --sh-comment: #6b7280;
+}
+
+/* Code block styling */
+pre.sh-code {
+  @apply rounded-lg p-4 text-sm overflow-x-auto my-4;
+  background-color: #f6f8fa;
+}
+
+.dark pre.sh-code {
+  background-color: #161b22;
+}
+
+pre.sh-code code {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  line-height: 1.6;
+}
+
+/* Line numbers - only shown when .show-line-numbers class is present */
+pre.show-line-numbers code {
+  counter-reset: sh-line-number;
+}
+
+pre.show-line-numbers .sh__line::before {
+  counter-increment: sh-line-number 1;
+  content: counter(sh-line-number);
+  margin-right: 24px;
+  text-align: right;
+  color: #a4a4a4;
+}
+
+.dark pre.show-line-numbers .sh__line::before {
+  color: #6b7280;
+}

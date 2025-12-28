@@ -87,7 +87,7 @@ Out[15]:
 
 Hold up! Why'd that modify the `goku` string? This is because surrounding something with `"""` doesn't necessarily mean as comments in Python. It is just a multiline string. Imagine it as a string literal, which isn't assigned to any variable. **There's no such thing as multiline comments in Python, unlike other programming languages.** The right way to put multiline comments is by using `#`.
 
-You'd recall using `"""` to put comments at the beginning of function/class, also otherwise known as docstrings. Well, what do you know, those docstrings aren't really comments. It is just a string literal and a standard convention<a href="#note2" id="note2ref"><sup>[1]</sup></a>.
+You'd recall using `"""` to put comments at the beginning of function/class, also otherwise known as docstrings. Well, what do you know, those docstrings aren't really comments. It is just a string literal and a standard convention<a href="#note1" id="note1ref"><sup>[1]</sup></a>.
 
 So the right way to put a comment in dict would be
 

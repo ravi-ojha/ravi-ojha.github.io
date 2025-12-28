@@ -61,7 +61,7 @@ All the links below lead to a quick overview of respective topic and the decrypt
    - Memoization or Dynamic Programming is a technique of remembering solutions to sub-problems which will help us solve a larger problem.
 
 
-*Disclaimer: This is not a complete list of the topics covered in the course. It is advised to go through the newer version of course on [edx.org]([https://www.edx.org/course?search_query=MITx+Introduction+to+Computer+Science+and+Programming+Using+Python)*
+*Disclaimer: This is not a complete list of the topics covered in the course. It is advised to go through the newer version of course on [edx.org](https://www.edx.org/course?search_query=MITx+Introduction+to+Computer+Science+and+Programming+Using+Python)*
 
 ---
 

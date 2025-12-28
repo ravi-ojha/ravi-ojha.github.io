@@ -95,10 +95,8 @@ I've added some mdsvex plugins to support a few extra things (check out the `mds
 The [mdsvex-relative-images](https://github.com/mattjennings/mdsvex-relative-images) plugin allows loading images or videos with a relative path. This is particularly nice for grouping images with the post under the same folder.
 
 ```md
-![penguins](./penguins.mp4)
+![my-video](./my-video.mp4)
 ```
-
-![penguins](./penguins.mp4)
 
 ## Deploying
 

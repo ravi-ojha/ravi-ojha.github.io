@@ -1,5 +1,5 @@
 body {
-  font-family: 'Inter Variable', sans-serif;
+  font-family: 'Geist Variable', sans-serif;
 }
 
 a {
@@ -16,12 +16,16 @@ a {
   min-height: calc(100vh - 130px);
 }
 
+::selection {
+  @apply bg-arctic-500/30;
+}
+
 .link-navbar-1 {
-  @apply w-fit text-gray-600 dark:text-gray-400 text-sm no-underline hover:text-gray-950 dark:hover:text-white;
+  @apply w-fit text-arctic-600 dark:text-arctic-400 text-sm no-underline hover:text-accent;
 }
 
 .link-footer-1 {
-  @apply w-fit text-gray-500 dark:text-gray-500 text-sm no-underline hover:text-gray-950 dark:hover:text-white;
+  @apply w-fit text-arctic-500 dark:text-arctic-500 text-sm no-underline hover:text-accent;
 }
 
 /* Sugar-high syntax highlighting - Light theme */
@@ -47,17 +51,17 @@ a {
   --sh-jsxliterals: #a78bfa;
   --sh-string: #7ee787;
   --sh-keyword: #f47067;
-  --sh-comment: #6b7280;
+  --sh-comment: var(--color-arctic-600);
 }
 
 /* Code block styling */
 pre.sh-code {
   @apply rounded-lg p-4 text-sm overflow-x-auto my-4;
-  background-color: #f6f8fa;
+  background-color: var(--color-arctic-50);
 }
 
 .dark pre.sh-code {
-  background-color: #161b22;
+  background-color: var(--color-arctic-950);
 }
 
 pre.sh-code code {
@@ -75,9 +79,291 @@ pre.show-line-numbers .sh__line::before {
   content: counter(sh-line-number);
   margin-right: 24px;
   text-align: right;
-  color: #a4a4a4;
+  color: var(--color-arctic-400);
 }
 
 .dark pre.show-line-numbers .sh__line::before {
-  color: #6b7280;
+  color: var(--color-arctic-600);
+}
+
+/* ==========================================
+   Custom Prose Styles
+   ========================================== */
+
+.prose {
+  color: var(--color-arctic-800);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.dark .prose {
+  color: var(--color-arctic-200);
+}
+
+/* Headings */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--color-arctic-800);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  transition: color 0.2s ease;
+}
+
+.prose h1:hover,
+.prose h2:hover,
+.prose h3:hover,
+.prose h4:hover {
+  color: var(--color-arctic-900);
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4 {
+  color: var(--color-arctic-200);
+}
+
+.dark .prose h1:hover,
+.dark .prose h2:hover,
+.dark .prose h3:hover,
+.dark .prose h4:hover {
+  color: var(--color-arctic-100);
+}
+
+.prose h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-arctic-200);
+}
+
+.dark .prose h2 {
+  border-bottom-color: var(--color-arctic-800);
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose h4 {
+  font-size: 1.1rem;
+}
+
+/* Heading links - inherit heading color, not accent */
+.prose h1 > a,
+.prose h2 > a,
+.prose h3 > a,
+.prose h4 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.prose h1 > a:hover,
+.prose h2 > a:hover,
+.prose h3 > a:hover,
+.prose h4 > a:hover {
+  opacity: 1;
+}
+
+/* Heading prefixes (# symbols) */
+.prose h1 > a::before,
+.prose h2 > a::before,
+.prose h3 > a::before,
+.prose h4 > a::before {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-weight: 400;
+  margin-right: 0.5em;
+  color: var(--color-arctic-300);
+}
+
+.dark .prose h1 > a::before,
+.dark .prose h2 > a::before,
+.dark .prose h3 > a::before,
+.dark .prose h4 > a::before {
+  color: var(--color-arctic-700);
+}
+
+.prose h1 > a::before {
+  content: '#';
+}
+
+.prose h2 > a::before {
+  content: '##';
+}
+
+.prose h3 > a::before {
+  content: '###';
+}
+
+.prose h4 > a::before {
+  content: '####';
+}
+
+/* Paragraphs */
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* Links */
+.prose a {
+  color: var(--color-arctic-950);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 60%, transparent);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.dark .prose a {
+  color: var(--color-arctic-50);
+}
+
+.prose a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+/* Lists */
+.prose ul,
+.prose ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li::marker {
+  color: var(--color-arctic-400);
+}
+
+.dark .prose li::marker {
+  color: var(--color-arctic-600);
+}
+
+/* Nested lists */
+.prose ul ul,
+.prose ol ol,
+.prose ul ol,
+.prose ol ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left: 3px solid var(--color-arctic-200);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: var(--color-arctic-600);
+  font-style: italic;
+}
+
+.dark .prose blockquote {
+  border-left-color: var(--color-arctic-700);
+  color: var(--color-arctic-400);
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+/* Inline code */
+.prose code:not(pre code) {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.875em;
+  background-color: var(--color-arctic-100);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  color: var(--color-arctic-900);
+}
+
+.dark .prose code:not(pre code) {
+  background-color: var(--color-arctic-900);
+  color: var(--color-arctic-100);
+}
+
+/* Images */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5em 0;
+}
+
+/* Horizontal rule */
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-arctic-200);
+  margin: 2em 0;
+}
+
+.dark .prose hr {
+  border-top-color: var(--color-arctic-800);
+}
+
+/* Strong and emphasis */
+.prose strong {
+  font-weight: 600;
+  color: var(--color-arctic-900);
+}
+
+.dark .prose strong {
+  color: var(--color-arctic-100);
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 1px solid var(--color-arctic-200);
+}
+
+.dark .prose th,
+.dark .prose td {
+  border-bottom-color: var(--color-arctic-800);
+}
+
+.prose th {
+  font-weight: 600;
+  color: var(--color-arctic-900);
+}
+
+.dark .prose th {
+  color: var(--color-arctic-100);
+}
+
+/* First/last child margin adjustments */
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
 }

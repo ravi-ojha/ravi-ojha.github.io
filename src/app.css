@@ -1,5 +1,20 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: #3B82F6;
+
+  --color-arctic-50: #f1f4f7;
+  --color-arctic-100: #e4e8f0;
+  --color-arctic-200: #c9d2e2;
+  --color-arctic-300: #aebcd4;
+  --color-arctic-400: #93a7c6;
+  --color-arctic-500: #7c92b3;
+  --color-arctic-600: #6a7d9a;
+  --color-arctic-700: #586981;
+  --color-arctic-800: #475569;
+  --color-arctic-900: #242d38;
+  --color-arctic-950: #141a22;
+}
 
 @import './styles/common.css';

@@ -4,7 +4,7 @@ layout: post
 title: "So long, HackerEarth!"
 description: "Thank you, HackerEarth. I'll always cherish the memories we've created. Goodbye!"
 og_image: "documentation/leaving-hackerearth.jpg"
-tags: [personal, hackerearth]
+tags: [personal]
 related_posts: ['/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth', '/posts/ravi-ojha-computer-science-svnit-surat-life-post']
 subscription_form: true
 ---

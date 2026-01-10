@@ -8,6 +8,7 @@ tags: [gimp, open-source]
 related_posts: ['/posts/ravi-ojha-computer-science-svnit-surat-life-post', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth', '/posts/playing-with-at-photoshop-and-gimp'] 
 redirect_from:
   - /2014/08/install-gimp-via-git-getting-started-contributing-to-GIMP.html
+is_archived: true
 ---
 
 GNU Image Manipulation Program is one of the best open source projects out there as an alternative for PhotoShop. I used it extensively for every graphic design purpose. It is natural that once you know the product very well, one starts finding possible improvements in the product. I had a few in my list and as a developer I thought why not build them myself. Hence the idea of building GIMP from source code, so that I can make changes to source and start developing.

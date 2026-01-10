@@ -4,10 +4,11 @@ layout: post
 title: "Python: Objects and Types"
 description: "Everything in Python is an object! Every object in Python has a type. This post discusses some of them with examples"
 og_image: "documentation/rookieslab-og.jpg"
-tags: [python, python-objects, python-types]
+tags: [python]
 related_posts: ['/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx', '/posts/iteration-or-loop-in-python']
 redirect_from:
   - /2012/12/learnign-python-objects-of-python-tuples.html
+is_archived: true
 ---
 
 ## What are Python Objects?

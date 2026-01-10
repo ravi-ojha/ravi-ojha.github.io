@@ -4,10 +4,11 @@ layout: post
 title: "Python: Arithmetic and Logical Operators"
 description: "How to perform arithmetic and logical operations on Python variables of different types"
 og_image: "documentation/rookieslab-og.jpg"
-tags: [python, arithmetic-operators, logical-operators]
+tags: [python]
 related_posts: ['/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx', '/posts/branching-with-if-else-elif-in-python']
 redirect_from:
   - /2012/12/operations-on-string-some-simple.html
+is_archived: true
 ---
 
 **Note: Python snippets were tested and run in Python 2.7. They may require some changes to be compatible with Python 3**

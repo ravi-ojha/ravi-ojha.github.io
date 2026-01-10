@@ -4,7 +4,7 @@ layout: post
 title: "Is it boring working in Web Development startups?"
 description: "Whenever I get in conversation with junior undergrads, they often ask if it is monotonous and boring working on web technologies. I used to think the same way 3-4 years ago, however, after having the first hand experience, I think otherwise."
 og_image: "documentation/boring-web-development.jpg"
-tags: [software-engineering, product-development]
+tags: [software-engineering]
 related_posts: ['/posts/what-it-takes-to-develop-test-and-release-a-software-product', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth']
 subscription_form: true
 ---

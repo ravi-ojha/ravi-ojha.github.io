@@ -4,7 +4,7 @@ layout: post
 title: "Python Caveats #1: How to put multiline comments in Python dict?"
 description: "How to put multiline comments in python dict? Should we use triple quotes style or multiline hashes?"
 og_image: "documentation/python-caveats-1.jpg"
-tags: [python, python-caveats]
+tags: [python]
 related_posts: ['/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth', '/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx']
 subscription_form: true
 ---

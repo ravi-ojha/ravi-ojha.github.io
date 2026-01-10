@@ -4,10 +4,11 @@ layout: post
 title: "Python: Strings and it's frequently used methods"
 description: "Accessing string characters via index, string slicing and frequently used str methods such as find, replace. How to read input from Standard Input STDIN"
 og_image: "documentation/rookieslab-og.jpg"
-tags: [python, string-slicing, python-str]
+tags: [python]
 related_posts: ['/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx', '/posts/python-lists-and-list-methods', '/posts/python-dictionary-and-its-properties']
 redirect_from:
   - /2012/12/operations-on-string-some-simple.html
+is_archived: true
 ---
 
 Strings are just words or a combination of words. Python has a built-in class `str`, which comes in handy while dealing with words or sentences.

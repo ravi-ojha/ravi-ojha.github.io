@@ -4,7 +4,7 @@ layout: post
 title: "Collection of Python posts for beginners"
 description: "I took MITx 6.00x on edX in 2012 and we were taught basics of Python along-with programming in general. While revisiting the videos in the end, I thought of creating a quick guide for myself and everyone else."
 og_image: "documentation/rookieslab-og.jpg"
-tags: [python, mitx, edx]
+tags: [python, edx]
 related_posts: ['/posts/most-efficient-way-to-find-all-factors-of-a-number-python-cpp', '/posts/ravi-ojha-computer-science-svnit-surat-life-post']
 redirect_from:
   - /2013/01/600x-mitx-python-final-exam-preparation.html

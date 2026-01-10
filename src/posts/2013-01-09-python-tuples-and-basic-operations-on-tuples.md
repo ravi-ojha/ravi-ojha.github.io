@@ -4,10 +4,11 @@ layout: post
 title: "Python: Tuples and Basic Operations on Tuples"
 description: "What is a tuple? How is it different from a list? And some basic methods on Tuples"
 og_image: "documentation/rookieslab-og.jpg"
-tags: [python, python-tuple]
+tags: [python]
 related_posts: ['/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx', '/posts/python-strings-and-frequently-used-str-methods']
 redirect_from:
   - /2012/12/learnign-python-objects-of-python-tuples.html
+is_archived: true
 ---
 
 ## What is a Tuple?

@@ -4,7 +4,7 @@ layout: post
 title: "Python: Linear Search v/s Bisection (Binary) Search"
 description: "When it comes to searching an element within a list of elements, our first approach is searching sequentially through the list. Let's take a look at a better method, Binary Search"
 og_image: "documentation/rookieslab-og.jpg"
-tags: [python, linear-search, binary-search, competitive-programming]
+tags: [python]
 related_posts: ['/posts/fastest-way-to-check-if-a-number-is-prime-or-not', '/posts/collection-of-python-blogs-for-beginners-mitx-600x-edx'] 
 redirect_from:
   - /2012/12/linear-search-vs-bisection-search-algorithm-python-code.html

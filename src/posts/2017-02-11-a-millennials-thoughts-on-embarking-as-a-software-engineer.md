@@ -4,7 +4,7 @@ layout: post
 title: "A millennial's thoughts on embarking as a Software Engineer"
 description: "We, the new generation of software engineers, love to talk about creating an impact. We attend overnight hackathons to build the next big thing. Good that we can build an app in 24 hours, but is it really a production ready codebase? Are we carried away with the agility brought in by our generation?"
 og_image: "documentation/millennials-thoughts-software-v2.jpg"
-tags: [software-engineering, product-development]
+tags: [software-engineering]
 related_posts: ['/posts/what-it-takes-to-develop-test-and-release-a-software-product', '/posts/hobbyist-competitive-programmer-to-software-engineer-at-hackerearth']
 subscription_form: true
 ---

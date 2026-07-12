@@ -113,7 +113,7 @@
   }
 
   .link-category {
-    font-weight: 500;
+    font-weight: bold;
     margin-right: 0.5em;
   }
 

@@ -9,9 +9,31 @@
 <main>
   <Navbar />
   <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-first-fold">
-    <h1 class="text-4xl text-slate-900 dark:text-white font-bold mb-8">Contact</h1>
-    <p class="text-slate-700 dark:text-slate-300">Coming soon...</p>
+    <h1 class="page-title">Contact</h1>
+    <p class="page-body">Coming soon...</p>
   </div>
   <Footer />
 </main>
 
+<style>
+  .page-title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--color-arctic-900);
+    margin: 0 0 2rem 0;
+    line-height: 1.2;
+  }
+
+  :global(.dark) .page-title {
+    color: var(--color-arctic-100);
+  }
+
+  .page-body {
+    color: var(--color-arctic-700);
+  }
+
+  :global(.dark) .page-body {
+    color: var(--color-arctic-300);
+  }
+</style>

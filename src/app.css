@@ -2,6 +2,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-serif: 'et-book', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
   --color-accent: #3B82F6;
 
   --color-arctic-50: #f1f4f7;
@@ -17,4 +20,5 @@
   --color-arctic-950: #141a22;
 }
 
+@import './styles/fonts.css';
 @import './styles/common.css';

@@ -1,5 +1,8 @@
 body {
-  font-family: 'Geist Variable', sans-serif;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  font-feature-settings: 'liga' 1, 'kern' 1;
 }
 
 a {
@@ -21,11 +24,11 @@ a {
 }
 
 .link-navbar-1 {
-  @apply w-fit text-arctic-600 dark:text-arctic-400 text-sm no-underline hover:text-accent;
+  @apply w-fit text-base text-arctic-600 dark:text-arctic-400 no-underline hover:text-accent;
 }
 
 .link-footer-1 {
-  @apply w-fit text-arctic-500 dark:text-arctic-500 text-sm no-underline hover:text-accent;
+  @apply w-fit text-base text-arctic-500 dark:text-arctic-500 no-underline hover:text-accent;
 }
 
 /* Sugar-high syntax highlighting - Light theme */
@@ -65,7 +68,7 @@ pre.sh-code {
 }
 
 pre.sh-code code {
-  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-family: var(--font-mono);
   line-height: 1.6;
 }
 
@@ -92,24 +95,25 @@ pre.show-line-numbers .sh__line::before {
 
 .prose {
   color: var(--color-arctic-800);
-  line-height: 1.75;
-  font-size: 1.05rem;
+  line-height: 1.65;
+  font-size: 1.125rem;
 }
 
 .dark .prose {
   color: var(--color-arctic-200);
 }
 
-/* Headings */
+/* Headings — size + spacing hierarchy; ET Book has no medium weights */
 .prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
   color: var(--color-arctic-800);
-  font-weight: 600;
-  line-height: 1.3;
-  margin-top: 2em;
-  margin-bottom: 0.75em;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.015em;
+  margin-top: 2.25em;
+  margin-bottom: 0.85em;
   transition: color 0.2s ease;
 }
 
@@ -135,26 +139,27 @@ pre.show-line-numbers .sh__line::before {
 }
 
 .prose h1 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin-top: 0;
+  letter-spacing: 0.02em;
 }
 
 .prose h2 {
-  font-size: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-arctic-200);
+  font-size: 1.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-arctic-200) 70%, transparent);
 }
 
 .dark .prose h2 {
-  border-bottom-color: var(--color-arctic-800);
+  border-bottom-color: color-mix(in srgb, var(--color-arctic-800) 70%, transparent);
 }
 
 .prose h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
 }
 
 .prose h4 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 /* Heading links - inherit heading color, not accent */
@@ -178,10 +183,11 @@ pre.show-line-numbers .sh__line::before {
 .prose h2 > a::before,
 .prose h3 > a::before,
 .prose h4 > a::before {
-  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-family: var(--font-mono);
   font-weight: 400;
   margin-right: 0.5em;
   color: var(--color-arctic-300);
+  letter-spacing: 0;
 }
 
 .dark .prose h1 > a::before,
@@ -209,8 +215,8 @@ pre.show-line-numbers .sh__line::before {
 
 /* Paragraphs */
 .prose p {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+  margin-top: 1.35em;
+  margin-bottom: 1.35em;
 }
 
 /* Links */
@@ -233,14 +239,14 @@ pre.show-line-numbers .sh__line::before {
 /* Lists */
 .prose ul,
 .prose ol {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+  margin-top: 1.35em;
+  margin-bottom: 1.35em;
   padding-left: 1.5em;
 }
 
 .prose li {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.55em;
+  margin-bottom: 0.55em;
 }
 
 .prose ul {
@@ -272,7 +278,7 @@ pre.show-line-numbers .sh__line::before {
 .prose blockquote {
   border-left: 3px solid var(--color-arctic-200);
   padding-left: 1em;
-  margin: 1.5em 0;
+  margin: 1.75em 0;
   color: var(--color-arctic-600);
   font-style: italic;
 }
@@ -288,7 +294,7 @@ pre.show-line-numbers .sh__line::before {
 
 /* Inline code */
 .prose code:not(pre code) {
-  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.875em;
   background-color: var(--color-arctic-100);
   padding: 0.2em 0.4em;
@@ -313,16 +319,16 @@ pre.show-line-numbers .sh__line::before {
 .prose hr {
   border: none;
   border-top: 1px solid var(--color-arctic-200);
-  margin: 2em 0;
+  margin: 2.25em 0;
 }
 
 .dark .prose hr {
   border-top-color: var(--color-arctic-800);
 }
 
-/* Strong and emphasis */
+/* Strong and emphasis — bold maps to ET Book bold face */
 .prose strong {
-  font-weight: 600;
+  font-weight: bold;
   color: var(--color-arctic-900);
 }
 
@@ -351,7 +357,7 @@ pre.show-line-numbers .sh__line::before {
 }
 
 .prose th {
-  font-weight: 600;
+  font-weight: bold;
   color: var(--color-arctic-900);
 }
 

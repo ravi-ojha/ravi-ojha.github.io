@@ -55,13 +55,13 @@
   }
 
   .year-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.75rem;
   }
 
   .year-heading {
-    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-arctic-600);
     margin-bottom: 1.5rem;
     letter-spacing: 0.05em;
@@ -98,7 +98,7 @@
     justify-content: space-between;
     align-items: baseline;
     gap: 1rem;
-    padding: 1.25rem 0;
+    padding: 1.35rem 0;
     text-decoration: none;
     transition: opacity 0.2s ease;
   }
@@ -108,8 +108,8 @@
   }
 
   .post-title {
-    font-size: 1.05rem;
-    font-weight: 500;
+    font-size: 1.125rem;
+    font-weight: 400;
     color: var(--color-arctic-900);
     line-height: 1.4;
   }
@@ -119,7 +119,7 @@
   }
 
   .post-date {
-    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--color-arctic-400);
     white-space: nowrap;

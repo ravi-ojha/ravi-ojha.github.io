@@ -52,10 +52,11 @@
   }
 
   .post-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.35rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     color: var(--color-arctic-900);
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.85rem 0;
     line-height: 1.2;
   }
 
@@ -64,7 +65,7 @@
   }
 
   .post-header time {
-    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.875rem;
     color: var(--color-arctic-600);
     letter-spacing: 0.02em;

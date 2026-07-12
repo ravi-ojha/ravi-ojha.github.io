@@ -42,7 +42,6 @@
         "vite": "^6.0.0"
     },
     "dependencies": {
-        "@fontsource-variable/geist": "^5.2.8",
         "sugar-high": "^0.9.5"
     }
 }

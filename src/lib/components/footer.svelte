@@ -11,7 +11,7 @@
     </div>
     <div class="flex flex-row gap-2 mt-2 items-center">
       <a href="/contact" class="link-footer-1"> Contact </a>
-      <span class="text-slate-500 dark:text-slate-500"> · </span>
+      <span class="text-arctic-500 dark:text-arctic-500"> · </span>
       <a href="/privacy" class="link-footer-1"> Privacy </a>
     </div>
   </div>

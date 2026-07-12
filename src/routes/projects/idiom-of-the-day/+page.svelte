@@ -3,16 +3,16 @@
 
   const title = 'Idiom of the Day'
   const description = 'A Chrome extension that helps you learn one idiom every day. Expand your vocabulary and master the art of language.'
-  const ogImage = 'https://rookieslab.com/projects/idiom-of-the-day/og-image.jpg'
+  const ogImage = 'https://www.rookieslab.com/posts/rookieslab-og.jpg'
 </script>
 
 <svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </svelte:head>
 
-<PageHead {title} {description} {ogImage} />
+<PageHead {title} {description} {ogImage} path="/projects/idiom-of-the-day" />
 
 <main class="idiom-page">
   <header class="mb-6">

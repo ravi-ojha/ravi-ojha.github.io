@@ -5,9 +5,31 @@
   import { toLocalDate } from '$lib/common/time-utils'
 
   let { data } = $props()
+
+  const publishedAt = $derived(
+    data.post.date instanceof Date ? data.post.date.toISOString() : undefined
+  )
+  const description = $derived(
+    data.post.description || data.post.preview?.text || ''
+  )
 </script>
 
-<PageHead title={data.post.title} description={data.post.preview?.text} />
+<PageHead
+  title={data.post.title}
+  {description}
+  path={`/posts/${data.post.slug}`}
+  ogImage={data.post.og_image}
+  isArticle={true}
+  article={{
+    slug: data.post.slug,
+    title: data.post.title,
+    description,
+    publishedAt,
+    modifiedAt: publishedAt,
+    tags: data.post.tags || [],
+    ogImage: data.post.og_image
+  }}
+/>
 
 <main>
   <Navbar />

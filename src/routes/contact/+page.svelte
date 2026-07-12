@@ -4,7 +4,7 @@
   import Footer from '$lib/components/footer.svelte'
 </script>
 
-<PageHead title="Contact" description="Contact Ravi Ojha" />
+<PageHead title="Contact" description="Contact Ravi Ojha" path="/contact" />
 
 <main>
   <Navbar />

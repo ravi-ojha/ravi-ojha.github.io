@@ -4,7 +4,7 @@
   import Footer from '$lib/components/footer.svelte'
 </script>
 
-<PageHead title="Privacy Policy" description="Privacy Policy for Rookie's Lab" />
+<PageHead title="Privacy Policy" description="Privacy Policy for Rookie's Lab" path="/privacy" />
 
 <main>
   <Navbar />

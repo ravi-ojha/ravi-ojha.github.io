@@ -4,7 +4,7 @@
   import Footer from '$lib/components/footer.svelte'
 </script>
 
-<PageHead title="About" description="About Ravi Ojha - Full-stack Software Engineer, product person, and blogger at Rookie's Lab" />
+<PageHead title="About" description="About Ravi Ojha - Full-stack Software Engineer, product person, and blogger at Rookie's Lab" path="/about" />
 
 <main>
   <Navbar />

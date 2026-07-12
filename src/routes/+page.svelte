@@ -21,7 +21,7 @@
   }
 </script>
 
-<PageHead />
+<PageHead path="/" />
 
 <main>
   <Navbar />

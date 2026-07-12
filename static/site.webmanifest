@@ -1,18 +1,20 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Rookie's Lab",
+  "short_name": "Rookie's Lab",
+  "description": "Blog about software engineering, design, competitive programming and projects by Ravi Ojha.",
+  "start_url": "/",
   "icons": [
     {
-      "src": "/favicon.ico/web-app-manifest-192x192.png",
+      "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/favicon.ico/web-app-manifest-512x512.png",
+      "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
   "theme_color": "#ffffff",

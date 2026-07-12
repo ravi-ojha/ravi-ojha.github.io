@@ -3,16 +3,37 @@ body {
   font-size: 1.25rem;
   line-height: 1.65;
   font-feature-settings: 'liga' 1, 'kern' 1;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 a {
   transition-duration: 300ms;
   transition-timing-function: ease-out;
-  transition-property: all;
+  transition-property: color, opacity, text-decoration-color;
 }
 
 .dark {
   color-scheme: dark;
+}
+
+/* Single reading column — design.md measure */
+.measure {
+  max-width: var(--container-measure);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .measure {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .measure {
+    padding-inline: 2rem;
+  }
 }
 
 .min-h-first-fold {
@@ -20,15 +41,33 @@ a {
 }
 
 ::selection {
-  @apply bg-arctic-500/30;
+  background-color: var(--selection);
 }
 
 .link-navbar-1 {
-  @apply w-fit text-lg text-arctic-600 dark:text-arctic-400 no-underline hover:text-accent;
+  width: fit-content;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.link-navbar-1:hover {
+  color: var(--accent);
 }
 
 .link-footer-1 {
-  @apply w-fit text-lg text-arctic-500 dark:text-arctic-500 no-underline hover:text-accent;
+  width: fit-content;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.link-footer-1:hover {
+  color: var(--accent);
 }
 
 /* Sugar-high syntax highlighting - Light theme */
@@ -54,17 +93,18 @@ a {
   --sh-jsxliterals: #a78bfa;
   --sh-string: #7ee787;
   --sh-keyword: #f47067;
-  --sh-comment: var(--color-arctic-600);
+  --sh-comment: var(--subtle);
 }
 
 /* Code block styling */
 pre.sh-code {
-  @apply rounded-lg p-4 text-base overflow-x-auto my-4;
-  background-color: var(--color-arctic-50);
-}
-
-.dark pre.sh-code {
-  background-color: var(--color-arctic-950);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  background-color: var(--code-bg);
+  box-shadow: var(--shadow-soft);
 }
 
 pre.sh-code code {
@@ -82,11 +122,7 @@ pre.show-line-numbers .sh__line::before {
   content: counter(sh-line-number);
   margin-right: 24px;
   text-align: right;
-  color: var(--color-arctic-400);
-}
-
-.dark pre.show-line-numbers .sh__line::before {
-  color: var(--color-arctic-600);
+  color: var(--subtle);
 }
 
 /* ==========================================
@@ -94,13 +130,9 @@ pre.show-line-numbers .sh__line::before {
    ========================================== */
 
 .prose {
-  color: var(--color-arctic-800);
+  color: var(--paragraph);
   line-height: 1.65;
   font-size: 1.25rem;
-}
-
-.dark .prose {
-  color: var(--color-arctic-200);
 }
 
 /* Headings — size + spacing hierarchy; ET Book has no medium weights */
@@ -108,50 +140,25 @@ pre.show-line-numbers .sh__line::before {
 .prose h2,
 .prose h3,
 .prose h4 {
-  color: var(--color-arctic-800);
+  color: var(--foreground);
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0.015em;
   margin-top: 2.25em;
   margin-bottom: 0.85em;
-  transition: color 0.2s ease;
-}
-
-.prose h1:hover,
-.prose h2:hover,
-.prose h3:hover,
-.prose h4:hover {
-  color: var(--color-arctic-900);
-}
-
-.dark .prose h1,
-.dark .prose h2,
-.dark .prose h3,
-.dark .prose h4 {
-  color: var(--color-arctic-200);
-}
-
-.dark .prose h1:hover,
-.dark .prose h2:hover,
-.dark .prose h3:hover,
-.dark .prose h4:hover {
-  color: var(--color-arctic-100);
 }
 
 .prose h1 {
   font-size: 2.5rem;
   margin-top: 0;
   letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .prose h2 {
   font-size: 1.8rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-arctic-200) 70%, transparent);
-}
-
-.dark .prose h2 {
-  border-bottom-color: color-mix(in srgb, var(--color-arctic-800) 70%, transparent);
+  border-bottom: 1px solid var(--border);
 }
 
 .prose h3 {
@@ -171,13 +178,6 @@ pre.show-line-numbers .sh__line::before {
   text-decoration: none;
 }
 
-.prose h1 > a:hover,
-.prose h2 > a:hover,
-.prose h3 > a:hover,
-.prose h4 > a:hover {
-  opacity: 1;
-}
-
 /* Heading prefixes (# symbols) */
 .prose h1 > a::before,
 .prose h2 > a::before,
@@ -186,15 +186,8 @@ pre.show-line-numbers .sh__line::before {
   font-family: var(--font-mono);
   font-weight: 400;
   margin-right: 0.5em;
-  color: var(--color-arctic-300);
+  color: var(--subtle);
   letter-spacing: 0;
-}
-
-.dark .prose h1 > a::before,
-.dark .prose h2 > a::before,
-.dark .prose h3 > a::before,
-.dark .prose h4 > a::before {
-  color: var(--color-arctic-700);
 }
 
 .prose h1 > a::before {
@@ -221,19 +214,15 @@ pre.show-line-numbers .sh__line::before {
 
 /* Links */
 .prose a {
-  color: var(--color-arctic-950);
+  color: var(--foreground);
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--color-accent) 60%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
   text-underline-offset: 4px;
   transition: text-decoration-color 0.2s ease;
 }
 
-.dark .prose a {
-  color: var(--color-arctic-50);
-}
-
 .prose a:hover {
-  text-decoration-color: var(--color-accent);
+  text-decoration-color: var(--accent);
 }
 
 /* Lists */
@@ -258,11 +247,7 @@ pre.show-line-numbers .sh__line::before {
 }
 
 .prose li::marker {
-  color: var(--color-arctic-400);
-}
-
-.dark .prose li::marker {
-  color: var(--color-arctic-600);
+  color: var(--subtle);
 }
 
 /* Nested lists */
@@ -276,16 +261,11 @@ pre.show-line-numbers .sh__line::before {
 
 /* Blockquotes */
 .prose blockquote {
-  border-left: 3px solid var(--color-arctic-200);
+  border-left: 2px solid var(--border-strong);
   padding-left: 1em;
   margin: 1.75em 0;
-  color: var(--color-arctic-600);
+  color: var(--muted);
   font-style: italic;
-}
-
-.dark .prose blockquote {
-  border-left-color: var(--color-arctic-700);
-  color: var(--color-arctic-400);
 }
 
 .prose blockquote p {
@@ -296,44 +276,31 @@ pre.show-line-numbers .sh__line::before {
 .prose code:not(pre code) {
   font-family: var(--font-mono);
   font-size: 0.875em;
-  background-color: var(--color-arctic-100);
-  padding: 0.2em 0.4em;
-  border-radius: 0.25rem;
-  color: var(--color-arctic-900);
-}
-
-.dark .prose code:not(pre code) {
-  background-color: var(--color-arctic-900);
-  color: var(--color-arctic-100);
+  background-color: var(--inline-code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: var(--radius-sm);
+  color: var(--foreground);
 }
 
 /* Images */
 .prose img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
   margin: 1.5em 0;
 }
 
 /* Horizontal rule */
 .prose hr {
   border: none;
-  border-top: 1px solid var(--color-arctic-200);
-  margin: 2.25em 0;
-}
-
-.dark .prose hr {
-  border-top-color: var(--color-arctic-800);
+  border-top: 1px solid var(--border);
+  margin: 2.5em 0;
 }
 
 /* Strong and emphasis — bold maps to ET Book bold face */
 .prose strong {
   font-weight: bold;
-  color: var(--color-arctic-900);
-}
-
-.dark .prose strong {
-  color: var(--color-arctic-100);
+  color: var(--foreground);
 }
 
 /* Tables */
@@ -348,21 +315,12 @@ pre.show-line-numbers .sh__line::before {
 .prose td {
   padding: 0.75em 1em;
   text-align: left;
-  border-bottom: 1px solid var(--color-arctic-200);
-}
-
-.dark .prose th,
-.dark .prose td {
-  border-bottom-color: var(--color-arctic-800);
+  border-bottom: 1px solid var(--border);
 }
 
 .prose th {
   font-weight: bold;
-  color: var(--color-arctic-900);
-}
-
-.dark .prose th {
-  color: var(--color-arctic-100);
+  color: var(--foreground);
 }
 
 /* First/last child margin adjustments */

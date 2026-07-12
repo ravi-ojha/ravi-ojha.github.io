@@ -33,7 +33,7 @@
 
 <main>
   <Navbar />
-  <article class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-first-fold">
+  <article class="measure py-12 min-h-first-fold">
     <header class="post-header">
       <h1>{data.post.title}</h1>
       {#if data.post.date}
@@ -70,58 +70,45 @@
 
 <style>
   .post-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
 
   .post-header h1 {
     font-size: 2.6rem;
     font-weight: 400;
     letter-spacing: 0.02em;
-    color: var(--color-arctic-900);
+    color: var(--foreground);
     margin: 0 0 0.85rem 0;
     line-height: 1.2;
-  }
-
-  :global(.dark) .post-header h1 {
-    color: var(--color-arctic-100);
   }
 
   .post-header time {
     font-family: var(--font-mono);
     font-size: 0.95rem;
-    color: var(--color-arctic-600);
+    color: var(--muted);
     letter-spacing: 0.02em;
   }
 
-  :global(.dark) .post-header time {
-    color: var(--color-arctic-400);
-  }
-
   .post-nav {
-    margin-top: 4rem;
+    margin-top: 5rem;
     padding-top: 2rem;
-    border-top: 1px solid var(--color-arctic-200);
-  }
-
-  :global(.dark) .post-nav {
-    border-top-color: var(--color-arctic-800);
+    border-top: 1px solid var(--border);
   }
 
   .nav-links {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .nav-link {
-    color: var(--color-accent);
+    color: var(--muted);
     text-decoration: none;
     font-size: 1.05rem;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
   }
 
   .nav-link:hover {
-    opacity: 0.7;
+    color: var(--accent);
   }
 </style>
-

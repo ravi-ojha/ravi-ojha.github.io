@@ -25,7 +25,7 @@
 
 <main>
   <Navbar />
-  <div class="posts-container max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 min-h-first-fold">
+  <div class="posts-container measure min-h-first-fold">
     {#each data.groupedPosts as group}
       <section class="year-section">
         <h2 class="year-heading">{group.year}</h2>
@@ -50,25 +50,21 @@
 
 <style>
   .posts-container {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
   }
 
   .year-section {
-    margin-bottom: 2.75rem;
+    margin-bottom: 4rem;
   }
 
   .year-heading {
     font-family: var(--font-mono);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 400;
-    color: var(--color-arctic-600);
+    color: var(--muted);
     margin-bottom: 1.5rem;
     letter-spacing: 0.05em;
-  }
-
-  :global(.dark) .year-heading {
-    color: var(--color-arctic-400);
   }
 
   .posts-list {
@@ -78,19 +74,11 @@
   }
 
   .post-item {
-    border-top: 1px solid var(--color-arctic-200);
-  }
-
-  :global(.dark) .post-item {
-    border-top-color: var(--color-arctic-800);
+    border-top: 1px solid var(--border);
   }
 
   .post-item:last-child {
-    border-bottom: 1px solid var(--color-arctic-200);
-  }
-
-  :global(.dark) .post-item:last-child {
-    border-bottom-color: var(--color-arctic-800);
+    border-bottom: 1px solid var(--border);
   }
 
   .post-link {
@@ -104,31 +92,23 @@
   }
 
   .post-link:hover {
-    opacity: 0.7;
+    opacity: 0.65;
   }
 
   .post-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 400;
-    color: var(--color-arctic-900);
+    color: var(--foreground);
     line-height: 1.4;
-  }
-
-  :global(.dark) .post-title {
-    color: var(--color-arctic-200);
   }
 
   .post-date {
     font-family: var(--font-mono);
     font-size: 0.95rem;
-    color: var(--color-arctic-400);
+    color: var(--subtle);
     white-space: nowrap;
     flex-shrink: 0;
     letter-spacing: 0.02em;
-  }
-
-  :global(.dark) .post-date {
-    color: var(--color-arctic-600);
   }
 
   .month {

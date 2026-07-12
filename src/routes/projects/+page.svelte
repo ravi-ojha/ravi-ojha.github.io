@@ -8,10 +8,10 @@
 
 <main>
   <Navbar />
-  <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-first-fold">
+  <div class="measure py-12 min-h-first-fold">
     <h1 class="page-title">Projects</h1>
     <ul class="project-list">
-      <li>
+      <li class="project-item">
         <a href="/projects/idiom-of-the-day" class="project-link">
           Idiom of the Day
         </a>
@@ -27,46 +27,40 @@
     font-size: 2.5rem;
     font-weight: 400;
     letter-spacing: 0.02em;
-    color: var(--color-arctic-900);
-    margin: 0 0 2rem 0;
+    color: var(--foreground);
+    margin: 0 0 2.5rem 0;
     line-height: 1.2;
-  }
-
-  :global(.dark) .page-title {
-    color: var(--color-arctic-100);
   }
 
   .project-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  }
+
+  .project-item {
+    padding: 1.35rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .project-item:last-child {
+    border-bottom: 1px solid var(--border);
   }
 
   .project-link {
-    font-size: 1.35rem;
-    color: var(--color-arctic-950);
-    text-decoration: underline;
-    text-decoration-color: color-mix(in srgb, var(--color-accent) 60%, transparent);
-    text-underline-offset: 4px;
-  }
-
-  :global(.dark) .project-link {
-    color: var(--color-arctic-50);
+    font-size: 1.125rem;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
   }
 
   .project-link:hover {
-    text-decoration-color: var(--color-accent);
+    opacity: 0.65;
   }
 
   .project-desc {
     margin: 0.35rem 0 0 0;
-    color: var(--color-arctic-600);
-  }
-
-  :global(.dark) .project-desc {
-    color: var(--color-arctic-400);
+    color: var(--muted);
+    font-size: 1.05rem;
   }
 </style>

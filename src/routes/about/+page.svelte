@@ -8,7 +8,7 @@
 
 <main>
   <Navbar />
-  <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-first-fold">
+  <div class="measure py-12 min-h-first-fold">
     <article class="prose">
       <blockquote>
         <p>
@@ -118,10 +118,6 @@
   }
 
   .dot {
-    color: var(--color-arctic-400);
-  }
-
-  :global(.dark) .dot {
-    color: var(--color-arctic-600);
+    color: var(--subtle);
   }
 </style>

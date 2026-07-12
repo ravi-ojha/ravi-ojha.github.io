@@ -2,17 +2,31 @@
   import ThemeSwitch from '$lib/components/ui/theme-switch.svelte'
 </script>
 
-<footer class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="py-4 md:py-4 flex flex-wrap justify-between gap-4">
-    <div class="flex flex-row gap-8 items-center">
-      <div class="mt-1">
-        <ThemeSwitch />
-      </div>
+<footer class="measure">
+  <div class="footer-inner">
+    <div class="mt-1">
+      <ThemeSwitch />
     </div>
-    <div class="flex flex-row gap-2 mt-2 items-center">
-      <a href="/contact" class="link-footer-1"> Contact </a>
-      <span class="text-arctic-500 dark:text-arctic-500"> · </span>
-      <a href="/privacy" class="link-footer-1"> Privacy </a>
+    <div class="flex flex-row gap-2 items-center">
+      <a href="/contact" class="link-footer-1">Contact</a>
+      <span class="footer-sep">·</span>
+      <a href="/privacy" class="link-footer-1">Privacy</a>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-inner {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .footer-sep {
+    color: var(--subtle);
+  }
+</style>

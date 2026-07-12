@@ -24,7 +24,7 @@
 
 <style>
   .page-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     color: var(--color-arctic-900);
@@ -46,7 +46,7 @@
   }
 
   .project-link {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: var(--color-arctic-950);
     text-decoration: underline;
     text-decoration-color: color-mix(in srgb, var(--color-accent) 60%, transparent);

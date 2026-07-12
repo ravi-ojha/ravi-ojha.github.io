@@ -17,7 +17,7 @@
 
 <style>
   .page-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     color: var(--color-arctic-900);

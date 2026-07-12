@@ -1,6 +1,6 @@
 body {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.65;
   font-feature-settings: 'liga' 1, 'kern' 1;
 }
@@ -24,11 +24,11 @@ a {
 }
 
 .link-navbar-1 {
-  @apply w-fit text-base text-arctic-600 dark:text-arctic-400 no-underline hover:text-accent;
+  @apply w-fit text-lg text-arctic-600 dark:text-arctic-400 no-underline hover:text-accent;
 }
 
 .link-footer-1 {
-  @apply w-fit text-base text-arctic-500 dark:text-arctic-500 no-underline hover:text-accent;
+  @apply w-fit text-lg text-arctic-500 dark:text-arctic-500 no-underline hover:text-accent;
 }
 
 /* Sugar-high syntax highlighting - Light theme */
@@ -59,7 +59,7 @@ a {
 
 /* Code block styling */
 pre.sh-code {
-  @apply rounded-lg p-4 text-sm overflow-x-auto my-4;
+  @apply rounded-lg p-4 text-base overflow-x-auto my-4;
   background-color: var(--color-arctic-50);
 }
 
@@ -96,7 +96,7 @@ pre.show-line-numbers .sh__line::before {
 .prose {
   color: var(--color-arctic-800);
   line-height: 1.65;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
 }
 
 .dark .prose {
@@ -139,13 +139,13 @@ pre.show-line-numbers .sh__line::before {
 }
 
 .prose h1 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   margin-top: 0;
   letter-spacing: 0.02em;
 }
 
 .prose h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid color-mix(in srgb, var(--color-arctic-200) 70%, transparent);
 }
@@ -155,11 +155,11 @@ pre.show-line-numbers .sh__line::before {
 }
 
 .prose h3 {
-  font-size: 1.3rem;
+  font-size: 1.45rem;
 }
 
 .prose h4 {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
 }
 
 /* Heading links - inherit heading color, not accent */

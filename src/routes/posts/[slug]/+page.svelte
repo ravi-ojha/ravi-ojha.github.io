@@ -52,7 +52,7 @@
   }
 
   .post-header h1 {
-    font-size: 2.35rem;
+    font-size: 2.6rem;
     font-weight: 400;
     letter-spacing: 0.02em;
     color: var(--color-arctic-900);
@@ -66,7 +66,7 @@
 
   .post-header time {
     font-family: var(--font-mono);
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--color-arctic-600);
     letter-spacing: 0.02em;
   }
@@ -94,7 +94,7 @@
   .nav-link {
     color: var(--color-accent);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     transition: opacity 0.2s ease;
   }
 

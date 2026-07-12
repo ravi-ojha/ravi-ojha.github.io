@@ -60,7 +60,7 @@
 
   .year-heading {
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--color-arctic-600);
     margin-bottom: 1.5rem;
@@ -108,7 +108,7 @@
   }
 
   .post-title {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 400;
     color: var(--color-arctic-900);
     line-height: 1.4;
@@ -120,7 +120,7 @@
 
   .post-date {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--color-arctic-400);
     white-space: nowrap;
     flex-shrink: 0;
